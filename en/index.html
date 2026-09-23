@@ -123,8 +123,19 @@
     .stat .n{font-size:28px;font-weight:500;color:var(--text)}
     .stat .l{color:var(--muted);font-size:13px;margin-top:6px}
 
-    .contact{text-align:center;padding:52px 24px;border:1px solid var(--line);border-radius:14px}
+    .contact{text-align:center;padding:56px 40px;border:1px solid var(--line);border-radius:16px;max-width:760px;margin:0 auto;
+      background:linear-gradient(180deg, rgba(195,160,106,.04), transparent 60%);position:relative;overflow:hidden}
+    .contact:before{content:"";position:absolute;inset:12px;border:1px solid rgba(195,160,106,.1);border-radius:12px;pointer-events:none}
     .contact a{color:var(--gold)}
+    .contact-paths{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0 32px;text-align:left}
+    .contact-path{border:1px solid var(--line);border-radius:12px;padding:20px 20px 18px;background:rgba(255,255,255,.02)}
+    .contact-path .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
+    .contact-path.v .tag{color:var(--violet)}
+    .contact-path p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
+    .contact-mail{position:relative;font-size:14px}
+    .contact-mail a{display:inline-block;padding:13px 26px;border-radius:6px;background:var(--gold);color:#221a0d;font-weight:500;text-decoration:none;transition:.2s}
+    .contact-mail a:hover{opacity:.88}
+    @media (max-width:680px){.contact{padding:40px 22px}.contact-paths{grid-template-columns:1fr}}
     footer{border-top:1px solid var(--line);padding:30px 0;color:var(--faint);font-size:13px;text-align:center}
 
     /* ── Differentiation sections — violet only ── */
@@ -501,8 +512,18 @@
         <div class="contact">
           <p class="eyebrow" style="margin-bottom:14px">GET IN TOUCH</p>
           <h2>Looking for partners to build this with</h2>
-          <p class="lead" style="margin:14px auto 20px">We welcome inquiries about investment, partnerships, and hiring.</p>
-          <p style="font-size:16px"><a href="mailto:juneyoung.jeon@vectuslab.com">juneyoung.jeon@vectuslab.com</a></p>
+          <p class="lead" style="margin:14px auto 0">We welcome inquiries about investment and strategic partnerships.</p>
+          <div class="contact-paths">
+            <div class="contact-path">
+              <p class="tag">Investment</p>
+              <p>Looking for investors to grow the AI financial judgment engine with us.</p>
+            </div>
+            <div class="contact-path v">
+              <p class="tag">Partnerships</p>
+              <p>Open to data, research, and distribution partnership proposals.</p>
+            </div>
+          </div>
+          <p class="contact-mail"><a href="mailto:juneyoung.jeon@vectuslab.com">juneyoung.jeon@vectuslab.com</a></p>
         </div>
       </div>
     </section>
