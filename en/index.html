@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vectus — AI 기반 금융 판단 엔진 | AI-Powered Financial Decision Engine</title>
-  <meta name="description" content="벡투스(Vectus)는 AI 기반 금융 판단 엔진을 개발하는 스타트업입니다. 실시간 시세·수급·뉴스 데이터와 머신러닝 모델로 맞춤형 투자 추천과 사후관리를 제공합니다." />
-  <meta property="og:title" content="Vectus — AI 기반 금융 판단 엔진" />
+  <title>Vectus — AI-Powered Financial Decision Engine</title>
+  <meta name="description" content="Vectus is an AI-powered financial decision engine. We deliver personalized investment recommendations and ongoing portfolio management using real-time price, flow, and news data with machine learning models." />
+  <meta property="og:title" content="Vectus — AI-Powered Financial Decision Engine" />
   <meta property="og:description" content="AI-powered financial decision engine for personalized investing and B2B credit ruleset optimization." />
   <meta property="og:type" content="website" />
-  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="icon" type="image/png" href="../logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
   <style>
     :root{
       --ink:#0a0b0d; --panel:#131519; --panel-2:#181b21;
@@ -24,11 +24,11 @@
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
-      font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
       background:var(--ink);color:var(--text);line-height:1.7;
       -webkit-font-smoothing:antialiased;overflow-x:hidden;
     }
-    h1,h2{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;text-wrap:balance}
+    h1,h2{font-family:'Fraunces',Georgia,serif;font-weight:600;text-wrap:balance}
     .mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
     .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
     header{
@@ -36,7 +36,7 @@
       background:rgba(10,11,13,.82);border-bottom:1px solid var(--line);
     }
     .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;font-family:'Gowun Batang',serif}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:18px;font-family:'Fraunces',serif}
     .logo img{height:48px;width:auto;display:block;background:#fff;padding:6px 10px;border-radius:8px}
     .nav a{color:var(--muted);text-decoration:none;margin-left:26px;font-size:13.5px}
     .nav a:hover{color:var(--text)}
@@ -63,15 +63,15 @@
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
     .reveal.in{opacity:1;transform:none}
 
-    /* ── HERO — 비대칭 2단 ── */
+    /* ── Hero — asymmetric two-column ── */
     .hero{padding:88px 0 96px;position:relative}
     .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
     @media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
-    .hero h1{font-size:clamp(36px,5.2vw,56px);line-height:1.28;letter-spacing:-.3px;margin-bottom:20px}
+    .hero h1{font-size:clamp(34px,5vw,52px);line-height:1.28;letter-spacing:-.3px;margin-bottom:20px}
     .hero p{color:var(--muted);font-size:16px;max-width:460px;margin-bottom:34px}
     .cta{display:flex;gap:12px;flex-wrap:wrap}
 
-    /* ── 판단카드 (히어로 우측 + 확대) ── */
+    /* ── Judgment card (hero, enlarged) ── */
     .card-frame{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);
       box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
     .card-bar{display:flex;gap:6px;padding:13px 18px;border-bottom:1px solid var(--line)}
@@ -97,7 +97,7 @@
     .card-steps{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--muted);line-height:2}
     .card-steps b{color:var(--text);font-weight:500}
 
-    /* ── 판단 체인(연결 흐름) ── */
+    /* ── Judgment chain (connected flow) ── */
     .flow{display:flex;align-items:stretch;gap:0;margin-top:40px}
     @media (max-width:760px){.flow{flex-direction:column}}
     .flow-node{flex:1;position:relative;padding:22px 20px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
@@ -109,13 +109,13 @@
     .flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:18px;flex:0 0 auto;padding:0 6px}
     @media (max-width:760px){.flow-arrow{transform:rotate(90deg);padding:6px 0}}
 
-    /* ── 그리드/셀 (WHAT WE DO, CORE MODELS) ── */
+    /* ── Grid/cells (What we do, Core models) ── */
     .grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:36px}
     .grid-3{grid-template-columns:repeat(3,1fr)}
     .cell{background:var(--panel);padding:26px;transition:background .25s;border-top:2px solid var(--gold-line)}
     .cell:hover{background:var(--panel-2)}
     .cell .idx{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);background:var(--gold-dim);padding:4px 10px;border-radius:5px;margin-bottom:14px;letter-spacing:.05em}
-    .cell h3{font-size:16px;margin-bottom:8px;font-weight:500}
+    .cell h3{font-size:16px;margin-bottom:8px;font-weight:500;font-family:'Inter',sans-serif}
     .cell p{color:var(--muted);font-size:14px}
 
     .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:36px}
@@ -127,7 +127,7 @@
     .contact a{color:var(--gold)}
     footer{border-top:1px solid var(--line);padding:30px 0;color:var(--faint);font-size:13px;text-align:center}
 
-    /* ── 차별화 섹션 — 바이올렛 전용 ── */
+    /* ── Differentiation sections — violet only ── */
     .diff-band{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .diff-sub{color:var(--muted);font-size:15px;line-height:1.75;margin:14px 0 30px;max-width:600px}
     .split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
@@ -166,12 +166,12 @@
     .data-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
     .data-chip{border:1px solid var(--line);border-radius:6px;padding:9px 16px;font-size:13.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
 
-    /* ── 판단으로 끝나지 않습니다 ── */
+    /* ── Beyond the recommendation ── */
     .follow-list{margin-top:40px;display:flex;flex-direction:column}
     .follow-item{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line)}
     .follow-item:last-child{border-bottom:1px solid var(--line)}
     .follow-num{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-line);font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--gold);font-weight:500}
-    .follow-item h3{font-size:16.5px;font-weight:500;margin-bottom:6px}
+    .follow-item h3{font-size:16.5px;font-weight:500;margin-bottom:6px;font-family:'Inter',sans-serif}
     .follow-item p{color:var(--muted);font-size:14px;max-width:560px}
     @media (max-width:560px){.follow-item{grid-template-columns:40px 1fr;gap:16px}.follow-num{width:36px;height:36px;font-size:14px}}
 
@@ -192,17 +192,17 @@
   <header>
     <div class="wrap nav">
       <a class="logo" href="#" style="text-decoration:none;color:inherit">
-        <img src="logo.png" alt="Vectus" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'" />
+        <img src="../logo.png" alt="Vectus" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'" />
         <span style="display:none">Vectus</span>
       </a>
       <nav>
-        <a href="#what">서비스</a>
-        <a href="#diff">차별화</a>
-        <a href="#tech">기술</a>
-        <a href="#infra">인프라</a>
-        <a href="#contact" class="cta-nav">문의</a>
+        <a href="#what">Services</a>
+        <a href="#diff">Why Vectus</a>
+        <a href="#tech">Technology</a>
+        <a href="#infra">Infrastructure</a>
+        <a href="#contact" class="cta-nav">Contact</a>
         <span class="lang-switch">
-          <a href="/" class="active">KO</a><a href="/en/">EN</a>
+          <a href="/">KO</a><a href="/en/" class="active">EN</a>
         </span>
       </nav>
     </div>
@@ -213,12 +213,13 @@
       <div class="wrap hero-grid">
         <div>
           <p class="eyebrow">AI · FINTECH · INVESTMENT INTELLIGENCE</p>
-          <h1>이유 있는 추천</h1>
-          <p>벡투스(Vectus)는 실시간 시장 데이터와 머신러닝 모델로 개인 맞춤형 투자
-             추천과 사후관리를 제공하는 AI 금융 기술 스타트업입니다.</p>
+          <h1>Recommendations, with a reason.</h1>
+          <p>Vectus is an AI fintech startup delivering personalized investment
+             recommendations and ongoing portfolio management, powered by real-time
+             market data and machine learning models.</p>
           <div class="cta">
-            <a class="btn btn-primary" href="#contact">문의하기</a>
-            <a class="btn btn-ghost" href="#diff">차별점 보기</a>
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+            <a class="btn btn-ghost" href="#diff">See what's different</a>
           </div>
         </div>
 
@@ -226,25 +227,25 @@
           <div class="card-bar"><span></span><span></span><span></span></div>
           <div class="card-body">
             <div class="card-top">
-              <div><div class="card-name">삼성전자</div><div class="card-tag">개별종목</div></div>
-              <span class="card-badge">리밸런싱 검토</span>
+              <div><div class="card-name">Samsung Electronics</div><div class="card-tag">Stock</div></div>
+              <span class="card-badge">Rebalancing review</span>
             </div>
-            <div class="card-metric"><span class="v">78%</span><span class="l">전환 확률</span></div>
+            <div class="card-metric"><span class="v">78%</span><span class="l">Reversal probability</span></div>
 
             <div class="gauge-row">
               <div class="gauge">
-                <div class="gauge-label"><span>시장위험 점수</span><b>91점</b></div>
+                <div class="gauge-label"><span>Market risk score</span><b>91</b></div>
                 <div class="gauge-track"><div class="gauge-fill risk" style="width:91%"></div></div>
               </div>
               <div class="gauge">
-                <div class="gauge-label"><span>최대 편입비중</span><b>34.23%</b></div>
+                <div class="gauge-label"><span>Max overlap weight</span><b>34.23%</b></div>
                 <div class="gauge-track"><div class="gauge-fill overlap" style="width:34%"></div></div>
               </div>
             </div>
 
             <div class="card-steps">
-              ① 장기성과 <b>+143%</b> → ② 중기흐름 <b>-19.6%</b> → ③ 최근흐름 <b>+1.8%</b><br>
-              다른 보유상품 1개 안에도 포함
+              ① Long-term <b>+143%</b> → ② Mid-term <b>-19.6%</b> → ③ Recent <b>+1.8%</b><br>
+              Also held in 1 other product you own
             </div>
           </div>
         </div>
@@ -254,15 +255,15 @@
     <section class="tight divider reveal">
       <div class="wrap">
         <p class="eyebrow" style="text-align:center">JUDGMENT CHAIN</p>
-        <h2 style="text-align:center">오늘 뉴스, 내 자산까지 이어집니다</h2>
+        <h2 style="text-align:center">From today's news to your portfolio</h2>
         <div class="flow">
-          <div class="flow-node"><div class="flow-idx">01</div><div class="flow-text">원/달러 환율 하락</div></div>
+          <div class="flow-node"><div class="flow-idx">01</div><div class="flow-text">USD/KRW exchange rate falls</div></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node"><div class="flow-idx">02</div><div class="flow-text">삼성전자 · SK하이닉스 영업이익 압박</div></div>
+          <div class="flow-node"><div class="flow-idx">02</div><div class="flow-text">Samsung Electronics · SK hynix margins squeezed</div></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node"><div class="flow-idx">03</div><div class="flow-text">코스피100 ETF(31% 편입) 위험 확대</div></div>
+          <div class="flow-node"><div class="flow-idx">03</div><div class="flow-text">KOSPI 100 ETF (31% weight) risk rises</div></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node final"><div class="flow-idx">04</div><div class="flow-text">내가 보유한 그 ETF, 지금 어떻게 해야 할까</div></div>
+          <div class="flow-node final"><div class="flow-idx">04</div><div class="flow-text">What should you do with that ETF, right now?</div></div>
         </div>
       </div>
     </section>
@@ -270,24 +271,25 @@
     <section id="what" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">WHAT WE DO</p>
-        <h2>데이터에서 판단으로</h2>
-        <p class="lead">2,900여 개 종목의 실시간 시세·수급·뉴스 데이터를 수집하고,
-           다층 머신러닝 모델로 분석해 개인에게 맞춤형 투자 의사결정을 제공합니다.</p>
+        <h2>From data to decisions</h2>
+        <p class="lead">We collect real-time price, flow, and news data across 2,900+
+           stocks, then analyze it with layered machine learning models to deliver
+           personalized investment decisions.</p>
         <div class="grid grid-3">
           <div class="cell">
             <div class="idx">01</div>
-            <h3>실시간 데이터 수집</h3>
-            <p>2,900+ 종목의 시세·수급·뉴스 데이터를 매일 수백만 건 단위로 수집·정제합니다.</p>
+            <h3>Real-time data collection</h3>
+            <p>We collect and refine millions of data points daily — price, flow, and news — across 2,900+ stocks.</p>
           </div>
           <div class="cell">
             <div class="idx">02</div>
-            <h3>맞춤형 투자 추천</h3>
-            <p>국면판단·연결위험·다요인 최적화 모델로 개인 성향에 맞는 포트폴리오를 제안합니다.</p>
+            <h3>Personalized recommendations</h3>
+            <p>Regime detection, connectivity risk, and multi-factor optimization tailor a portfolio to your profile.</p>
           </div>
           <div class="cell">
             <div class="idx">03</div>
-            <h3>사후관리 · 알림</h3>
-            <p>리밸런싱 시그널과 리스크 알림으로 투자 이후의 의사결정까지 지속 지원합니다.</p>
+            <h3>Aftercare & alerts</h3>
+            <p>Rebalancing signals and risk alerts keep supporting your decisions after you invest.</p>
           </div>
         </div>
       </div>
@@ -296,71 +298,71 @@
     <div id="diff"></div>
     <section class="diff-band reveal">
       <div class="wrap">
-        <p class="eyebrow v">VS 로보어드바이저 · 증권사 앱</p>
-        <h2>정보는 많은데, 답이 없었다면</h2>
-        <p class="diff-sub">수익률 · 위험등급 · 과거 성과 · 시장 뉴스 · 보유 현황 — 다 보여주지만 "그래서 어떻게 해야 하나요"는 없습니다.</p>
+        <p class="eyebrow v">VS ROBO-ADVISORS & BROKERAGE APPS</p>
+        <h2>When information wasn't the same as an answer</h2>
+        <p class="diff-sub">Returns, risk ratings, past performance, market news, holdings — they show you everything, but never "so what should I do?"</p>
         <div class="split">
           <div class="pane">
-            <p class="pane-label">일반 앱</p>
-            <p>수익률 · 위험등급<br>과거 성과 · 뉴스<br>보유 현황 — 전부 따로</p>
+            <p class="pane-label">Typical app</p>
+            <p>Returns · Risk ratings<br>Past performance · News<br>Holdings — all separate</p>
           </div>
           <div class="pane violet">
             <p class="pane-label">Vectus</p>
-            <p>이 다섯 가지를 하나로 연결해 "지금 이렇게 하시면 됩니다"까지 답합니다</p>
+            <p>We connect all five into one answer: "here's what to do now."</p>
           </div>
         </div>
 
         <div class="formula-block">
-          <p class="formula-q">PER 72배 — 이게 좋은 건가요, 나쁜 건가요?</p>
+          <p class="formula-q">A PER of 72x — is that good or bad?</p>
           <div class="formula-steps">
-            증권사 앱은 PER 72.38배 · PBR 4.61배를 보여주고 끝입니다.<br>
-            Vectus는 ① 장기성과 +143% → ② 중기흐름 -19.6% → ③ 최근흐름 +1.8%를 이어서<br>
-            <span class="formula-result">→ "분할 편입을 권합니다"까지 설명합니다.</span>
+            Brokerage apps show you PER 72.38x · PBR 4.61x, and stop there.<br>
+            Vectus connects ① long-term +143% → ② mid-term -19.6% → ③ recent +1.8%<br>
+            <span class="formula-result">→ and tells you: "build the position in stages."</span>
           </div>
         </div>
 
         <div class="checklist">
-          <p><span class="k">확인</span>국내 주요 증권사 · 로보어드바이저 앱을 하나씩 직접 방문해 비교했습니다(2026-09-22 기준)</p>
-          <p><span class="k">결과</span>뉴스 → 시장 영향 → 내 보유상품까지 잇는 판단 체인 — 확인한 곳 중 어디에도 없었습니다</p>
-          <p><span class="k">결과</span>보유한 여러 상품에 같은 종목이 겹쳐 있는 위험을 계산해 보여주는 곳 — 확인한 곳 중 어디에도 없었습니다</p>
+          <p><span class="k">Checked</span>We visited Korea's major brokerage and robo-advisor apps one by one to compare (as of 2026-09-22)</p>
+          <p><span class="k">Result</span>A judgment chain connecting news → market impact → your holdings — none of them had it</p>
+          <p><span class="k">Result</span>A feature that calculates overlap risk across your holdings — none of them had it</p>
         </div>
       </div>
     </section>
 
     <section class="diff-band reveal" style="border-top:none">
       <div class="wrap">
-        <p class="eyebrow v">VS 일반 LLM</p>
-        <h2>그럴듯한 답, 확인된 답</h2>
-        <p class="diff-sub">일반 챗봇은 넓고 빠르게 말합니다. Vectus는 내 실제 자산 안에서 좁고 깊게 맞춥니다.</p>
+        <p class="eyebrow v">VS GENERAL-PURPOSE LLMS</p>
+        <h2>A plausible answer, vs. a verified one</h2>
+        <p class="diff-sub">General chatbots talk broadly and fast. Vectus goes narrow and deep, inside your actual holdings.</p>
 
         <table class="axis">
-          <tr><th>일반 LLM</th><th>Vectus</th></tr>
-          <tr><td>출처가 어딘지 불명</td><td>KRX · 코스콤 · KOFIA · DART 실측 데이터</td></tr>
-          <tr><td>학습 시점에 멈춘 지식</td><td>시세 · 공시 매일 자동 동기화</td></tr>
-          <tr><td>내 보유 현황을 모름</td><td>내 상품 · 중복위험과 연결해 답변</td></tr>
-          <tr><td>숫자를 지어내도 확인 불가</td><td>실제 데이터와 대조 후 표시</td></tr>
-          <tr><td>"사세요"까지 단정적으로 말함</td><td>매수 · 매도 지시 문구를 코드가 차단</td></tr>
+          <tr><th>General LLM</th><th>Vectus</th></tr>
+          <tr><td>Source is unclear</td><td>Verified data from KRX · Koscom · KOFIA · DART</td></tr>
+          <tr><td>Knowledge frozen at training time</td><td>Prices and filings sync automatically, every day</td></tr>
+          <tr><td>Doesn't know your holdings</td><td>Answers connected to your holdings and overlap risk</td></tr>
+          <tr><td>No way to verify if numbers are made up</td><td>Checked against real data before it's shown</td></tr>
+          <tr><td>States "buy" as if it were certain</td><td>Buy/sell directives are blocked by code</td></tr>
         </table>
 
         <div class="chat">
-          <p class="pane-label" style="margin:26px 0 0">"삼성전자 어때요?"</p>
-          <div class="bubble them"><p class="bubble-tag">일반 AI 챗봇</p>반도체 대장주로 실적 개선 기대감이 있어 긍정적으로 볼 수 있습니다</div>
-          <div class="bubble us"><p class="bubble-tag">Vectus</p>코스피100 ETF에 31.29% 편입(2026-09-22 공시 기준). 3개월 수익률 -19.6%, 시장위험도 신규진입 부적합 — 분할 편입을 권합니다</div>
+          <p class="pane-label" style="margin:26px 0 0">"How's Samsung Electronics doing?"</p>
+          <div class="bubble them"><p class="bubble-tag">General AI chatbot</p>It's a leading semiconductor stock with earnings improvement expected, so it could be seen positively</div>
+          <div class="bubble us"><p class="bubble-tag">Vectus</p>Held at 31.29% of the KOSPI 100 ETF (per 2026-09-22 filing). 3-month return -19.6%, market risk unsuitable for new entry — we recommend building the position in stages</div>
         </div>
 
         <div class="checklist">
-          <p><span class="k">원칙</span>값이 없으면 "없음"이라고 표시합니다 — 비슷한 종목이나 업종 평균으로 채우지 않습니다</p>
-          <p><span class="k">장치</span>AI가 답한 숫자는 실제 데이터와 다시 대조합니다</p>
-          <p><span class="k">장치</span>"사세요 · 파세요"처럼 단정적인 매수 · 매도 지시는 코드가 자동으로 차단합니다</p>
-          <p><span class="k">장치</span>가격 · 수익률의 출처를 문서로 남기고, 어긋나면 자동으로 걸러내는 검증 장치를 둡니다</p>
+          <p><span class="k">Principle</span>If a value is missing, we show "unavailable" — never filled in with a similar stock or an industry average</p>
+          <p><span class="k">Safeguard</span>Every number the AI states is checked again against real data</p>
+          <p><span class="k">Safeguard</span>Directive phrases like "buy" or "sell" are automatically blocked by code</p>
+          <p><span class="k">Safeguard</span>Price and return sources are documented, with automated checks that catch discrepancies</p>
         </div>
       </div>
     </section>
 
     <section class="closing divider reveal">
       <div class="wrap">
-        <h2>투자에 필요한 건, 벡투스 하나면 됩니다</h2>
-        <p>정보를 모으고, 지표를 해석하고, 근거 있게 답하는 것 — 이 세 가지를 다 하는 곳은 흔치 않습니다. 여러 앱을 오갈 필요 없습니다.</p>
+        <h2>Everything you need for investing, in one place</h2>
+        <p>Gathering information, interpreting indicators, and answering with evidence — few places do all three. You shouldn't need to jump between apps.</p>
       </div>
     </section>
 
@@ -368,13 +370,13 @@
     <section class="tight reveal">
       <div class="wrap">
         <p class="eyebrow">DATA SOURCE</p>
-        <h2>추정이 아니라, 실제 공시 데이터입니다</h2>
-        <p class="lead">값이 없으면 "없음"이라고 표시합니다. 유사 종목이나 업종 평균으로 채우지 않습니다.</p>
+        <h2>Real filings, not estimates</h2>
+        <p class="lead">If a value is missing, we show "unavailable." We never fill it in with a similar stock or an industry average.</p>
         <div class="data-row">
-          <span class="data-chip">한국거래소(KRX) 시세</span>
-          <span class="data-chip">코스콤 실시간 시세</span>
-          <span class="data-chip">금융투자협회(KOFIA) 펀드 공시</span>
-          <span class="data-chip">DART 전자공시 재무제표</span>
+          <span class="data-chip">Korea Exchange (KRX) prices</span>
+          <span class="data-chip">Koscom real-time prices</span>
+          <span class="data-chip">KOFIA fund filings</span>
+          <span class="data-chip">DART financial statements</span>
         </div>
       </div>
     </section>
@@ -382,38 +384,38 @@
     <section id="tech" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">CORE MODELS</p>
-        <h2>문제마다 다른 전문 모델을 씁니다</h2>
-        <p class="lead">하나의 만능 알고리즘이 아니라, 문제별 전문 모델이 있습니다.</p>
+        <h2>A dedicated model for every problem</h2>
+        <p class="lead">Not one do-it-all algorithm — a dedicated model for each kind of problem.</p>
         <div class="grid grid-3">
           <div class="cell">
             <div class="idx">01</div>
-            <h3>국면판단 모델</h3>
-            <p>시장이 상승 · 하락 · 변동성 중 어디 있는지 식별합니다.</p>
+            <h3>Regime detection model</h3>
+            <p>Identifies whether the market is trending up, down, or into higher volatility.</p>
           </div>
           <div class="cell">
             <div class="idx">02</div>
-            <h3>연결위험 분석</h3>
-            <p>보유 상품 간 중복위험과 보완효과를 계산합니다.</p>
+            <h3>Connectivity risk analysis</h3>
+            <p>Calculates overlap risk and complementary effects across your holdings.</p>
           </div>
           <div class="cell">
             <div class="idx">03</div>
-            <h3>다요인 최적화</h3>
-            <p>위험 대비 수익을 조정합니다.</p>
+            <h3>Multi-factor optimization</h3>
+            <p>Adjusts return relative to risk.</p>
           </div>
           <div class="cell">
             <div class="idx">04</div>
-            <h3>추세전환 판단</h3>
-            <p>시장 방향이 바뀌는 시점을 통계로 포착합니다.</p>
+            <h3>Trend reversal detection</h3>
+            <p>Statistically identifies when market direction is about to change.</p>
           </div>
           <div class="cell">
             <div class="idx">05</div>
-            <h3>뉴스 영향 분석</h3>
-            <p>뉴스가 내 상품에 미치는 영향을 규칙 기반으로 추적합니다 — LLM이 마음대로 해석하지 않습니다.</p>
+            <h3>News impact analysis</h3>
+            <p>Tracks how news affects your holdings using rules — not an LLM's free interpretation.</p>
           </div>
           <div class="cell">
             <div class="idx">06</div>
-            <h3>5축 종합판단</h3>
-            <p>"좋은 회사"와 "지금 사도 되는 값"은 다릅니다. 재무체력 · 적정가치 · 추세 · 수급 · 공매도압력을 한 번에 보고, 둘이 어긋날 땐 왜 지금 보류해야 하는지까지 알려줍니다.</p>
+            <h3>Five-axis combined judgment</h3>
+            <p>"A good company" and "a good price right now" are different things. We weigh financial strength, fair value, trend, flow, and short pressure together, and tell you why to hold off when they disagree.</p>
           </div>
         </div>
       </div>
@@ -422,36 +424,36 @@
     <section class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">BEYOND THE RECOMMENDATION</p>
-        <h2>판단으로 끝나지 않습니다</h2>
-        <p class="lead">추천하고 멈추는 곳이 많습니다. Vectus는 그다음까지 이어갑니다.</p>
+        <h2>The recommendation isn't the end</h2>
+        <p class="lead">Most places stop at the recommendation. Vectus keeps going.</p>
         <div class="follow-list">
           <div class="follow-item">
             <div class="follow-num">01</div>
-            <div><h3>장중 5슬롯 가격예측</h3><p>개별 종목의 장중 주요 시점마다 통계적으로 보정된 근시일 가격 예측 구간을 제공합니다.</p></div>
+            <div><h3>Intraday 5-slot price forecast</h3><p>Delivers a statistically calibrated near-term price range at each key intraday checkpoint for individual stocks.</p></div>
           </div>
           <div class="follow-item">
             <div class="follow-num">02</div>
-            <div><h3>변동성 유사일 분석</h3><p>오늘과 비슷한 변동성 패턴을 보였던 과거 날짜를 찾아, 그 이후 실제로 어떻게 움직였는지 함께 보여줍니다.</p></div>
+            <div><h3>Volatility-analog analysis</h3><p>Finds past trading days with a similar volatility pattern and shows what actually happened afterward.</p></div>
           </div>
           <div class="follow-item">
             <div class="follow-num">03</div>
-            <div><h3>추천 이력 관리</h3><p>추천하고 끝나지 않습니다. 과거 추천이 실제로 맞았는지 5 · 20 · 60일 수익률로 추적해 보여드립니다.</p></div>
+            <div><h3>Recommendation history</h3><p>We don't stop at the recommendation. We track whether past recommendations were actually right, using 5/20/60-day returns.</p></div>
           </div>
           <div class="follow-item">
             <div class="follow-num">04</div>
-            <div><h3>커스텀 종목 스크리너</h3><p>변동성 · 수익성 · 추세전환 등 6대 판단지표를 직접 조합해, 원하는 조건에 맞는 종목만 걸러봅니다.</p></div>
+            <div><h3>Custom stock screener</h3><p>Combine 6 core judgment factors yourself — volatility, profitability, trend reversal, and more — to filter for exactly the stocks you want.</p></div>
           </div>
           <div class="follow-item">
             <div class="follow-num">05</div>
-            <div><h3>알림 조건 커스터마이징</h3><p>목표가 도달 · 손실률 도달 · 판단지표 등급 변경까지, 내가 원하는 기준으로 알림을 직접 설정합니다.</p></div>
+            <div><h3>Custom alert conditions</h3><p>Set your own alerts — target price reached, a loss threshold hit, or a judgment grade change.</p></div>
           </div>
           <div class="follow-item">
             <div class="follow-num">06</div>
-            <div><h3>배당투자 종목</h3><p>배당수익률만 보지 않습니다. 1천만원을 투자했을 때 예상 세전 배당금, 배당 권리 일정, 배당락 회복 기간, 연속배당·배당성향까지 함께 보여줍니다.</p></div>
+            <div><h3>Dividend-focused stocks</h3><p>We don't just show dividend yield. See the estimated pre-tax payout on a ₩10M position, this dividend's record date, ex-dividend recovery time, and dividend streak alongside payout ratio.</p></div>
           </div>
           <div class="follow-item">
             <div class="follow-num">07</div>
-            <div><h3>분기 실적 반전 종목</h3><p>연간 실적만 보면 안 보입니다. 전종목을 대상으로 "연간은 흑자인데 4분기는 적자"인 곳을 역산해 찾아내고, 공시 후 주가 반응까지 보여줍니다.</p></div>
+            <div><h3>Quarterly earnings reversals</h3><p>Full-year results alone won't show this. We work backward across every stock to find a profitable year that hid a loss-making fourth quarter, and show the price reaction after disclosure.</p></div>
           </div>
         </div>
       </div>
@@ -460,14 +462,14 @@
     <section id="infra" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">CLOUD INFRASTRUCTURE</p>
-        <h2>확장 가능한 클라우드 위에서</h2>
-        <p class="lead">매일 수백만 건의 데이터 처리, 실시간 머신러닝 추론, 야간 모델
-           재학습을 안정적으로 운영하기 위해 GPU·데이터 파이프라인·스케줄러를 포함한
-           확장 가능한 클라우드 인프라를 핵심 기반으로 삼습니다.</p>
+        <h2>Built on scalable cloud infrastructure</h2>
+        <p class="lead">To reliably process millions of data points every day, run real-time
+           ML inference, and retrain models overnight, we rely on a scalable cloud
+           infrastructure — GPUs, data pipelines, and schedulers — as our core foundation.</p>
         <div class="stats">
-          <div class="stat"><div class="n mono">2,900+</div><div class="l">실시간 분석 종목</div></div>
-          <div class="stat"><div class="n mono">수백만 건</div><div class="l">일일 데이터 처리</div></div>
-          <div class="stat"><div class="n mono">24/7</div><div class="l">추론 · 야간 재학습</div></div>
+          <div class="stat"><div class="n mono">2,900+</div><div class="l">Stocks analyzed in real time</div></div>
+          <div class="stat"><div class="n mono">Millions</div><div class="l">Data points processed daily</div></div>
+          <div class="stat"><div class="n mono">24/7</div><div class="l">Inference · overnight retraining</div></div>
         </div>
       </div>
     </section>
@@ -475,20 +477,21 @@
     <section id="vision" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">VISION</p>
-        <h2>개인 투자에서 B2B 여신까지</h2>
-        <p class="lead">AWS 기반으로 실시간 분석 서비스를 안정적으로 운영하고, 축적한
-           금융 판단 엔진을 B2B 여신 룰셋 최적화 솔루션으로 확장해 금융 의사결정
-           전반의 인텔리전스 인프라가 되는 것을 목표로 합니다.</p>
+        <h2>From personal investing to B2B credit</h2>
+        <p class="lead">We run a reliable real-time analytics service on AWS, and aim to
+           extend the financial decision engine we've built into a B2B credit ruleset
+           optimization solution — becoming the intelligence infrastructure behind
+           financial decision-making as a whole.</p>
       </div>
     </section>
 
     <section class="company-block">
       <div class="wrap">
-        <p class="company-disclaimer">판단 보조 · 확정 예측 아님 · 매수 · 매도 지시 아님 · 수익을 보장하지 않습니다</p>
+        <p class="company-disclaimer">Decision support only · Not a guaranteed forecast · Not a buy or sell instruction · Returns are not guaranteed</p>
         <p class="company-info">
-          ㈜벡투스 (Vectus)<br>
-          대표이사 김형태<br>
-          경기도 고양시 청초로 19, 아이에스비즈타워2차 B동 717호
+          Vectus Inc.<br>
+          CEO Hyungtae Kim<br>
+          717, IS BIZ Tower 2 Building B, 19 Cheongcho-ro, Goyang-si, Gyeonggi-do, Republic of Korea
         </p>
       </div>
     </section>
@@ -497,8 +500,8 @@
       <div class="wrap">
         <div class="contact">
           <p class="eyebrow" style="margin-bottom:14px">GET IN TOUCH</p>
-          <h2>함께 만들어 갈 파트너를 찾습니다</h2>
-          <p class="lead" style="margin:14px auto 20px">투자, 협업, 채용 문의를 환영합니다.</p>
+          <h2>Looking for partners to build this with</h2>
+          <p class="lead" style="margin:14px auto 20px">We welcome inquiries about investment, partnerships, and hiring.</p>
           <p style="font-size:16px"><a href="mailto:juneyoung.jeon@vectuslab.com">juneyoung.jeon@vectuslab.com</a></p>
         </div>
       </div>
@@ -507,7 +510,7 @@
 
   <footer>
     <div class="wrap">
-      © 2026 Vectus (벡투스). AI-powered financial decision engine. All rights reserved.
+      © 2026 Vectus. AI-powered financial decision engine. All rights reserved.
     </div>
   </footer>
 
