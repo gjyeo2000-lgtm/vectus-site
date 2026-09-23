@@ -15,21 +15,22 @@
   <style>
     :root{
       --ink:#0a0b0d; --panel:#131519; --panel-2:#181b21;
-      --line:rgba(255,255,255,.08); --line-strong:rgba(255,255,255,.15);
+      --line:rgba(255,255,255,.08); --line-strong:rgba(255,255,255,.16);
       --text:#edeef1; --muted:#8e919b; --faint:#5c5f68;
-      --gold:#c3a06a; --gold-dim:rgba(195,160,106,.12);
+      --gold:#c3a06a; --gold-dim:rgba(195,160,106,.12); --gold-line:rgba(195,160,106,.35);
       --violet:#9483bb; --violet-dim:rgba(148,131,187,.13); --violet-line:rgba(148,131,187,.32);
+      --red:#b0655f;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
       font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
       background:var(--ink);color:var(--text);line-height:1.7;
-      -webkit-font-smoothing:antialiased;
+      -webkit-font-smoothing:antialiased;overflow-x:hidden;
     }
     h1,h2{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;text-wrap:balance}
     .mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
-    .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+    .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
     header{
       position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);
       background:rgba(10,11,13,.82);border-bottom:1px solid var(--line);
@@ -39,12 +40,9 @@
     .logo img{height:48px;width:auto;display:block;background:#fff;padding:6px 10px;border-radius:8px}
     .nav a{color:var(--muted);text-decoration:none;margin-left:26px;font-size:13.5px}
     .nav a:hover{color:var(--text)}
-    .hero{padding:100px 0 76px;text-align:center}
-    .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+
+    .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
     .eyebrow.v{color:var(--violet)}
-    .hero h1{font-size:clamp(34px,5.5vw,54px);line-height:1.3;letter-spacing:-.2px}
-    .hero p{max-width:520px;margin:24px auto 0;color:var(--muted);font-size:16px}
-    .cta{margin-top:38px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn{display:inline-block;padding:12px 24px;border-radius:6px;font-weight:500;
       text-decoration:none;font-size:14px;transition:.2s;border:1px solid var(--line-strong)}
     .btn-primary{background:var(--gold);color:#221a0d;border-color:var(--gold)}
@@ -52,16 +50,66 @@
     .btn-ghost{color:var(--text)}
     .btn-ghost:hover{border-color:var(--gold)}
 
-    section{padding:80px 0}
-    section.tight{padding:52px 0}
+    section{padding:88px 0}
+    section.tight{padding:56px 0}
     h2{font-size:clamp(24px,3vw,32px);margin-bottom:14px;letter-spacing:-.1px}
     .lead{color:var(--muted);font-size:15.5px;max-width:620px}
-
     .divider{border-top:1px solid var(--line)}
 
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    /* ── HERO — 비대칭 2단 ── */
+    .hero{padding:88px 0 96px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+    @media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+    .hero h1{font-size:clamp(36px,5.2vw,56px);line-height:1.28;letter-spacing:-.3px;margin-bottom:20px}
+    .hero p{color:var(--muted);font-size:16px;max-width:460px;margin-bottom:34px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* ── 판단카드 (히어로 우측 + 확대) ── */
+    .card-frame{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);
+      box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+    .card-bar{display:flex;gap:6px;padding:13px 18px;border-bottom:1px solid var(--line)}
+    .card-bar span{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+    .card-body{padding:26px 26px 28px}
+    .card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .card-name{font-size:16px;font-weight:500}
+    .card-tag{font-size:11px;color:var(--faint)}
+    .card-badge{font-size:11px;color:var(--violet);background:var(--violet-dim);border:1px solid var(--violet-line);border-radius:5px;padding:4px 10px}
+    .card-metric{display:flex;align-items:baseline;gap:10px;margin-bottom:22px}
+    .card-metric .v{font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:500;color:var(--gold)}
+    .card-metric .l{font-size:13px;color:var(--muted)}
+
+    .gauge-row{display:flex;gap:22px;margin-bottom:20px}
+    .gauge{flex:1}
+    .gauge-label{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-bottom:7px}
+    .gauge-label b{color:var(--text);font-family:'IBM Plex Mono',monospace;font-weight:500}
+    .gauge-track{height:5px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden}
+    .gauge-fill{height:100%;border-radius:3px}
+    .gauge-fill.risk{background:var(--red)}
+    .gauge-fill.overlap{background:var(--violet)}
+
+    .card-steps{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--muted);line-height:2}
+    .card-steps b{color:var(--text);font-weight:500}
+
+    /* ── 판단 체인(연결 흐름) ── */
+    .flow{display:flex;align-items:stretch;gap:0;margin-top:40px}
+    @media (max-width:760px){.flow{flex-direction:column}}
+    .flow-node{flex:1;position:relative;padding:22px 20px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+    .flow-node.final{border-color:var(--gold-line);background:var(--gold-dim)}
+    .flow-idx{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);margin-bottom:10px}
+    .flow-node.final .flow-idx{color:var(--gold)}
+    .flow-text{font-size:14.5px;color:var(--muted);line-height:1.6}
+    .flow-node.final .flow-text{color:var(--text);font-weight:500}
+    .flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:18px;flex:0 0 auto;padding:0 6px}
+    @media (max-width:760px){.flow-arrow{transform:rotate(90deg);padding:6px 0}}
+
+    /* ── 그리드/셀 (WHAT WE DO, CORE MODELS) ── */
     .grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:36px}
     .grid-3{grid-template-columns:repeat(3,1fr)}
-    .cell{background:var(--panel);padding:26px}
+    .cell{background:var(--panel);padding:26px;transition:background .25s}
+    .cell:hover{background:var(--panel-2)}
     .cell .idx{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold);margin-bottom:10px;letter-spacing:.05em}
     .cell h3{font-size:16px;margin-bottom:8px;font-weight:500}
     .cell p{color:var(--muted);font-size:14px}
@@ -74,15 +122,6 @@
     .contact{text-align:center;padding:52px 24px;border:1px solid var(--line);border-radius:14px}
     .contact a{color:var(--gold)}
     footer{border-top:1px solid var(--line);padding:30px 0;color:var(--faint);font-size:13px;text-align:center}
-
-    /* ── 판단 체인 ── */
-    .chain{display:flex;flex-direction:column;gap:0;margin-top:30px;max-width:560px;margin-inline:auto}
-    .chain-step{display:flex;gap:16px;align-items:flex-start;padding-block:11px}
-    .chain-dot{width:7px;height:7px;border-radius:50%;background:var(--faint);margin-top:8px;flex:none;position:relative}
-    .chain-step:not(:last-child) .chain-dot::after{content:"";position:absolute;top:11px;left:2.5px;width:1px;height:40px;background:var(--line-strong)}
-    .chain-step.final .chain-dot{background:var(--gold)}
-    .chain-text{font-size:15.5px;color:var(--muted);line-height:1.6;text-align:left}
-    .chain-step.final .chain-text{color:var(--text);font-weight:500}
 
     /* ── 차별화 섹션 — 바이올렛 전용 ── */
     .diff-band{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -116,30 +155,22 @@
     .checklist p:not(:last-child){border-bottom:1px solid var(--line)}
     .checklist .k{color:var(--gold);margin-right:4px}
 
-    /* ── 결론 ── */
-    .closing{text-align:center;padding:76px 0}
-    .closing h2{font-size:clamp(24px,3.4vw,32px)}
+    .closing{text-align:center;padding:84px 0}
+    .closing h2{font-size:clamp(26px,3.6vw,36px)}
     .closing p{color:var(--muted);font-size:14.5px;max-width:480px;margin:14px auto 0}
 
-    /* ── 데이터 원천 ── */
     .data-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
     .data-chip{border:1px solid var(--line);border-radius:6px;padding:9px 16px;font-size:13.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
 
-    /* ── 제품 화면 미리보기 ── */
-    .preview-frame{max-width:460px;margin:38px auto 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
-    .preview-bar{display:flex;gap:6px;padding:12px 16px;border-bottom:1px solid var(--line)}
-    .preview-bar span{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
-    .preview-body{padding:22px 24px 26px;text-align:left}
-    .preview-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-    .preview-name{font-size:15px;font-weight:500}
-    .preview-badge{font-size:11px;color:var(--violet);background:var(--violet-dim);border:1px solid var(--violet-line);border-radius:5px;padding:4px 9px}
-    .preview-metric{display:flex;align-items:baseline;gap:8px;margin-bottom:16px}
-    .preview-metric .v{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:500;color:var(--gold)}
-    .preview-metric .l{font-size:12.5px;color:var(--muted)}
-    .preview-steps{border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--muted);line-height:2}
-    .preview-steps b{color:var(--text);font-weight:500}
+    /* ── 판단으로 끝나지 않습니다 ── */
+    .follow-list{margin-top:40px;display:flex;flex-direction:column}
+    .follow-item{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line)}
+    .follow-item:last-child{border-bottom:1px solid var(--line)}
+    .follow-num{font-family:'IBM Plex Mono',monospace;font-size:22px;color:var(--gold);font-weight:500}
+    .follow-item h3{font-size:16.5px;font-weight:500;margin-bottom:6px}
+    .follow-item p{color:var(--muted);font-size:14px;max-width:560px}
+    @media (max-width:560px){.follow-item{grid-template-columns:40px 1fr;gap:16px}.follow-num{font-size:18px}}
 
-    /* ── 회사 정보 + 고지 ── */
     .company-block{text-align:center;padding:44px 24px;border-top:1px solid var(--line)}
     .company-disclaimer{font-size:12px;color:var(--faint);margin-bottom:18px}
     .company-info{font-size:13.5px;color:var(--muted);line-height:1.9}
@@ -147,6 +178,7 @@
     @media(max-width:760px){
       .grid-3,.stats{grid-template-columns:1fr}
       .nav a:not(.cta-nav){display:none}
+      .gauge-row{flex-direction:column;gap:14px}
     }
   </style>
 </head>
@@ -169,51 +201,64 @@
 
   <main>
     <section class="hero">
-      <div class="wrap">
-        <p class="eyebrow">AI · FINTECH · INVESTMENT INTELLIGENCE</p>
-        <h1>이유 있는 추천</h1>
-        <p>벡투스(Vectus)는 실시간 시장 데이터와 머신러닝 모델로 개인 맞춤형 투자
-           추천과 사후관리를 제공하는 AI 금융 기술 스타트업입니다.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="#contact">문의하기</a>
-          <a class="btn btn-ghost" href="#diff">차별점 보기</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tight divider">
-      <div class="wrap" style="text-align:center">
-        <p class="eyebrow">JUDGMENT CHAIN</p>
-        <h2>오늘 뉴스, 내 자산까지 이어집니다</h2>
-        <div class="chain">
-          <div class="chain-step"><div class="chain-dot"></div><div class="chain-text">원/달러 환율 하락</div></div>
-          <div class="chain-step"><div class="chain-dot"></div><div class="chain-text">삼성전자 · SK하이닉스 영업이익 압박</div></div>
-          <div class="chain-step"><div class="chain-dot"></div><div class="chain-text">두 종목이 31% 편입된 코스피100 ETF 위험 확대</div></div>
-          <div class="chain-step final"><div class="chain-dot"></div><div class="chain-text">내가 보유한 그 ETF, 지금 어떻게 해야 할까</div></div>
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">AI · FINTECH · INVESTMENT INTELLIGENCE</p>
+          <h1>이유 있는 추천</h1>
+          <p>벡투스(Vectus)는 실시간 시장 데이터와 머신러닝 모델로 개인 맞춤형 투자
+             추천과 사후관리를 제공하는 AI 금융 기술 스타트업입니다.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#contact">문의하기</a>
+            <a class="btn btn-ghost" href="#diff">차별점 보기</a>
+          </div>
         </div>
 
-        <div class="preview-frame">
-          <div class="preview-bar"><span></span><span></span><span></span></div>
-          <div class="preview-body">
-            <div class="preview-top">
-              <span class="preview-name">삼성전자 · 개별종목</span>
-              <span class="preview-badge">리밸런싱 검토</span>
+        <div class="card-frame reveal">
+          <div class="card-bar"><span></span><span></span><span></span></div>
+          <div class="card-body">
+            <div class="card-top">
+              <div><div class="card-name">삼성전자</div><div class="card-tag">개별종목</div></div>
+              <span class="card-badge">리밸런싱 검토</span>
             </div>
-            <div class="preview-metric">
-              <span class="v">78%</span>
-              <span class="l">전환 확률</span>
+            <div class="card-metric"><span class="v">78%</span><span class="l">전환 확률</span></div>
+
+            <div class="gauge-row">
+              <div class="gauge">
+                <div class="gauge-label"><span>시장위험 점수</span><b>91점</b></div>
+                <div class="gauge-track"><div class="gauge-fill risk" style="width:91%"></div></div>
+              </div>
+              <div class="gauge">
+                <div class="gauge-label"><span>최대 편입비중</span><b>34.23%</b></div>
+                <div class="gauge-track"><div class="gauge-fill overlap" style="width:34%"></div></div>
+              </div>
             </div>
-            <div class="preview-steps">
+
+            <div class="card-steps">
               ① 장기성과 <b>+143%</b> → ② 중기흐름 <b>-19.6%</b> → ③ 최근흐름 <b>+1.8%</b><br>
-              다른 보유상품 1개 안에도 포함 · 최대 편입비중 <b>34.23%</b><br>
-              국내 주식시장 위험 점수 <b>91점</b> — 보유상품 변화 판단에 반영
+              다른 보유상품 1개 안에도 포함
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="what" class="divider">
+    <section class="tight divider reveal">
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center">JUDGMENT CHAIN</p>
+        <h2 style="text-align:center">오늘 뉴스, 내 자산까지 이어집니다</h2>
+        <div class="flow">
+          <div class="flow-node"><div class="flow-idx">01</div><div class="flow-text">원/달러 환율 하락</div></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><div class="flow-idx">02</div><div class="flow-text">삼성전자 · SK하이닉스 영업이익 압박</div></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node"><div class="flow-idx">03</div><div class="flow-text">코스피100 ETF(31% 편입) 위험 확대</div></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node final"><div class="flow-idx">04</div><div class="flow-text">내가 보유한 그 ETF, 지금 어떻게 해야 할까</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="what" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">WHAT WE DO</p>
         <h2>데이터에서 판단으로</h2>
@@ -240,7 +285,7 @@
     </section>
 
     <div id="diff"></div>
-    <section class="diff-band">
+    <section class="diff-band reveal">
       <div class="wrap">
         <p class="eyebrow v">VS 로보어드바이저 · 증권사 앱</p>
         <h2>정보는 많은데, 답이 없었다면</h2>
@@ -273,7 +318,7 @@
       </div>
     </section>
 
-    <section class="diff-band" style="border-top:none">
+    <section class="diff-band reveal" style="border-top:none">
       <div class="wrap">
         <p class="eyebrow v">VS 일반 LLM</p>
         <h2>그럴듯한 답, 확인된 답</h2>
@@ -303,7 +348,7 @@
       </div>
     </section>
 
-    <section class="closing divider">
+    <section class="closing divider reveal">
       <div class="wrap">
         <h2>투자에 필요한 건, 벡투스 하나면 됩니다</h2>
         <p>정보를 모으고, 지표를 해석하고, 근거 있게 답하는 것 — 이 세 가지를 다 하는 곳은 흔치 않습니다. 여러 앱을 오갈 필요 없습니다.</p>
@@ -311,7 +356,7 @@
     </section>
 
     <div id="data"></div>
-    <section class="tight">
+    <section class="tight reveal">
       <div class="wrap">
         <p class="eyebrow">DATA SOURCE</p>
         <h2>추정이 아니라, 실제 공시 데이터입니다</h2>
@@ -325,7 +370,7 @@
       </div>
     </section>
 
-    <section id="tech" class="divider">
+    <section id="tech" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">CORE MODELS</p>
         <h2>문제마다 다른 전문 모델을 씁니다</h2>
@@ -360,7 +405,37 @@
       </div>
     </section>
 
-    <section id="infra" class="divider">
+    <section class="divider reveal">
+      <div class="wrap">
+        <p class="eyebrow">BEYOND THE RECOMMENDATION</p>
+        <h2>판단으로 끝나지 않습니다</h2>
+        <p class="lead">추천하고 멈추는 곳이 많습니다. Vectus는 그다음까지 이어갑니다.</p>
+        <div class="follow-list">
+          <div class="follow-item">
+            <div class="follow-num">01</div>
+            <div><h3>장중 5슬롯 가격예측</h3><p>개별 종목의 장중 주요 시점마다 통계적으로 보정된 근시일 가격 예측 구간을 제공합니다.</p></div>
+          </div>
+          <div class="follow-item">
+            <div class="follow-num">02</div>
+            <div><h3>변동성 유사일 분석</h3><p>오늘과 비슷한 변동성 패턴을 보였던 과거 날짜를 찾아, 그 이후 실제로 어떻게 움직였는지 함께 보여줍니다.</p></div>
+          </div>
+          <div class="follow-item">
+            <div class="follow-num">03</div>
+            <div><h3>추천 이력 관리</h3><p>추천하고 끝나지 않습니다. 과거 추천이 실제로 맞았는지 5 · 20 · 60일 수익률로 추적해 보여드립니다.</p></div>
+          </div>
+          <div class="follow-item">
+            <div class="follow-num">04</div>
+            <div><h3>커스텀 종목 스크리너</h3><p>변동성 · 수익성 · 추세전환 등 6대 판단지표를 직접 조합해, 원하는 조건에 맞는 종목만 걸러봅니다.</p></div>
+          </div>
+          <div class="follow-item">
+            <div class="follow-num">05</div>
+            <div><h3>알림 조건 커스터마이징</h3><p>목표가 도달 · 손실률 도달 · 판단지표 등급 변경까지, 내가 원하는 기준으로 알림을 직접 설정합니다.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="infra" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">CLOUD INFRASTRUCTURE</p>
         <h2>확장 가능한 클라우드 위에서</h2>
@@ -375,7 +450,7 @@
       </div>
     </section>
 
-    <section id="vision" class="divider">
+    <section id="vision" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">VISION</p>
         <h2>개인 투자에서 B2B 여신까지</h2>
@@ -413,5 +488,18 @@
       © 2026 Vectus (벡투스). AI-powered financial decision engine. All rights reserved.
     </div>
   </footer>
+
+  <script>
+    (function(){
+      var els = document.querySelectorAll('.reveal');
+      if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in')}); return; }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, {threshold:0.12});
+      els.forEach(function(e){ io.observe(e); });
+    })();
+  </script>
 </body>
 </html>
