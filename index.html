@@ -317,6 +317,8 @@
 
     .data-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
     .data-chip{border:1px solid var(--line);border-radius:6px;padding:9px 16px;font-size:13.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
+    /* ★2026-09-27 컴플라이언스 — 코스콤 데이터 이용 근거를 데이터 원천 칩 바로 아래 한 줄로 못박는다. */
+    .data-note{margin-top:14px;font-size:12.5px;line-height:1.7;color:var(--muted);max-width:640px}
 
     /* ── 판단으로 끝나지 않습니다 ── */
     .follow-list{margin-top:40px;display:flex;flex-direction:column}
@@ -721,6 +723,7 @@
           <span class="data-chip">금융투자협회(KOFIA) 펀드 공시</span>
           <span class="data-chip">DART 전자공시 재무제표</span>
         </div>
+        <p class="data-note">Vectus는 코스콤(Koscom)이 정한 이용자격을 충족하고 신청·승인 절차를 거쳐 정식 시세·금융정보 데이터를 직접 수신하고 있습니다. 출처 불명의 수집 데이터가 아닌, 정식 계약을 통해 받는 원천 데이터입니다.</p>
 
         <div class="mini-cinema reveal">
           <div class="mini-scatter">
