@@ -406,6 +406,20 @@
     .legal-box p{font-size:12.5px;color:var(--faint);line-height:1.8}
     .legal-box p:not(:last-child){margin-bottom:6px}
 
+    /* ── Insurance zone — visually separated from the investment sections ── */
+    .insurance-zone{
+      position:relative;
+      background:
+        radial-gradient(ellipse 900px 520px at 15% 0%, rgba(148,131,187,.07), transparent 60%),
+        radial-gradient(ellipse 900px 600px at 85% 100%, rgba(148,131,187,.06), transparent 60%),
+        var(--ink);
+      border-top:1px solid var(--violet-line);
+      border-bottom:1px solid var(--violet-line);
+    }
+    .pillar-break{text-align:center;padding:44px 0 0}
+    .pillar-tag{display:inline-flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet)}
+    .pillar-tag:before,.pillar-tag:after{content:"";width:40px;height:1px;background:var(--violet-line)}
+
     @media(max-width:760px){
       .grid-3,.stats{grid-template-columns:1fr}
       .nav a:not(.cta-nav){display:none}
@@ -885,7 +899,9 @@
       </div>
     </section>
 
-    <section id="insurance" class="divider reveal">
+    <div class="insurance-zone">
+    <div class="pillar-break"><span class="pillar-tag">PART 02 · INSURANCE</span></div>
+    <section id="insurance" class="reveal">
       <div class="wrap">
         <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
         <h2>We don't push you to buy. We diagnose what you already hold.</h2>
@@ -1073,7 +1089,7 @@
 
     <section class="reveal">
       <div class="wrap">
-        <p class="eyebrow">DATA SOURCE</p>
+        <p class="eyebrow v">DATA SOURCE</p>
         <h2>Policy terms, fully analyzed — not estimated</h2>
         <p class="lead">We don't stop at matching. We analyze the full text for riders you need to know about, and exactly when a claim is and isn't covered.</p>
         <div class="data-row">
@@ -1099,6 +1115,7 @@
         <p class="scope-note"><b>Current scope:</b> we're focused on actual-loss medical insurance, adding insurers and products one at a time — other insurance product lines are coming, and this isn't yet a comparison across every insurer or product.</p>
       </div>
     </section>
+    </div>
 
     <section id="infra" class="divider reveal">
       <div class="wrap">
