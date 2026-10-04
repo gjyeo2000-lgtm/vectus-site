@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vectus — AI 기반 금융 판단 엔진 | AI-Powered Financial Decision Engine</title>
-  <meta name="description" content="벡투스(Vectus)는 AI 기반 금융 판단 엔진을 개발하는 스타트업입니다. 실시간 시세·수급·뉴스 데이터와 머신러닝 모델로 맞춤형 투자 추천과 사후관리를 제공합니다." />
-  <meta property="og:title" content="Vectus — AI 기반 금융 판단 엔진" />
-  <meta property="og:description" content="AI-powered financial decision engine for personalized investing and B2B credit ruleset optimization." />
+  <title>Vectus — AI 기반 투자 · 보험 판단 엔진 | AI-Powered Investment & Insurance Decision Engine</title>
+  <meta name="description" content="벡투스(Vectus)는 AI 기반 투자 · 보험 판단 엔진을 개발하는 스타트업입니다. 실시간 시세·수급·뉴스 데이터와 머신러닝 모델로 맞춤형 투자 추천과 사후관리를, 보유 보험 진단으로 보장 공백 · 중복 담보 확인을 제공합니다." />
+  <meta property="og:title" content="Vectus — AI 기반 투자 · 보험 판단 엔진" />
+  <meta property="og:description" content="AI-powered investment and insurance decision engine — personalized investing, policy diagnosis, and B2B credit ruleset optimization." />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -344,6 +344,82 @@
     .company-disclaimer{font-size:12px;color:var(--faint);margin-bottom:18px}
     .company-info{font-size:13.5px;color:var(--muted);line-height:1.9}
 
+    /* ── 보험 진단 섹션(INSURANCE DIAGNOSIS) 전용 ── */
+    .roadmap-pill{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--violet);background:var(--violet-dim);border:1px solid var(--violet-line);border-radius:20px;padding:7px 15px;margin-top:18px}
+    .roadmap-pill:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--violet)}
+
+    .chain-scene{position:relative;margin:40px 0 0;padding:46px 32px 30px;border:1px solid var(--line);border-radius:18px;
+      background:linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+      box-shadow:0 40px 80px -60px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden}
+    .chain-track{position:absolute;top:66px;left:52px;right:52px;height:2px;
+      background:linear-gradient(90deg, var(--line-strong) 0%, var(--violet-line) 60%, var(--violet) 100%);overflow:visible}
+    .chain-pulse{position:absolute;top:50%;left:0;width:6px;height:6px;border-radius:50%;background:var(--violet);
+      transform:translateY(-50%);box-shadow:0 0 10px var(--violet);animation:chainMove 4.5s ease-in-out infinite}
+    .chain-pulse.d2{animation-delay:2.25s;opacity:.6}
+    @keyframes chainMove{0%{left:0;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
+    .chain-steps{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    @media(max-width:860px){.chain-steps{grid-template-columns:repeat(2,1fr);row-gap:30px}.chain-track{display:none}}
+    @media(max-width:480px){.chain-steps{grid-template-columns:1fr}}
+    .chain-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+    .chain-dot{position:relative;z-index:1;width:40px;height:40px;border-radius:50%;flex:none;
+      display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:500;
+      color:var(--text);background:var(--ink);border:2px solid var(--line-strong)}
+    .chain-step.final .chain-dot{background:var(--violet);border-color:var(--violet);color:#1a1522;
+      box-shadow:0 0 0 6px var(--violet-dim), 0 0 28px rgba(148,131,187,.5)}
+    .chain-card{width:100%;background:rgba(19,21,25,.78);border:1px solid var(--line);border-radius:12px;padding:14px 14px 15px;
+      display:flex;flex-direction:column;gap:5px;min-height:70px;justify-content:center}
+    .chain-card b{font-size:13px;color:var(--text);font-weight:500;line-height:1.4}
+    .chain-card span{font-size:11px;color:var(--faint)}
+    .chain-step.final .chain-card{background:var(--violet-dim);border-color:var(--violet-line)}
+    .chain-step.final .chain-card span{color:var(--violet)}
+
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    @media(max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.grid-4{grid-template-columns:1fr}}
+    .grid.violet .cell{border-top-color:var(--violet-line)}
+    .grid.violet .cell .idx{color:var(--violet);background:var(--violet-dim)}
+
+    .sample-tag{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;letter-spacing:.06em;color:var(--faint);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:20px;padding:4px 12px;margin:30px 0 14px}
+    .sample-tag:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--faint)}
+    .card-badge.warn{color:var(--red);background:rgba(176,101,95,.14);border-color:rgba(176,101,95,.35)}
+    .status-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+    .status-chips .chip{font-size:12px;border-radius:6px;padding:7px 13px;font-weight:500}
+    .status-chips .chip.gap{color:var(--violet);background:var(--violet-dim);border:1px solid var(--violet-line)}
+    .status-chips .chip.dup{color:var(--red);background:rgba(176,101,95,.14);border:1px solid rgba(176,101,95,.35)}
+    .gauge-fill.dup{background:var(--red);width:18%}
+    .gauge-fill.done{background:var(--violet);width:100%}
+
+    .decision-cinema.violet:before{border-color:rgba(148,131,187,.1)}
+    .decision-cinema.violet .engine-orb{
+      background:
+        radial-gradient(circle at 50% 42%, rgba(148,131,187,.22), transparent 34%),
+        radial-gradient(circle at 50% 50%, rgba(195,160,106,.12), transparent 58%),
+        rgba(10,11,13,.72);
+      border-color:rgba(148,131,187,.36);
+      box-shadow:0 0 90px rgba(148,131,187,.1), inset 0 0 48px rgba(148,131,187,.08);
+    }
+    .decision-cinema.violet .engine-orb:before,.decision-cinema.violet .engine-orb:after{border-color:rgba(148,131,187,.22)}
+    .decision-cinema.violet .engine-orb:after{border-color:rgba(195,160,106,.18)}
+    .decision-cinema.violet .engine-kicker{color:var(--violet)}
+    .decision-cinema.violet .engine-number{font-size:16px;line-height:1.35;max-width:180px;margin:0 auto}
+
+    .mini-cinema.violet .mini-orb{
+      background:radial-gradient(circle at 50% 40%, rgba(148,131,187,.26), transparent 60%), rgba(10,11,13,.7);
+      border-color:rgba(148,131,187,.42);box-shadow:0 0 48px rgba(148,131,187,.12), inset 0 0 24px rgba(148,131,187,.08);
+    }
+    .mini-cinema.violet .mini-orb:before{border-color:rgba(148,131,187,.2)}
+    .mini-cinema.violet .mini-orb small{color:var(--violet)}
+    .mini-cinema.violet .mini-arrow-wrap svg{color:var(--violet)}
+
+    .checklist.violet .k{color:var(--violet)}
+
+    .scope-note{margin-top:10px;font-size:12.5px;line-height:1.7;color:var(--faint);max-width:640px}
+    .scope-note b{color:var(--muted);font-weight:500}
+
+    .legal-box{margin-top:18px;border:1px solid var(--line-strong);border-radius:8px;padding:18px 22px;background:var(--panel)}
+    .legal-box p{font-size:12.5px;color:var(--faint);line-height:1.8}
+    .legal-box p:not(:last-child){margin-bottom:6px}
+
     @media(max-width:760px){
       .grid-3,.stats{grid-template-columns:1fr}
       .nav a:not(.cta-nav){display:none}
@@ -364,6 +440,7 @@
         <a href="#what">서비스</a>
         <a href="#diff">차별화</a>
         <a href="#tech">기술</a>
+        <a href="#insurance">보험</a>
         <a href="#infra">인프라</a>
         <a href="#contact">문의</a>
         <!-- 2026-09-24 Eric PO 지시: 실제 웹 서비스로 연결하는 탭이 없었음(발견).
@@ -906,6 +983,221 @@
       </div>
     </section>
 
+    <section id="insurance" class="divider reveal">
+      <div class="wrap">
+        <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
+        <h2>가입을 권하지 않습니다, 보유하신 보험을 진단합니다</h2>
+        <p class="lead">보장 공백과 중복 담보는 가입할 때가 아니라, 지금 갖고 있는 보험부터 확인해야 보입니다.</p>
+        <div class="roadmap-pill">지금은 실손의료보험 중심 · 나머지 보험 상품군은 순차 출시 준비 중</div>
+
+        <div class="chain-scene">
+          <div class="chain-track"><span class="chain-pulse"></span><span class="chain-pulse d2"></span></div>
+          <div class="chain-steps">
+            <div class="chain-step"><div class="chain-dot">01</div><div class="chain-card"><b>약관 · 상품요약서 원문 수집</b><span>보험사 공시실에서</span></div></div>
+            <div class="chain-step"><div class="chain-dot">02</div><div class="chain-card"><b>보유계약과 조항 단위 대조</b><span>짐작이 아니라 대조</span></div></div>
+            <div class="chain-step"><div class="chain-dot">03</div><div class="chain-card"><b>보장공백 · 중복담보 확인</b><span>특약 · 사고 보장여부까지</span></div></div>
+            <div class="chain-step final"><div class="chain-dot">04</div><div class="chain-card"><b>가입 권유 없이, 근거와 함께</b><span>결정은 고객님의 몫</span></div></div>
+          </div>
+        </div>
+
+        <div class="grid grid-4 violet">
+          <div class="cell">
+            <div class="idx">01</div>
+            <h3>보유보험 진단</h3>
+            <p>약관 전체 조항을 분석해 유효 · 만기 · 해지 상태는 물론, 반드시 알아야 할 특약사항과 사고 발생 시 보장되는 경우 · 안 되는 경우까지 근거와 함께 제시합니다.</p>
+          </div>
+          <div class="cell">
+            <div class="idx">02</div>
+            <h3>보장 공백 발견</h3>
+            <p>비어 있는 보장과 겹치는 담보를 근거 문서와 함께 보여줍니다 — 짐작이 아니라 대조입니다.</p>
+          </div>
+          <div class="cell">
+            <div class="idx">03</div>
+            <h3>생애주기 맞춤 상품 매칭</h3>
+            <p>결혼 · 출산 등 생애주기에 맞게 비어 있는 보장을 채울 상품 후보를 찾아 보여드립니다 — 가입 결정은 고객님의 몫입니다.</p>
+          </div>
+          <div class="cell">
+            <div class="idx">04</div>
+            <h3>가입 권유 없는 판단</h3>
+            <p>설명은 결정적 로직만 쓰고, "가입 추천"류 권유 문구는 코드가 자동으로 차단합니다.</p>
+          </div>
+        </div>
+
+        <span class="sample-tag">예시 화면 · 실제 사용자 데이터 아님</span>
+        <div class="card-frame" style="max-width:520px">
+          <div class="card-bar"><span></span><span></span><span></span></div>
+          <div class="card-body">
+            <div class="card-top">
+              <div><div class="card-name">보유보험 진단 결과</div><div class="card-tag">실손의료보험류 예시</div></div>
+              <span class="card-badge warn">확인 필요</span>
+            </div>
+            <div class="status-chips">
+              <span class="chip gap">보장공백 발견</span>
+              <span class="chip dup">중복담보 발견</span>
+            </div>
+            <div class="gauge-row">
+              <div class="gauge">
+                <div class="gauge-label"><span>중복담보 비중</span><b>18%</b></div>
+                <div class="gauge-track"><div class="gauge-fill dup"></div></div>
+              </div>
+              <div class="gauge">
+                <div class="gauge-label"><span>약관 대조 완료</span><b>100%</b></div>
+                <div class="gauge-track"><div class="gauge-fill done"></div></div>
+              </div>
+            </div>
+            <div class="card-steps">
+              ① 보유계약 수집 → ② 약관 원문 대조 → ③ 공백 · 중복 확인<br>
+              GA 핸드오프 대기 없음 — 지금 바로 근거를 확인할 수 있습니다
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene-section">
+      <div class="wrap">
+        <div class="scene-head">
+          <div>
+            <p class="eyebrow v">PRODUCT SCENE</p>
+            <h2>약관과 보유계약이 판단으로 바뀌는 순간</h2>
+          </div>
+          <p>투자 쪽 "데이터가 판단으로 바뀌는 순간"과 같은 구조를 보험에도 그대로 적용합니다.</p>
+        </div>
+        <div class="decision-cinema violet">
+          <div class="signal-stack" aria-label="입력 데이터">
+            <div class="signal-card">
+              <small>policy document</small>
+              <b>약관 · 상품요약서 원문</b>
+              <span>보험사 공시실에서 수집한 공식 문서를 그대로 근거로 씁니다.</span>
+            </div>
+            <div class="signal-card">
+              <small>holdings</small>
+              <b>보유보험 수집</b>
+              <span>스크래핑 또는 직접 입력으로 모읍니다.</span>
+            </div>
+            <div class="signal-card">
+              <small>type diagnosis</small>
+              <b>유형진단 설문</b>
+              <span>생애주기 · 위험선호를 함께 반영합니다.</span>
+            </div>
+          </div>
+          <div class="engine-core">
+            <div class="engine-orb">
+              <div>
+                <div class="engine-kicker">Vectus Judgment Core</div>
+                <div class="engine-number">결정적 판단<br>(LLM 재량 없음)</div>
+                <div class="engine-label">모든 사실은 근거 문서에 결속</div>
+                <div class="engine-foot">근거가 없는 설명은 표시하지 않습니다</div>
+              </div>
+            </div>
+          </div>
+          <div class="action-stack" aria-label="출력 판단">
+            <div class="action-ticket">
+              <small>coverage gap</small>
+              <b>보장공백 확인</b>
+              <span>비어 있는 담보를 근거 문서와 함께 보여줍니다.</span>
+            </div>
+            <div class="action-ticket">
+              <small>duplicate</small>
+              <b>중복담보 확인</b>
+              <span>같은 위험에 중복 가입된 담보를 확인합니다.</span>
+            </div>
+            <div class="action-ticket">
+              <small>handoff</small>
+              <b>GA 핸드오프 대기</b>
+              <span>동의하신 경우에만, 판단이 끝난 뒤에만 내부로 전달합니다.</span>
+            </div>
+          </div>
+        </div>
+        <div class="decision-caption">
+          <span><b>사진 대신 제품 장면:</b> 약관 원문과 보유계약이 판단 코어를 거쳐 공백 · 중복 확인으로 바뀌는 흐름</span>
+          <span>표시 값은 예시입니다 — 실제 결과는 보유하신 보험에 따라 다릅니다</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="diff-band reveal">
+      <div class="wrap">
+        <p class="eyebrow v">VS 설계사 · GA</p>
+        <h2>판단과 집행을 분리합니다</h2>
+        <p class="diff-sub">설계사 · GA는 가입이 집행돼야 수익이 나는 구조입니다. Vectus는 판단이 끝난 뒤, 동의하신 경우에만 내부적으로 연결합니다.</p>
+        <table class="axis">
+          <tr><th>일반 설계사 · GA</th><th>Vectus</th></tr>
+          <tr><td>가입 집행이 수익과 직결되는 구조</td><td>판단 로직에 수수료 영향 없음(결정적 템플릿, LLM 재량 없음)</td></tr>
+          <tr><td>가입 유도 중심 상담</td><td>"가입 추천" 등 권유 문구는 코드가 차단</td></tr>
+          <tr><td>비교 근거 비공개</td><td>보험사 공식 약관 · 상품요약서 원문 대조</td></tr>
+          <tr><td>미가공 상담 리드로 바로 연결</td><td>판단이 끝난 뒤, 동의 시에만 내부 큐로 전달(Settlement-Only)</td></tr>
+        </table>
+        <div class="chat-stage">
+          <div class="chat">
+            <p class="pane-label">"실손보험, 더 가입해야 할까요?"</p>
+            <div class="bubble them"><p class="bubble-tag">일반 설계사 · GA 상담(예시)</p>지금 이 특약도 같이 가입해두시는 게 좋습니다 — 제가 바로 설계해드릴게요</div>
+            <div class="bubble us"><p class="bubble-tag">Vectus</p>보유하신 실손보험 약관을 대조해 보니 입원일당 특약이 비어 있습니다. 가입 전에 이 공백부터 확인해보세요 — 가입 여부는 직접 결정하시면 됩니다</div>
+          </div>
+        </div>
+        <div class="checklist violet">
+          <p><span class="k">장치</span>보험 설명 문구는 전부 결정적 템플릿입니다 — LLM이 매번 다르게 판단하지 않습니다</p>
+          <p><span class="k">장치</span>숫자로 된 사실은 전부 근거 문서(evidence_refs)에 결속됩니다</p>
+          <p><span class="k">장치</span>"가입 가능 · 가입 추천 · 보험료 확정" 같은 판매 권유 문구는 코드가 자동으로 걸러냅니다</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="diff-band reveal" style="border-top:none">
+      <div class="wrap">
+        <p class="eyebrow v">VS 보험앱(비교 · 관리 앱)</p>
+        <h2>모아서 보여주고 끝나지 않습니다</h2>
+        <p class="diff-sub">보유계약을 모아 리스트로 보여주는 앱은 이미 여럿 있습니다. Vectus는 그 계약을 약관 원문과 대조해 공백 · 중복을 "근거 있게" 짚어내는 다음 단계까지 갑니다.</p>
+        <div class="mini-cinema violet reveal">
+          <div class="mini-scatter">
+            <div class="mini-chip">보유계약 리스트</div>
+            <div class="mini-chip">갱신일 알림</div>
+            <div class="mini-chip">무료 상담 신청 버튼</div>
+          </div>
+          <div class="mini-arrow-wrap">
+            <svg viewBox="0 0 52 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9h44M38 3l8 6-8 6"/></svg>
+          </div>
+          <div class="mini-orb">
+            <div><small>Vectus</small><b>약관 대조로<br>근거까지</b></div>
+          </div>
+        </div>
+        <div class="checklist violet">
+          <p><span class="k">특징</span>보험 비교 · 관리 앱 다수는 보유계약을 모아 "보여주는" 데 집중합니다 — 약관 원문과 대조해 보장공백 · 중복을 짚어주는 기능까지는 가지 않는 경우가 많습니다</p>
+          <p><span class="k">구조</span>"무료 상담" 버튼이 설계사 · GA 상담 연결로 이어지는 구조가 흔합니다</p>
+          <p><span class="k">Vectus</span>약관 원문 대조 → 보장공백 · 중복 근거 제시 → 동의 시에만 판단이 끝난 패킷을 내부로 전달(Settlement-Only)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="wrap">
+        <p class="eyebrow">DATA SOURCE</p>
+        <h2>약관도, 추정이 아니라 조항 전체를 분석합니다</h2>
+        <p class="lead">대조에서 멈추지 않습니다. 반드시 알아야 할 특약사항과, 사고 발생 시 보장되는 경우 · 안 되는 경우까지 약관 전체 조항을 분석해 제시합니다.</p>
+        <div class="data-row">
+          <span class="data-chip">보험사 공시실 약관</span>
+          <span class="data-chip">상품요약서 · 사업방법서</span>
+        </div>
+        <p class="data-note">보험사 공시실에서 공개된 약관 · 상품요약서 원문을 직접 수집해, 특약사항과 사고 시 보장 여부까지 조항 단위로 분석합니다.</p>
+
+        <div class="mini-cinema violet reveal">
+          <div class="mini-scatter">
+            <div class="mini-chip">약관 원문</div>
+            <div class="mini-chip">상품요약서</div>
+            <div class="mini-chip">사업방법서</div>
+          </div>
+          <div class="mini-arrow-wrap">
+            <svg viewBox="0 0 52 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9h44M38 3l8 6-8 6"/></svg>
+          </div>
+          <div class="mini-orb">
+            <div><small>조항 단위 분석</small><b>특약 · 보장여부<br>까지 확인</b></div>
+          </div>
+        </div>
+
+        <p class="scope-note"><b>현재 범위:</b> 실손의료보험을 중심으로 회사 · 상품을 하나씩 늘려가고 있습니다 — 나머지 보험 상품군은 순차 출시를 준비 중이며, 아직 전 보험사 · 전 상품 비교는 아닙니다.</p>
+      </div>
+    </section>
+
     <section id="infra" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">CLOUD INFRASTRUCTURE</p>
@@ -949,7 +1241,7 @@
 
     <section class="company-block">
       <div class="wrap">
-        <p class="company-disclaimer">판단 보조 · 확정 예측 아님 · 매수 · 매도 지시 아님 · 수익을 보장하지 않습니다</p>
+        <p class="company-disclaimer">판단 보조 · 확정 예측 아님 · 매수 · 매도 지시 아님 · 수익을 보장하지 않습니다<br>보험 진단은 판단 보조이며 보험업법상 모집 · 중개 행위가 아닙니다 · 가입 권유 아님 · 비교 대상은 일부 보험사 · 상품에 한정 · 보유보험 정보 수집은 본인 동의 필요</p>
         <p class="company-info">
           ㈜벡투스 (Vectus)<br>
           대표이사 김형태<br>

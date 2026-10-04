@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vectus — AI-Powered Financial Decision Engine</title>
-  <meta name="description" content="Vectus is an AI-powered financial decision engine. We deliver personalized investment recommendations and ongoing portfolio management using real-time price, flow, and news data with machine learning models." />
-  <meta property="og:title" content="Vectus — AI-Powered Financial Decision Engine" />
-  <meta property="og:description" content="AI-powered financial decision engine for personalized investing and B2B credit ruleset optimization." />
+  <title>Vectus — AI-Powered Investment &amp; Insurance Decision Engine</title>
+  <meta name="description" content="Vectus is an AI-powered investment and insurance decision engine. We deliver personalized investment recommendations and ongoing portfolio management using real-time price, flow, and news data with machine learning models, and diagnose the policies you already hold for coverage gaps and duplicate coverage." />
+  <meta property="og:title" content="Vectus — AI-Powered Investment & Insurance Decision Engine" />
+  <meta property="og:description" content="AI-powered investment and insurance decision engine — personalized investing, policy diagnosis, and B2B credit ruleset optimization." />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="../logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -330,6 +330,82 @@
     .company-disclaimer{font-size:12px;color:var(--faint);margin-bottom:18px}
     .company-info{font-size:13.5px;color:var(--muted);line-height:1.9}
 
+    /* ── Insurance Diagnosis section only ── */
+    .roadmap-pill{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--violet);background:var(--violet-dim);border:1px solid var(--violet-line);border-radius:20px;padding:7px 15px;margin-top:18px}
+    .roadmap-pill:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--violet)}
+
+    .chain-scene{position:relative;margin:40px 0 0;padding:46px 32px 30px;border:1px solid var(--line);border-radius:18px;
+      background:linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+      box-shadow:0 40px 80px -60px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden}
+    .chain-track{position:absolute;top:66px;left:52px;right:52px;height:2px;
+      background:linear-gradient(90deg, var(--line-strong) 0%, var(--violet-line) 60%, var(--violet) 100%);overflow:visible}
+    .chain-pulse{position:absolute;top:50%;left:0;width:6px;height:6px;border-radius:50%;background:var(--violet);
+      transform:translateY(-50%);box-shadow:0 0 10px var(--violet);animation:chainMove 4.5s ease-in-out infinite}
+    .chain-pulse.d2{animation-delay:2.25s;opacity:.6}
+    @keyframes chainMove{0%{left:0;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
+    .chain-steps{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    @media(max-width:860px){.chain-steps{grid-template-columns:repeat(2,1fr);row-gap:30px}.chain-track{display:none}}
+    @media(max-width:480px){.chain-steps{grid-template-columns:1fr}}
+    .chain-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+    .chain-dot{position:relative;z-index:1;width:40px;height:40px;border-radius:50%;flex:none;
+      display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:500;
+      color:var(--text);background:var(--ink);border:2px solid var(--line-strong)}
+    .chain-step.final .chain-dot{background:var(--violet);border-color:var(--violet);color:#1a1522;
+      box-shadow:0 0 0 6px var(--violet-dim), 0 0 28px rgba(148,131,187,.5)}
+    .chain-card{width:100%;background:rgba(19,21,25,.78);border:1px solid var(--line);border-radius:12px;padding:14px 14px 15px;
+      display:flex;flex-direction:column;gap:5px;min-height:70px;justify-content:center}
+    .chain-card b{font-size:13px;color:var(--text);font-weight:500;line-height:1.4}
+    .chain-card span{font-size:11px;color:var(--faint)}
+    .chain-step.final .chain-card{background:var(--violet-dim);border-color:var(--violet-line)}
+    .chain-step.final .chain-card span{color:var(--violet)}
+
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    @media(max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.grid-4{grid-template-columns:1fr}}
+    .grid.violet .cell{border-top-color:var(--violet-line)}
+    .grid.violet .cell .idx{color:var(--violet);background:var(--violet-dim)}
+
+    .sample-tag{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;letter-spacing:.06em;color:var(--faint);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:20px;padding:4px 12px;margin:30px 0 14px}
+    .sample-tag:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--faint)}
+    .card-badge.warn{color:var(--red);background:rgba(176,101,95,.14);border-color:rgba(176,101,95,.35)}
+    .status-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+    .status-chips .chip{font-size:12px;border-radius:6px;padding:7px 13px;font-weight:500}
+    .status-chips .chip.gap{color:var(--violet);background:var(--violet-dim);border:1px solid var(--violet-line)}
+    .status-chips .chip.dup{color:var(--red);background:rgba(176,101,95,.14);border:1px solid rgba(176,101,95,.35)}
+    .gauge-fill.dup{background:var(--red);width:18%}
+    .gauge-fill.done{background:var(--violet);width:100%}
+
+    .decision-cinema.violet:before{border-color:rgba(148,131,187,.1)}
+    .decision-cinema.violet .engine-orb{
+      background:
+        radial-gradient(circle at 50% 42%, rgba(148,131,187,.22), transparent 34%),
+        radial-gradient(circle at 50% 50%, rgba(195,160,106,.12), transparent 58%),
+        rgba(10,11,13,.72);
+      border-color:rgba(148,131,187,.36);
+      box-shadow:0 0 90px rgba(148,131,187,.1), inset 0 0 48px rgba(148,131,187,.08);
+    }
+    .decision-cinema.violet .engine-orb:before,.decision-cinema.violet .engine-orb:after{border-color:rgba(148,131,187,.22)}
+    .decision-cinema.violet .engine-orb:after{border-color:rgba(195,160,106,.18)}
+    .decision-cinema.violet .engine-kicker{color:var(--violet)}
+    .decision-cinema.violet .engine-number{font-size:16px;line-height:1.35;max-width:180px;margin:0 auto}
+
+    .mini-cinema.violet .mini-orb{
+      background:radial-gradient(circle at 50% 40%, rgba(148,131,187,.26), transparent 60%), rgba(10,11,13,.7);
+      border-color:rgba(148,131,187,.42);box-shadow:0 0 48px rgba(148,131,187,.12), inset 0 0 24px rgba(148,131,187,.08);
+    }
+    .mini-cinema.violet .mini-orb:before{border-color:rgba(148,131,187,.2)}
+    .mini-cinema.violet .mini-orb small{color:var(--violet)}
+    .mini-cinema.violet .mini-arrow-wrap svg{color:var(--violet)}
+
+    .checklist.violet .k{color:var(--violet)}
+
+    .scope-note{margin-top:10px;font-size:12.5px;line-height:1.7;color:var(--faint);max-width:640px}
+    .scope-note b{color:var(--muted);font-weight:500}
+
+    .legal-box{margin-top:18px;border:1px solid var(--line-strong);border-radius:8px;padding:18px 22px;background:var(--panel)}
+    .legal-box p{font-size:12.5px;color:var(--faint);line-height:1.8}
+    .legal-box p:not(:last-child){margin-bottom:6px}
+
     @media(max-width:760px){
       .grid-3,.stats{grid-template-columns:1fr}
       .nav a:not(.cta-nav){display:none}
@@ -350,6 +426,7 @@
         <a href="#what">Services</a>
         <a href="#diff">Why Vectus</a>
         <a href="#tech">Technology</a>
+        <a href="#insurance">Insurance</a>
         <a href="#infra">Infrastructure</a>
         <a href="#contact">Contact</a>
         <!-- 2026-09-24: currently the test phase, so this links to test.vectuslab.ai.
@@ -808,6 +885,221 @@
       </div>
     </section>
 
+    <section id="insurance" class="divider reveal">
+      <div class="wrap">
+        <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
+        <h2>We don't push you to buy. We diagnose what you already hold.</h2>
+        <p class="lead">Coverage gaps and duplicate policies aren't something you catch at sign-up — you have to check what you already hold.</p>
+        <div class="roadmap-pill">Currently focused on actual-loss medical insurance · other product lines are coming</div>
+
+        <div class="chain-scene">
+          <div class="chain-track"><span class="chain-pulse"></span><span class="chain-pulse d2"></span></div>
+          <div class="chain-steps">
+            <div class="chain-step"><div class="chain-dot">01</div><div class="chain-card"><b>Collect policy terms &amp; summaries</b><span>From official insurer filings</span></div></div>
+            <div class="chain-step"><div class="chain-dot">02</div><div class="chain-card"><b>Match clause-by-clause against your policies</b><span>Comparison, not guesswork</span></div></div>
+            <div class="chain-step"><div class="chain-dot">03</div><div class="chain-card"><b>Surface coverage gaps &amp; duplicates</b><span>Down to riders and claim conditions</span></div></div>
+            <div class="chain-step final"><div class="chain-dot">04</div><div class="chain-card"><b>No sales pitch — just the evidence</b><span>The decision is yours</span></div></div>
+          </div>
+        </div>
+
+        <div class="grid grid-4 violet">
+          <div class="cell">
+            <div class="idx">01</div>
+            <h3>Diagnose your policies</h3>
+            <p>We analyze the full text of your policy terms — validity, maturity, and cancellation status, the riders you need to know about, and exactly when a claim is and isn't covered, all with evidence.</p>
+          </div>
+          <div class="cell">
+            <div class="idx">02</div>
+            <h3>Find coverage gaps</h3>
+            <p>We show empty coverage and overlapping riders, backed by the source documents — comparison, not guesswork.</p>
+          </div>
+          <div class="cell">
+            <div class="idx">03</div>
+            <h3>Match products to your life stage</h3>
+            <p>As your life stage changes — marriage, children, and beyond — we surface candidate products to fill the gap. The decision to buy is yours.</p>
+          </div>
+          <div class="cell">
+            <div class="idx">04</div>
+            <h3>Judgment, not a sales pitch</h3>
+            <p>Explanations use deterministic logic only. Phrases like "you should sign up" are blocked in code.</p>
+          </div>
+        </div>
+
+        <span class="sample-tag">Sample screen · not real user data</span>
+        <div class="card-frame" style="max-width:520px">
+          <div class="card-bar"><span></span><span></span><span></span></div>
+          <div class="card-body">
+            <div class="card-top">
+              <div><div class="card-name">Policy diagnosis result</div><div class="card-tag">Actual-loss medical insurance, example</div></div>
+              <span class="card-badge warn">Needs review</span>
+            </div>
+            <div class="status-chips">
+              <span class="chip gap">Coverage gap found</span>
+              <span class="chip dup">Duplicate coverage found</span>
+            </div>
+            <div class="gauge-row">
+              <div class="gauge">
+                <div class="gauge-label"><span>Duplicate coverage ratio</span><b>18%</b></div>
+                <div class="gauge-track"><div class="gauge-fill dup"></div></div>
+              </div>
+              <div class="gauge">
+                <div class="gauge-label"><span>Terms cross-checked</span><b>100%</b></div>
+                <div class="gauge-track"><div class="gauge-fill done"></div></div>
+              </div>
+            </div>
+            <div class="card-steps">
+              ① Collect policies → ② Match clause-by-clause → ③ Confirm gaps &amp; duplicates<br>
+              No GA handoff pending — see the evidence right away
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene-section">
+      <div class="wrap">
+        <div class="scene-head">
+          <div>
+            <p class="eyebrow v">PRODUCT SCENE</p>
+            <h2>The moment policy terms become a judgment</h2>
+          </div>
+          <p>We apply the same structure as our investment "Product Scene" to insurance.</p>
+        </div>
+        <div class="decision-cinema violet">
+          <div class="signal-stack" aria-label="inputs">
+            <div class="signal-card">
+              <small>policy document</small>
+              <b>Policy terms &amp; product summary</b>
+              <span>We use official filings collected from insurers as evidence, as-is.</span>
+            </div>
+            <div class="signal-card">
+              <small>holdings</small>
+              <b>Your policies, collected</b>
+              <span>Via data scraping or manual entry.</span>
+            </div>
+            <div class="signal-card">
+              <small>type diagnosis</small>
+              <b>Type diagnosis questionnaire</b>
+              <span>Factors in life stage and risk preference.</span>
+            </div>
+          </div>
+          <div class="engine-core">
+            <div class="engine-orb">
+              <div>
+                <div class="engine-kicker">Vectus Judgment Core</div>
+                <div class="engine-number">Deterministic judgment<br>(no LLM discretion)</div>
+                <div class="engine-label">Every fact is tied to its source</div>
+                <div class="engine-foot">We don't show explanations without evidence</div>
+              </div>
+            </div>
+          </div>
+          <div class="action-stack" aria-label="outputs">
+            <div class="action-ticket">
+              <small>coverage gap</small>
+              <b>Coverage gap confirmed</b>
+              <span>Empty coverage, shown with its source document.</span>
+            </div>
+            <div class="action-ticket">
+              <small>duplicate</small>
+              <b>Duplicate coverage confirmed</b>
+              <span>Same risk covered twice — we check.</span>
+            </div>
+            <div class="action-ticket">
+              <small>handoff</small>
+              <b>GA handoff — on hold</b>
+              <span>Forwarded internally only with your consent, after judgment is complete.</span>
+            </div>
+          </div>
+        </div>
+        <div class="decision-caption">
+          <span><b>A product scene, not a stock photo:</b> policy terms and your holdings become coverage-gap and duplicate findings</span>
+          <span>Figures shown are illustrative — your actual results depend on your policies</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="diff-band reveal">
+      <div class="wrap">
+        <p class="eyebrow v">VS INSURANCE AGENTS &amp; GA</p>
+        <h2>We separate judgment from execution</h2>
+        <p class="diff-sub">Agents and GA firms get paid when a policy is signed. Vectus connects you internally only after judgment is done, and only with your consent.</p>
+        <table class="axis">
+          <tr><th>Typical agent / GA</th><th>Vectus</th></tr>
+          <tr><td>Revenue tied directly to enrollment</td><td>No fee influence on judgment logic (deterministic templates, no LLM discretion)</td></tr>
+          <tr><td>Enrollment-focused consultations</td><td>Phrases like "you should sign up" are blocked in code</td></tr>
+          <tr><td>Comparison basis undisclosed</td><td>Compared against official insurer policy terms &amp; summaries</td></tr>
+          <tr><td>Raw leads forwarded immediately</td><td>Forwarded internally only after judgment, with consent (settlement-only)</td></tr>
+        </table>
+        <div class="chat-stage">
+          <div class="chat">
+            <p class="pane-label">"Should I add more actual-loss medical coverage?"</p>
+            <div class="bubble them"><p class="bubble-tag">Typical agent / GA consultation (example)</p>You should add this rider too — I can set it up for you right now.</div>
+            <div class="bubble us"><p class="bubble-tag">Vectus</p>Checking your actual-loss policy terms, your hospitalization daily-allowance rider is empty. Confirm that gap before enrolling — the decision to sign up is yours.</div>
+          </div>
+        </div>
+        <div class="checklist violet">
+          <p><span class="k">Mechanism</span>Every insurance explanation uses deterministic templates — not LLM judgment that changes each time</p>
+          <p><span class="k">Mechanism</span>Every numeric fact is bound to a source document (evidence_refs)</p>
+          <p><span class="k">Mechanism</span>Sales phrases like "you can enroll," "we recommend enrolling," "premium confirmed" are automatically filtered out in code</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="diff-band reveal" style="border-top:none">
+      <div class="wrap">
+        <p class="eyebrow v">VS INSURANCE COMPARISON &amp; MANAGEMENT APPS</p>
+        <h2>We don't stop at showing your policies</h2>
+        <p class="diff-sub">Plenty of apps already list your policies. Vectus matches them against the original terms to surface gaps and duplicates with evidence.</p>
+        <div class="mini-cinema violet reveal">
+          <div class="mini-scatter">
+            <div class="mini-chip">List of your policies</div>
+            <div class="mini-chip">Renewal reminders</div>
+            <div class="mini-chip">Free consultation button</div>
+          </div>
+          <div class="mini-arrow-wrap">
+            <svg viewBox="0 0 52 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9h44M38 3l8 6-8 6"/></svg>
+          </div>
+          <div class="mini-orb">
+            <div><small>Vectus</small><b>Evidence, from<br>the original terms</b></div>
+          </div>
+        </div>
+        <div class="checklist violet">
+          <p><span class="k">Pattern</span>Many insurance comparison/management apps focus on listing your policies — fewer go as far as matching the original terms to flag gaps and duplicates</p>
+          <p><span class="k">Structure</span>A "free consultation" button commonly leads straight to an agent or GA</p>
+          <p><span class="k">Vectus</span>Match original terms → surface gap/duplicate evidence → forward internally only after judgment, with consent (settlement-only)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="wrap">
+        <p class="eyebrow">DATA SOURCE</p>
+        <h2>Policy terms, fully analyzed — not estimated</h2>
+        <p class="lead">We don't stop at matching. We analyze the full text for riders you need to know about, and exactly when a claim is and isn't covered.</p>
+        <div class="data-row">
+          <span class="data-chip">Insurer filing disclosures</span>
+          <span class="data-chip">Product summaries &amp; business method statements</span>
+        </div>
+        <p class="data-note">We collect publicly disclosed policy terms and product summaries directly from insurer filing rooms, and analyze them clause by clause — down to riders and claim conditions.</p>
+
+        <div class="mini-cinema violet reveal">
+          <div class="mini-scatter">
+            <div class="mini-chip">Policy terms</div>
+            <div class="mini-chip">Product summary</div>
+            <div class="mini-chip">Business method statement</div>
+          </div>
+          <div class="mini-arrow-wrap">
+            <svg viewBox="0 0 52 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9h44M38 3l8 6-8 6"/></svg>
+          </div>
+          <div class="mini-orb">
+            <div><small>Clause-by-clause</small><b>Down to riders &amp;<br>claim coverage</b></div>
+          </div>
+        </div>
+
+        <p class="scope-note"><b>Current scope:</b> we're focused on actual-loss medical insurance, adding insurers and products one at a time — other insurance product lines are coming, and this isn't yet a comparison across every insurer or product.</p>
+      </div>
+    </section>
+
     <section id="infra" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">CLOUD INFRASTRUCTURE</p>
@@ -852,7 +1144,7 @@
 
     <section class="company-block">
       <div class="wrap">
-        <p class="company-disclaimer">Decision support only · Not a guaranteed forecast · Not a buy or sell instruction · Returns are not guaranteed</p>
+        <p class="company-disclaimer">Decision support only · Not a guaranteed forecast · Not a buy or sell instruction · Returns are not guaranteed<br>Policy diagnosis is decision support only and does not constitute insurance solicitation or brokerage under Korean law · Not a sales pitch · Comparisons are limited to a subset of insurers/products · Collecting your policy data requires your consent</p>
         <p class="company-info">
           Vectus Inc.<br>
           CEO Hyungtae Kim<br>
