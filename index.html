@@ -420,6 +420,20 @@
     .legal-box p{font-size:12.5px;color:var(--faint);line-height:1.8}
     .legal-box p:not(:last-child){margin-bottom:6px}
 
+    /* ── 보험 존(zone) — 투자 섹션들과 시각적으로 구분 ── */
+    .insurance-zone{
+      position:relative;
+      background:
+        radial-gradient(ellipse 900px 520px at 15% 0%, rgba(148,131,187,.07), transparent 60%),
+        radial-gradient(ellipse 900px 600px at 85% 100%, rgba(148,131,187,.06), transparent 60%),
+        var(--ink);
+      border-top:1px solid var(--violet-line);
+      border-bottom:1px solid var(--violet-line);
+    }
+    .pillar-break{text-align:center;padding:44px 0 0}
+    .pillar-tag{display:inline-flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet)}
+    .pillar-tag:before,.pillar-tag:after{content:"";width:40px;height:1px;background:var(--violet-line)}
+
     @media(max-width:760px){
       .grid-3,.stats{grid-template-columns:1fr}
       .nav a:not(.cta-nav){display:none}
@@ -983,7 +997,9 @@
       </div>
     </section>
 
-    <section id="insurance" class="divider reveal">
+    <div class="insurance-zone">
+    <div class="pillar-break"><span class="pillar-tag">PART 02 · INSURANCE</span></div>
+    <section id="insurance" class="reveal">
       <div class="wrap">
         <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
         <h2>가입을 권하지 않습니다, 보유하신 보험을 진단합니다</h2>
@@ -1171,7 +1187,7 @@
 
     <section class="reveal">
       <div class="wrap">
-        <p class="eyebrow">DATA SOURCE</p>
+        <p class="eyebrow v">DATA SOURCE</p>
         <h2>약관도, 추정이 아니라 조항 전체를 분석합니다</h2>
         <p class="lead">대조에서 멈추지 않습니다. 반드시 알아야 할 특약사항과, 사고 발생 시 보장되는 경우 · 안 되는 경우까지 약관 전체 조항을 분석해 제시합니다.</p>
         <div class="data-row">
@@ -1197,6 +1213,7 @@
         <p class="scope-note"><b>현재 범위:</b> 실손의료보험을 중심으로 회사 · 상품을 하나씩 늘려가고 있습니다 — 나머지 보험 상품군은 순차 출시를 준비 중이며, 아직 전 보험사 · 전 상품 비교는 아닙니다.</p>
       </div>
     </section>
+    </div>
 
     <section id="infra" class="divider reveal">
       <div class="wrap">
