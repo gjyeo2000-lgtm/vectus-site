@@ -430,9 +430,15 @@
       border-top:1px solid var(--violet-line);
       border-bottom:1px solid var(--violet-line);
     }
-    .pillar-break{text-align:center;padding:44px 0 0}
-    .pillar-tag{display:inline-flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet)}
-    .pillar-tag:before,.pillar-tag:after{content:"";width:40px;height:1px;background:var(--violet-line)}
+    .pillar-break{text-align:center;padding:72px 0 56px}
+    .pillar-tag{display:inline-flex;align-items:center;gap:22px;font-size:16px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--violet)}
+    .pillar-tag:before,.pillar-tag:after{content:"";width:72px;height:1px;background:var(--violet-line)}
+    .pillar-tag.gold{color:var(--gold)}
+    .pillar-tag.gold:before,.pillar-tag.gold:after{background:var(--gold-line)}
+    @media(max-width:560px){
+      .pillar-tag{font-size:13px;gap:12px;letter-spacing:.18em}
+      .pillar-tag:before,.pillar-tag:after{width:32px}
+    }
 
     @media(max-width:760px){
       .grid-3,.stats{grid-template-columns:1fr}
@@ -588,7 +594,9 @@
       </div>
     </section>
 
-    <section class="tight divider reveal">
+    <div class="pillar-break"><span class="pillar-tag gold">PART 01 · INVESTMENT</span></div>
+
+    <section class="tight reveal">
       <div class="wrap">
         <p class="eyebrow" style="text-align:center">JUDGMENT CHAIN</p>
         <h2 style="text-align:center">오늘 뉴스, 내 자산까지 이어집니다</h2>
