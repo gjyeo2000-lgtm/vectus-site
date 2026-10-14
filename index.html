@@ -336,6 +336,11 @@
 
     /* ── 판단으로 끝나지 않습니다 ── */
     .follow-list{margin-top:40px;display:flex;flex-direction:column}
+    .feature-divider{margin-top:44px;padding:25px 28px;border:1px solid var(--gold-line);border-radius:12px;background:linear-gradient(120deg,var(--gold-dim),var(--panel) 65%)}
+    .feature-divider .eyebrow{margin-bottom:8px}
+    .feature-divider h3{font-size:21px;margin-bottom:7px}
+    .feature-divider p:last-child{max-width:760px;color:var(--muted);font-size:14px}
+    @media(max-width:560px){.feature-divider{padding:22px}}
     .follow-item{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line)}
     .follow-item:last-child{border-bottom:1px solid var(--line)}
     .follow-num{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-line);color:var(--gold)}
@@ -1039,6 +1044,11 @@
         </div>
         <p class="trust-scope">영업일 기준입니다. 아직 도달하지 않은 구간은 평가하지 않으며, 수익 보장이나 예측 적중률을 뜻하지 않습니다.</p>
 
+        <div class="feature-divider" id="investment-tools">
+          <p class="eyebrow">VECTUS INVESTMENT TOOLS</p>
+          <h3>벡투스의 투자 분석 기능</h3>
+          <p>위 시간축은 추천 이후의 관찰·평가 방식을 보여줍니다. 아래 기능은 추천 이력 관리뿐 아니라 종목 탐색, 기업 분석, 시장 관찰, 보유상품 점검에도 각각 활용할 수 있습니다.</p>
+        </div>
         <div class="follow-list">
           <div class="follow-item">
             <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
@@ -1103,6 +1113,14 @@
           <div class="follow-item" data-feature="holdings-history">
             <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
             <div><div class="follow-idx">13</div><h3>보유상품 이력·손익</h3><p>직접 등록한 시작잔고와 매수·매도 기록으로 보유 변화와 손익을 확인합니다. 추천 이력 추적과는 다른 내 자산의 기록이며, 증권사의 모든 거래를 자동으로 가져오거나 자동 매매하는 서비스는 아닙니다.</p></div>
+          </div>
+          <div class="follow-item" data-feature="us-stock-analysis">
+            <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-3 3-3 15 0 18M12 3c3 3 3 15 0 18"/></svg></div>
+            <div><div class="follow-idx">14</div><h3>미국 종목 기업분석</h3><p>지원되는 미국 상장 종목의 기업·공시 재무·가격 자료와 투자 판단 근거를 확인합니다. 지원 범위와 자료 기준일, 정보 부족 표시를 함께 살펴보세요.</p></div>
+          </div>
+          <div class="follow-item" data-feature="undervalued-candidates">
+            <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 18V6M4 18h16M7 15l4-4 3 2 5-6"/></svg></div>
+            <div><div class="follow-idx">15</div><h3>코스피·코스닥 저평가 후보 찾기</h3><p>자산가치, 자기 과거, 시장 비교, 재무건전성 기준을 골라 후보를 찾습니다. 확정 저평가 판단이나 매수 추천이 아닙니다.</p></div>
           </div>
         </div>
       </div>
