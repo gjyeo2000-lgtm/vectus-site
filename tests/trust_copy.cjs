@@ -32,6 +32,9 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.match(vision, name === 'ko' ? /종합자산관리 웹을 준비합니다/ : /preparing an integrated wealth-management web experience/);
   assert.match(vision, name === 'ko' ? /법률 검토.*계획입니다/ : /specialist legal review.*plan to connect|plan to connect.*specialist legal review/);
   const insurance = html.match(/<div class="insurance-zone">([\s\S]*?)<section id="infra"/)?.[1] || '';
+  assert.doesNotMatch(insurance, /\bLLMs?\b/i, `${name}: insurance explanation must name Vectus as the actor`);
+  assert.match(insurance, name === 'ko' ? /보험의 근거 확인·계산·판단은 벡투스가 수행합니다/ : /Vectus performs the evidence checks, calculations, and judgments for insurance/);
+  assert.doesNotMatch(insurance, name === 'ko' ? /결정적 템플릿/ : /deterministic templates/i);
   assert.equal((insurance.match(/<article><small>0[123] \/ (?:SOURCE|HOLDINGS|HOLD)/g) || []).length, 3, `${name}: insurance evidence sequence missing`);
   assert.match(insurance, name === 'ko' ? /확인 불가 시 보류/ : /Defer when unverified/);
   assert.match(insurance, name === 'ko' ? /가능한 전 보험사·전 상품 비교로 확대합니다/ : /broadest possible insurer and product comparison/);
