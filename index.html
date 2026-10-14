@@ -67,6 +67,14 @@
     h2{font-size:clamp(24px,3vw,32px);margin-bottom:14px;letter-spacing:-.1px}
     .lead{color:var(--muted);font-size:15.5px;max-width:620px}
     .divider{border-top:1px solid var(--line)}
+    .vision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+    .vision-card{padding:26px;border:1px solid var(--line-strong);border-top:2px solid var(--gold);border-radius:12px;background:var(--panel)}
+    .vision-card:nth-child(2){border-top-color:var(--violet)}
+    .vision-card .vision-label{display:block;margin-bottom:13px;color:var(--gold);font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em}
+    .vision-card:nth-child(2) .vision-label{color:var(--violet)}
+    .vision-card h3{font-size:21px;line-height:1.4;margin-bottom:12px}
+    .vision-card p{color:var(--muted);font-size:14px;line-height:1.8}
+    @media(max-width:700px){.vision-grid{grid-template-columns:1fr}.vision-card{padding:23px}}
 
     .reveal{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
     .reveal.in{opacity:1;transform:none}
@@ -1387,8 +1395,19 @@
     <section id="vision" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">VISION</p>
-        <h2>투자·보험·여신을 잇는 종합자산관리</h2>
-        <p class="lead">벡투스는 주식·펀드 투자 판단과 보유보험 진단을 기반으로, 여신 판단과 세무정보 분석을 연결한 종합자산관리 웹을 준비합니다. 현재 법무법인 대표변호사의 자문 체계도 갖추고 있으며, 향후 자산관리 과정에서 필요한 법률 검토를 전문가 조직과 연결하는 방향으로 확장할 계획입니다.</p>
+        <h2>벡투스의 두 가지 확장 비전</h2>
+        <div class="vision-grid">
+          <article class="vision-card">
+            <span class="vision-label">VISION 01 · 확장 목표</span>
+            <h3>개인 투자에서 B2B 여신까지</h3>
+            <p>AWS 기반 데이터 파이프라인과 상품별 계산 경로를 운영하고, 축적한 금융 판단 엔진을 B2B 여신 룰셋 최적화 솔루션으로 확장하는 것을 목표로 합니다.</p>
+          </article>
+          <article class="vision-card">
+            <span class="vision-label">VISION 02 · 준비 중</span>
+            <h3>투자·보험·여신을 잇는 종합자산관리</h3>
+            <p>벡투스는 주식·펀드 투자 판단과 보유보험 진단을 기반으로, 여신 판단과 세무정보 분석을 연결한 종합자산관리 웹을 준비합니다. 현재 법무법인 대표변호사의 자문 체계도 갖추고 있으며, 향후 자산관리 과정에서 필요한 법률 검토를 전문가 조직과 연결하는 방향으로 확장할 계획입니다.</p>
+          </article>
+        </div>
       </div>
     </section>
 

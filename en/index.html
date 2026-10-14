@@ -66,6 +66,14 @@
     h2{font-size:clamp(24px,3vw,32px);margin-bottom:14px;letter-spacing:-.1px}
     .lead{color:var(--muted);font-size:15.5px;max-width:620px}
     .divider{border-top:1px solid var(--line)}
+    .vision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+    .vision-card{padding:26px;border:1px solid var(--line-strong);border-top:2px solid var(--gold);border-radius:12px;background:var(--panel)}
+    .vision-card:nth-child(2){border-top-color:var(--violet)}
+    .vision-card .vision-label{display:block;margin-bottom:13px;color:var(--gold);font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em}
+    .vision-card:nth-child(2) .vision-label{color:var(--violet)}
+    .vision-card h3{font-size:21px;line-height:1.4;margin-bottom:12px}
+    .vision-card p{color:var(--muted);font-size:14px;line-height:1.8}
+    @media(max-width:700px){.vision-grid{grid-template-columns:1fr}.vision-card{padding:23px}}
 
     .reveal{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
     .reveal.in{opacity:1;transform:none}
@@ -1286,8 +1294,19 @@
     <section id="vision" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">VISION</p>
-        <h2>Toward integrated wealth management</h2>
-        <p class="lead">Building on stock and fund investment decision support and existing-policy diagnosis, Vectus is preparing an integrated wealth-management web experience that connects credit decision technology and tax-information analysis. We already have an advisory arrangement with a law firm's managing partner and plan to connect clients with specialist legal review where wealth-management decisions call for it.</p>
+        <h2>Two paths for Vectus's next stage</h2>
+        <div class="vision-grid">
+          <article class="vision-card">
+            <span class="vision-label">VISION 01 · EXPANSION GOAL</span>
+            <h3>From personal investing to B2B credit</h3>
+            <p>We operate AWS-based data pipelines and product-specific calculation paths, and aim to extend the financial decision engine we have built into a B2B credit ruleset optimization solution.</p>
+          </article>
+          <article class="vision-card">
+            <span class="vision-label">VISION 02 · IN PREPARATION</span>
+            <h3>Toward integrated wealth management</h3>
+            <p>Building on stock and fund investment decision support and existing-policy diagnosis, Vectus is preparing an integrated wealth-management web experience that connects credit decision technology and tax-information analysis. We already have an advisory arrangement with a law firm's managing partner and plan to connect clients with specialist legal review where wealth-management decisions call for it.</p>
+          </article>
+        </div>
       </div>
     </section>
 
