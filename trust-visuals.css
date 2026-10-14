@@ -1,0 +1,69 @@
+.trust-chain{margin-top:28px;padding:18px;border:1px solid var(--gold-line);border-radius:12px;background:rgba(19,21,25,.9)}
+.trust-chain ol{list-style:none;display:flex;align-items:center;gap:8px}
+.trust-chain li{flex:1;min-width:0;padding:11px 8px;border:1px solid var(--line-strong);border-radius:7px;text-align:center;color:var(--text);font-size:12px;background:var(--panel-2)}
+.trust-chain .trust-link{flex:0 0 22px;height:2px;padding:0;border:0;border-radius:0;background:var(--gold);transform-origin:left center}
+.trust-ready .trust-chain .trust-link{transform:scaleX(0)}
+.trust-ready .trust-chain.trust-in .trust-link{animation:trust-draw .6s ease-out forwards}
+.trust-ready .trust-chain.trust-in .trust-link:nth-child(4){animation-delay:.65s}
+.trust-ready .trust-chain.trust-in .trust-link:nth-child(6){animation-delay:1.3s}
+.trust-scope{font-size:11.5px!important;line-height:1.6;color:var(--muted);margin:13px 0 0!important;max-width:none!important}
+.trust-section{border-top:1px solid var(--line);background:radial-gradient(circle at 80% 20%,rgba(148,131,187,.07),transparent 35%),var(--ink)}
+.trust-section .trust-intro{max-width:760px;color:var(--muted);font-size:15px;line-height:1.8}
+.trust-stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:30px}
+.trust-stage{border-top:2px solid var(--gold-line);background:var(--panel);padding:19px 15px;min-width:0}
+.trust-stage strong{display:block;color:var(--gold);font:500 11px 'IBM Plex Mono',monospace;margin-bottom:15px}
+.trust-stage h3{font-size:15px;margin-bottom:8px}
+.trust-stage p{font-size:12.5px;color:var(--muted);line-height:1.65}
+.trust-diagram{margin-top:24px;border:1px solid var(--line);border-radius:12px;padding:20px;background:rgba(19,21,25,.75)}
+.trust-diagram svg{display:block;width:100%;height:auto}
+.trust-diagram path{fill:none;stroke:var(--gold);stroke-width:2;stroke-dasharray:420;stroke-dashoffset:0}
+.trust-diagram path.trust-hold{stroke:var(--violet)}
+.trust-ready .trust-diagram path{stroke-dashoffset:420}
+.trust-ready .trust-diagram.trust-in path{animation:trust-line 1.3s ease-out forwards}
+.trust-ready .trust-diagram.trust-in path.trust-hold{animation-delay:.7s}
+.trust-diagram rect{fill:var(--panel-2);stroke:var(--gold-line)}
+.trust-diagram rect.trust-hold{stroke:var(--violet-line)}
+.trust-diagram text{fill:var(--text);font:13px 'IBM Plex Sans KR',sans-serif;text-anchor:middle;dominant-baseline:middle}
+.trust-diagram p,.trust-graph p{margin-top:12px;color:var(--muted);font-size:12px;line-height:1.65}
+.trust-graph-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.trust-graph{border:1px solid var(--line);border-radius:12px;padding:24px;background:var(--panel)}
+.trust-graph h3{font-size:17px;margin-bottom:9px}
+.trust-graph svg{display:block;width:100%;height:auto;margin-top:18px}
+.trust-graph path.trust-edge{fill:none;stroke:var(--violet);stroke-width:2;stroke-dasharray:500;stroke-dashoffset:0}
+.trust-graph path.trust-edge:nth-of-type(2){stroke:var(--gold)}
+.trust-graph path.trust-regime{fill:none;stroke:var(--gold);stroke-width:3;stroke-dasharray:700;stroke-dashoffset:0}
+.trust-ready .trust-graph path.trust-edge{stroke-dashoffset:500}
+.trust-ready .trust-graph path.trust-regime{stroke-dashoffset:700}
+.trust-ready .trust-graph.trust-in path.trust-edge{animation:trust-line 1.8s ease-out forwards}
+.trust-ready .trust-graph.trust-in path.trust-edge:nth-of-type(2){animation-delay:.55s}
+.trust-ready .trust-graph.trust-in path.trust-regime{animation:trust-line 2.4s ease-out forwards}
+.trust-graph circle{fill:var(--panel-2);stroke:var(--violet);stroke-width:2}
+.trust-graph circle:last-of-type{stroke:var(--gold)}
+.trust-graph text{fill:var(--text);font:12px 'IBM Plex Sans KR',sans-serif;text-anchor:middle;dominant-baseline:middle}
+.trust-graph .trust-axis{stroke:var(--line-strong);stroke-width:2}
+.trust-graph .trust-band{fill:var(--gold-dim)}
+.trust-model-list{margin-top:34px;border-top:1px solid var(--line)}
+.trust-model-row{display:grid;grid-template-columns:52px minmax(180px,.72fr) 1.4fr;gap:16px;align-items:start;border-bottom:1px solid var(--line);padding:23px 0}
+.trust-model-row span{color:var(--gold);font:500 11px 'IBM Plex Mono',monospace}
+.trust-model-row h3{font:700 18px 'Gowun Batang',serif}
+.trust-model-row p{color:var(--muted);font-size:13.5px;line-height:1.75}
+.trust-evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.trust-evidence-grid article{border-top:2px solid var(--gold-line);padding:20px 0}
+.trust-evidence-grid small{color:var(--gold);font:500 11px 'IBM Plex Mono',monospace}
+.trust-evidence-grid h3{font-size:17px;margin:14px 0 8px}
+.trust-evidence-grid p{color:var(--muted);font-size:13px;line-height:1.7}
+.trust-source-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;margin-top:28px}
+.trust-source-sheet,.trust-source-aside{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:25px}
+.trust-source-sheet h3,.trust-source-aside h3{font-size:17px;margin-bottom:18px}
+.trust-source-row{display:grid;grid-template-columns:125px 1fr;gap:12px;border-top:1px solid var(--line);padding:12px 0;font-size:13px}
+.trust-source-row strong{font-weight:500;color:var(--text)}
+.trust-source-row span,.trust-source-aside p{color:var(--muted)}
+.trust-source-aside p{font-size:13px;line-height:1.75}
+.engine-number.trust-text{font-size:clamp(20px,3vw,28px);line-height:1.3}
+.card-metric .v.trust-text{font-size:25px}
+@keyframes trust-draw{to{transform:scaleX(1)}}
+@keyframes trust-line{to{stroke-dashoffset:0}}
+@media(max-width:760px){.trust-stages{grid-template-columns:1fr 1fr}.trust-graph-grid,.trust-evidence-grid,.trust-source-grid{grid-template-columns:1fr}.trust-model-row{grid-template-columns:36px 1fr}.trust-model-row p{grid-column:2}.trust-chain ol{flex-direction:column}.trust-chain li{width:100%}.trust-chain .trust-link{width:2px;height:16px;flex:none;transform-origin:center top}.trust-ready .trust-chain .trust-link{transform:scaleY(0)}.trust-ready .trust-chain.trust-in .trust-link{animation:trust-draw-y .6s ease-out forwards}}
+@media(max-width:480px){.trust-stages{grid-template-columns:1fr}.trust-source-row{grid-template-columns:1fr;gap:3px}.trust-diagram{padding:10px}.trust-diagram text{font-size:15px}}
+@keyframes trust-draw-y{to{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){.trust-ready .trust-chain .trust-link{transform:none!important}.trust-ready .trust-diagram path,.trust-ready .trust-graph path.trust-edge,.trust-ready .trust-graph path.trust-regime{stroke-dashoffset:0!important;animation:none!important}}
