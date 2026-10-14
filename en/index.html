@@ -344,6 +344,11 @@
     .insurance-cost p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
     .insurance-cost-note{border-left:2px solid var(--violet);padding-left:17px}
     @media(max-width:680px){.insurance-cost{grid-template-columns:1fr;padding:22px}.insurance-cost-note{border-left:0;border-top:2px solid var(--violet);padding:16px 0 0}}
+    .insurance-roadmap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0 30px}
+    .insurance-roadmap article{min-width:0;padding:26px 28px;border:1px solid var(--violet-line);border-radius:14px;background:linear-gradient(135deg,rgba(117,79,162,.14),rgba(19,21,25,.78))}
+    .insurance-roadmap h3{margin:0 0 10px;color:var(--text);font-size:19px}
+    .insurance-roadmap p:last-child{margin:0;color:var(--muted);font-size:13px;line-height:1.75}
+    @media(max-width:680px){.insurance-roadmap{grid-template-columns:1fr}.insurance-roadmap article{padding:22px}}
 
     .chain-scene{position:relative;margin:40px 0 0;padding:46px 32px 30px;border:1px solid var(--line);border-radius:18px;
       background:linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
@@ -963,7 +968,7 @@
     <div class="pillar-break" id="insurance"><span class="pillar-tag">PART 02 · INSURANCE</span></div>
     <section class="closing reveal">
       <div class="wrap">
-        <h2>One standard of evidence for investing and insurance</h2>
+        <h2>Investing and insurance, together with Vectus</h2>
         <p>Investing needs dated prices and filings. Insurance needs the right policy terms and holdings. Vectus is connecting the evidence behind both decisions.</p>
       </div>
     </section>
@@ -972,7 +977,8 @@
         <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
         <h2>We don't push you to buy. We diagnose what you already hold.</h2>
         <p class="lead">To assess gaps and possible duplication, we need to match your policies to the official terms for the right product edition. If evidence is missing, we leave that judgment open rather than inventing a result.</p>
-        <div class="roadmap-pill">Actual-loss medical insurance validation and staged release in progress · not an all-insurer comparison</div>
+        <div class="roadmap-pill">Starting with actual-loss medical insurance, expanding toward the broadest possible insurer and product comparison</div>
+        <p class="scope-note">We are securing and validating official insurer materials product by product. Where the source terms or link to a policy cannot yet be verified, we mark it for review rather than invent a comparison.</p>
         <div class="insurance-proof" aria-label="Insurance evidence checks">
           <article><small>01 / SOURCE</small><h3>Verify official terms</h3><p>Check the product edition and effective period of insurer disclosures.</p></article>
           <article><small>02 / HOLDINGS</small><h3>Link your policies</h3><p>Compare only policies supplied with consent or entered by you.</p></article>
@@ -1015,6 +1021,19 @@
         <div class="insurance-cost">
           <div><p class="eyebrow v">COST &amp; COVERAGE</p><h3>Concerned about wasted premiums?</h3><p>Review possible overlap, older policies, and renewal terms to decide what to check first. Age alone is not a reason to cancel or replace a policy.</p></div>
           <p class="insurance-cost-note">The type diagnosis identifies cost-pressure signals; it does not provide a personal premium quote or savings figure. The initial actual-loss release does not fill in amounts without official evidence. Any real savings depend on your policy terms.</p>
+        </div>
+
+        <div class="insurance-roadmap" aria-label="Insurance service roadmap">
+          <article>
+            <p class="eyebrow v">LIFE STAGE · IN PREPARATION</p>
+            <h3>When life changes, your coverage deserves another look</h3>
+            <p>Marriage, parenthood, retirement, and caregiving can change what coverage you need. We are preparing life-stage reviews that connect verified policies and product information to relevant comparison candidates.</p>
+          </article>
+          <article>
+            <p class="eyebrow v">DISCLOSURES &amp; NEWS · IN PREPARATION</p>
+            <h3>Insurance can change after you enroll</h3>
+            <p>We are preparing a service to spot relevant changes in insurer disclosures, policy terms, and insurance news, then revisit your policies, life stage, and premium burden. Applicable disclosures and terms inform coverage judgments; news helps detect and explain changes, but does not determine coverage on its own.</p>
+          </article>
         </div>
 
         <span class="sample-tag">Conceptual example · 18% and 100% are not customer or performance figures</span>
@@ -1167,7 +1186,7 @@
     <section class="reveal">
       <div class="wrap">
         <p class="eyebrow v">DATA SOURCE</p>
-        <h2>Trace insurance judgments back to original terms</h2>
+        <h2>Check official policy terms down to the edition and effective period</h2>
         <p class="lead">After verifying a document's edition and effective period, we examine clauses, riders, and coverage conditions that match your policies. We do not assert coverage where the evidence has not been verified.</p>
         <div class="data-row">
           <span class="data-chip">Insurer filing disclosures</span>
@@ -1189,7 +1208,7 @@
           </div>
         </div>
 
-        <p class="scope-note"><b>Current scope:</b> we're focused on actual-loss medical insurance, adding insurers and products one at a time — other insurance product lines are coming, and this isn't yet a comparison across every insurer or product.</p>
+        <p class="scope-note"><b>Expansion path:</b> Starting with actual-loss medical insurance, we will add insurers and product lines as official materials are secured and verified. Our goal is the broadest possible comparison; what can be compared today depends on verified sources and policy links.</p>
       </div>
     </section>
     </div>

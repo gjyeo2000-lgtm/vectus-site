@@ -359,6 +359,11 @@
     .insurance-cost p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
     .insurance-cost-note{border-left:2px solid var(--violet);padding-left:17px}
     @media(max-width:680px){.insurance-cost{grid-template-columns:1fr;padding:22px}.insurance-cost-note{border-left:0;border-top:2px solid var(--violet);padding:16px 0 0}}
+    .insurance-roadmap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0 30px}
+    .insurance-roadmap article{min-width:0;padding:26px 28px;border:1px solid var(--violet-line);border-radius:14px;background:linear-gradient(135deg,rgba(117,79,162,.14),rgba(19,21,25,.78))}
+    .insurance-roadmap h3{margin:0 0 10px;color:var(--text);font-size:19px}
+    .insurance-roadmap p:last-child{margin:0;color:var(--muted);font-size:13px;line-height:1.75}
+    @media(max-width:680px){.insurance-roadmap{grid-template-columns:1fr}.insurance-roadmap article{padding:22px}}
 
     .chain-scene{position:relative;margin:40px 0 0;padding:46px 32px 30px;border:1px solid var(--line);border-radius:18px;
       background:linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
@@ -1065,7 +1070,7 @@
     <div class="pillar-break" id="insurance"><span class="pillar-tag">PART 02 · INSURANCE</span></div>
     <section class="closing reveal">
       <div class="wrap">
-        <h2>투자와 보험, 같은 기준으로 확인합니다</h2>
+        <h2>투자도 보험도, 벡투스 하나면 됩니다</h2>
         <p>투자는 가격·공시의 기준일을, 보험은 약관·보유계약의 적용 범위를 확인합니다. 벡투스는 각 판단의 근거를 한 흐름으로 연결해 갑니다.</p>
       </div>
     </section>
@@ -1074,7 +1079,8 @@
         <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
         <h2>가입을 권하지 않습니다, 보유하신 보험을 진단합니다</h2>
         <p class="lead">보장 공백과 중복 가능성은 보유계약과 해당 상품판의 공식 약관을 맞춰 봐야 알 수 있습니다. 근거가 부족한 항목은 결과를 만들어내지 않고 확인 필요로 남깁니다.</p>
-        <div class="roadmap-pill">실손의료보험 중심 검증·순차 공개 준비 중 · 전 보험사·전 상품 비교 아님</div>
+        <div class="roadmap-pill">실손의료보험부터 시작해 가능한 전 보험사·전 상품 비교로 확대합니다</div>
+        <p class="scope-note">보험사 공식 자료를 회사·상품별로 확보하고 검증하며 범위를 넓혀갑니다. 아직 원문이나 보유계약 연결이 확인되지 않은 상품은 비교 결과를 만들어내지 않고 확인 필요로 표시합니다.</p>
         <div class="insurance-proof" aria-label="보험 판단 근거 확인 순서">
           <article><small>01 / SOURCE</small><h3>공식 원문 확인</h3><p>보험사 공개 문서의 상품판과 적용시점을 확인합니다.</p></article>
           <article><small>02 / HOLDINGS</small><h3>보유계약 연결</h3><p>동의받아 수집하거나 직접 입력한 계약의 범위에서 대조합니다.</p></article>
@@ -1117,6 +1123,19 @@
         <div class="insurance-cost">
           <div><p class="eyebrow v">COST &amp; COVERAGE</p><h3>새는 보험료가 걱정된다면</h3><p>겹치는 보장, 오래된 계약, 갱신 조건을 살펴 어떤 계약을 먼저 재점검할지 좁힙니다. 오래됐다는 이유만으로 해지나 교체를 권하지 않습니다.</p></div>
           <p class="insurance-cost-note">보험 유형진단의 비용 신호는 개인별 보험료 견적이나 절감액이 아닙니다. 첫 실손 공개 범위에서는 공식 근거가 없는 금액을 채우지 않고, 실제 절감 가능 여부는 계약 조건 확인 뒤에 판단해야 합니다.</p>
+        </div>
+
+        <div class="insurance-roadmap" aria-label="보험 서비스 확장 계획">
+          <article>
+            <p class="eyebrow v">LIFE STAGE · 준비 중</p>
+            <h3>삶이 바뀌면, 보장도 다시 살펴야 합니다</h3>
+            <p>결혼·출산·은퇴·간병 등 생애 변화에 따라 현재 보장과 앞으로 필요한 보장을 함께 점검합니다. 확인된 보유계약과 상품 자료를 바탕으로 비교 후보를 제시하는 생애주기 맞춤 서비스를 준비하고 있습니다.</p>
+          </article>
+          <article>
+            <p class="eyebrow v">DISCLOSURES &amp; NEWS · 준비 중</p>
+            <h3>보험은 가입 후에도 달라집니다</h3>
+            <p>보험사 공시·약관 변경과 보험 관련 뉴스에서 확인할 변화를 찾아, 해당 보유계약과 생애주기·보험료 부담을 다시 점검할 수 있는 서비스를 준비하고 있습니다. 공시와 적용 약관은 보장 판단의 근거로, 뉴스는 변화 탐지와 맥락을 이해하는 참고자료로 구분합니다.</p>
+          </article>
         </div>
 
         <span class="sample-tag">설명용 가상 예시 · 18%·100%는 실제 고객·성능 수치 아님</span>
@@ -1269,7 +1288,7 @@
     <section class="reveal">
       <div class="wrap">
         <p class="eyebrow v">DATA SOURCE</p>
-        <h2>보험사 원문에서 확인 가능한 조항까지 추적합니다</h2>
+        <h2>보험사 공식 약관을 상품판과 적용시점까지 확인합니다</h2>
         <p class="lead">확보한 공식 문서의 상품판과 적용시점을 확인한 뒤, 보유계약과 연결되는 조항·특약·보장 조건을 살펴봅니다. 확인되지 않은 내용은 보장된다고 단정하지 않습니다.</p>
         <div class="data-row">
           <span class="data-chip">보험사 공시실 약관</span>
@@ -1291,7 +1310,7 @@
           </div>
         </div>
 
-        <p class="scope-note"><b>현재 범위:</b> 실손의료보험을 중심으로 회사 · 상품을 하나씩 늘려가고 있습니다 — 나머지 보험 상품군은 순차 출시를 준비 중이며, 아직 전 보험사 · 전 상품 비교는 아닙니다.</p>
+        <p class="scope-note"><b>확장 방향:</b> 실손의료보험에서 출발해 보험사 공식 자료가 확보·검증되는 대로 회사와 상품군을 넓혀갑니다. 가능한 전 보험사·전 상품 비교가 목표이며, 현재 비교 가능한 범위는 확인된 자료와 보유계약 연결에 따라 달라집니다.</p>
       </div>
     </section>
     </div>
