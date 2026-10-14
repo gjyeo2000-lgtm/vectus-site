@@ -16,6 +16,10 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.match(html, /class="trust-diagram"/);
   assert.match(html, /trust-motion\.js/);
   assert.match(html, /trust-visuals\.css/);
+  assert.match(html, /site-nav\.js/);
+  assert.equal((html.match(/class="mobile-menu"/g) || []).length, 1, `${name}: mobile navigation missing`);
+  assert.match(html, name === 'ko' ? /테스트 웹 · 초대자 전용/ : /Test Web · Invite Only/);
+  assert.doesNotMatch(html, name === 'ko' ? />웹 바로가기</ : />Go to Web App</);
   assert.doesNotMatch(html, /78%|34\.23%|24\/7|31\.29%/);
   assert.doesNotMatch(html, /<meta[^>]+noindex/i);
   assert.match(html, name === 'ko' ? /영업일 기준/ : /business days/i);
@@ -33,6 +37,7 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.match(insurance, name === 'ko' ? /가능한 전 보험사·전 상품 비교로 확대합니다/ : /broadest possible insurer and product comparison/);
   assert.equal((insurance.match(/class="insurance-roadmap"/g) || []).length, 1, `${name}: insurance roadmap missing`);
   assert.equal((insurance.match(/class="insurance-mission"/g) || []).length, 1, `${name}: customer-first mission missing`);
+  assert.match(insurance, name === 'ko' ? /중요한 특약·청구 조건을 확인하고, 쉽게 설명해 반복 진단 시간을 줄이는 것을 목표로 합니다/ : /important riders and claim conditions you might miss, explain them clearly, and reduce repetitive diagnosis work/);
   assert.match(insurance, name === 'ko' ? /수수료·가입 성사 여부를 판단 입력으로 사용하지 않고/ : /without fees or sales outcomes as judgment inputs/);
   assert.match(insurance, name === 'ko' ? /설계사의 상담과 경험을 대신하거나 폄하하지 않습니다/ : /We do not replace or diminish an agent's experience/);
   assert.match(insurance, name === 'ko' ? /약관 탐색과 상품판 대조의 반복 시간을 줄여/ : /reducing repetitive policy searches and edition matching/);
@@ -51,4 +56,14 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
 const motion = fs.readFileSync(path.join(root, 'trust-motion.js'), 'utf8');
 assert.match(motion, /prefers-reduced-motion: reduce/);
 assert.match(motion, /IntersectionObserver/);
+const visuals = fs.readFileSync(path.join(root, 'trust-visuals.css'), 'utf8');
+assert.match(visuals, /\.mobile-menu-panel/);
+assert.match(visuals, /@media\(max-width:980px\)/);
+assert.match(visuals, /\.nav>a\.logo\{display:flex!important\}/);
+assert.match(visuals, /\.hero-grid>\*\{min-width:0\}/);
+assert.match(visuals, /html\[lang="en"\] \.hero h1\{font-size:28px\}/);
+assert.match(visuals, /\.chain-pulse\{display:none!important;animation:none!important\}/);
+assert.match(visuals, /html\{scroll-behavior:auto\}/);
+const nav = fs.readFileSync(path.join(root, 'site-nav.js'), 'utf8');
+assert.match(nav, /Escape/);
 console.log('Homepage trust-copy contract: OK');

@@ -463,16 +463,26 @@
         <img src="../logo.png" alt="Vectus" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'" />
         <span style="display:none">Vectus</span>
       </a>
-      <nav>
+      <nav aria-label="Main navigation">
+        <details class="mobile-menu">
+          <summary>Menu</summary>
+          <div class="mobile-menu-panel">
+            <a href="#what">Services</a>
+            <a href="#diff">Why Vectus</a>
+            <a href="#tech">Technology</a>
+            <a href="#insurance">Insurance</a>
+            <a href="#infra">Infrastructure</a>
+            <a href="#contact">Contact</a>
+            <a href="https://test.vectuslab.ai" target="_blank" rel="noopener noreferrer">Test Web · Invite Only</a>
+          </div>
+        </details>
         <a href="#what">Services</a>
         <a href="#diff">Why Vectus</a>
         <a href="#tech">Technology</a>
         <a href="#insurance">Insurance</a>
         <a href="#infra">Infrastructure</a>
         <a href="#contact">Contact</a>
-        <!-- 2026-09-24: currently the test phase, so this links to test.vectuslab.ai.
-             Once testing ends and vectuslab.ai becomes the production domain, swap this href. -->
-        <a href="https://test.vectuslab.ai" target="_blank" rel="noopener noreferrer" class="cta-nav">Go to Web App</a>
+        <a href="https://test.vectuslab.ai" target="_blank" rel="noopener noreferrer" class="cta-nav">Test Web · Invite Only</a>
         <span class="lang-switch">
           <a href="/">KO</a><a href="/en/" class="active">EN</a>
         </span>
@@ -981,6 +991,7 @@
         <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
         <h2>We put the coverage you may already have before another sale</h2>
         <p class="lead">Customer coverage and rights, not enrollment commissions, are our starting point. We match your policies to official terms for the right product edition and mark unsupported conclusions for review.</p>
+        <p class="insurance-value-line">Our goal is to use official terms to identify important riders and claim conditions you might miss, explain them clearly, and reduce repetitive diagnosis work.</p>
         <div class="insurance-mission">
           <p class="eyebrow v">CUSTOMER FIRST</p>
           <h3>Understand the riders and claim conditions you might miss</h3>
@@ -1352,5 +1363,6 @@
     })();
   </script>
   <script src="../trust-motion.js" defer></script>
+  <script src="../site-nav.js" defer></script>
 </body>
 </html>

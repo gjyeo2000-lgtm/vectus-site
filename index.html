@@ -478,17 +478,26 @@
         <img src="logo.png" alt="Vectus" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'" />
         <span style="display:none">Vectus</span>
       </a>
-      <nav>
+      <nav aria-label="주요 메뉴">
+        <details class="mobile-menu">
+          <summary>메뉴</summary>
+          <div class="mobile-menu-panel">
+            <a href="#what">서비스</a>
+            <a href="#diff">차별화</a>
+            <a href="#tech">기술</a>
+            <a href="#insurance">보험</a>
+            <a href="#infra">인프라</a>
+            <a href="#contact">문의</a>
+            <a href="https://test.vectuslab.ai" target="_blank" rel="noopener noreferrer">테스트 웹 · 초대자 전용</a>
+          </div>
+        </details>
         <a href="#what">서비스</a>
         <a href="#diff">차별화</a>
         <a href="#tech">기술</a>
         <a href="#insurance">보험</a>
         <a href="#infra">인프라</a>
         <a href="#contact">문의</a>
-        <!-- 2026-09-24 Eric PO 지시: 실제 웹 서비스로 연결하는 탭이 없었음(발견).
-             지금은 테스트 단계라 test.vectuslab.ai를 연결하고, 테스트 기간이 끝나고
-             vectuslab.ai가 정식 도메인이 되면 이 href만 그쪽으로 교체한다. -->
-        <a href="https://test.vectuslab.ai" target="_blank" rel="noopener noreferrer" class="cta-nav">웹 바로가기</a>
+        <a href="https://test.vectuslab.ai" target="_blank" rel="noopener noreferrer" class="cta-nav">테스트 웹 · 초대자 전용</a>
         <span class="lang-switch">
           <a href="/" class="active">KO</a><a href="/en/">EN</a>
         </span>
@@ -1083,6 +1092,7 @@
         <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
         <h2>보험을 더 팔기보다, 고객이 받을 보장을 먼저 봅니다</h2>
         <p class="lead">가입 수수료가 아니라 고객의 보장과 권리를 판단의 출발점에 둡니다. 보유계약과 해당 상품판의 공식 약관을 대조하고, 근거가 부족한 항목은 확인 필요로 남깁니다.</p>
+        <p class="insurance-value-line">공식 약관으로 놓치기 쉬운 중요한 특약·청구 조건을 확인하고, 쉽게 설명해 반복 진단 시간을 줄이는 것을 목표로 합니다.</p>
         <div class="insurance-mission">
           <p class="eyebrow v">CUSTOMER FIRST</p>
           <h3>놓치기 쉬운 특약과 청구 조건, 이해할 수 있게</h3>
@@ -1454,5 +1464,6 @@
     })();
   </script>
   <script src="trust-motion.js" defer></script>
+  <script src="site-nav.js" defer></script>
 </body>
 </html>
