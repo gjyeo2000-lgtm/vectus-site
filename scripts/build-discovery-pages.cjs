@@ -82,7 +82,7 @@ function build(slug, lang) {
   <script type="application/ld+json">${schema}</script>
 </head><body>
 <a class="skip-link" href="#main">${lang === 'ko' ? '본문으로 건너뛰기' : 'Skip to content'}</a>
-<header class="site-header"><div class="wrap"><a class="brand" href="${base}">VectusLab</a><nav class="site-nav" aria-label="${navLabel}"><a href="${base}">${homeText}</a>${navHtml}<a class="lang-link" lang="${lang === 'ko' ? 'en' : 'ko'}" href="${altUrl}">${altLang}</a></nav><a class="test-web-link" href="https://test.vectuslab.ai">${testWebText}</a></div></header>
+<header class="site-header"><div class="wrap"><a class="brand" href="${base}">VectusLab</a><nav class="site-nav" aria-label="${navLabel}"><a href="${base}">${homeText}</a>${navHtml}<a class="lang-link" lang="${lang === 'ko' ? 'en' : 'ko'}" href="${altUrl}">${altLang}</a></nav><a class="test-web-link" href="https://test.vectuslab.ai/guest-home">${testWebText}</a></div></header>
 <main id="main">${main}</main>
 <footer class="footer"><div class="wrap"><span>${footerText}</span><span>${stageText}</span></div></footer>
 </body></html>
