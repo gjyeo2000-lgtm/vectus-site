@@ -62,6 +62,7 @@ function build(slug, lang) {
   const altLang = lang === 'ko' ? 'English' : '한국어';
   const altUrl = lang === 'ko' ? `/en/${slug}/` : `/${slug}/`;
   const homeText = lang === 'ko' ? '홈' : 'Home';
+  const testWebText = lang === 'ko' ? '초대 테스트로 돌아가기' : 'Return to test web';
   const navLabel = lang === 'ko' ? '서비스 안내' : 'Service guides';
   const footerText = lang === 'ko'
     ? '벡투스 공식 서비스 안내 · 이 화면은 개념 그래프이며 실제 고객별 결과가 아닙니다.'
@@ -81,7 +82,7 @@ function build(slug, lang) {
   <script type="application/ld+json">${schema}</script>
 </head><body>
 <a class="skip-link" href="#main">${lang === 'ko' ? '본문으로 건너뛰기' : 'Skip to content'}</a>
-<header class="site-header"><div class="wrap"><a class="brand" href="${base}">VectusLab</a><nav class="site-nav" aria-label="${navLabel}"><a href="${base}">${homeText}</a>${navHtml}<a class="lang-link" lang="${lang === 'ko' ? 'en' : 'ko'}" href="${altUrl}">${altLang}</a></nav></div></header>
+<header class="site-header"><div class="wrap"><a class="brand" href="${base}">VectusLab</a><nav class="site-nav" aria-label="${navLabel}"><a href="${base}">${homeText}</a>${navHtml}<a class="lang-link" lang="${lang === 'ko' ? 'en' : 'ko'}" href="${altUrl}">${altLang}</a></nav><a class="test-web-link" href="https://test.vectuslab.ai">${testWebText}</a></div></header>
 <main id="main">${main}</main>
 <footer class="footer"><div class="wrap"><span>${footerText}</span><span>${stageText}</span></div></footer>
 </body></html>
