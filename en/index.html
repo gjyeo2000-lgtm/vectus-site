@@ -331,6 +331,19 @@
     /* ── Insurance Diagnosis section only ── */
     .roadmap-pill{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--violet);background:var(--violet-dim);border:1px solid var(--violet-line);border-radius:20px;padding:7px 15px;margin-top:18px}
     .roadmap-pill:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--violet)}
+    .insurance-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+    .insurance-proof article{min-width:0;padding:19px 20px;border:1px solid var(--violet-line);border-radius:12px;background:linear-gradient(135deg,var(--violet-dim),rgba(19,21,25,.55))}
+    .insurance-proof small{display:block;margin-bottom:10px;color:var(--violet);font-size:11px;letter-spacing:.1em}
+    .insurance-proof h3{margin:0 0 8px;color:var(--text);font-size:15px}
+    .insurance-proof p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.65}
+    @media(max-width:680px){.insurance-proof{grid-template-columns:1fr}}
+    .insurance-axis-intro{margin:30px 0 0;color:var(--muted);font-size:13.5px;line-height:1.7}
+    .insurance-cost{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center;margin-top:24px;padding:26px 30px;border:1px solid var(--violet-line);border-radius:14px;background:linear-gradient(110deg,var(--violet-dim),rgba(19,21,25,.8))}
+    .insurance-cost .eyebrow{margin-bottom:8px}
+    .insurance-cost h3{font-size:19px;margin:0 0 8px;color:var(--text)}
+    .insurance-cost p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
+    .insurance-cost-note{border-left:2px solid var(--violet);padding-left:17px}
+    @media(max-width:680px){.insurance-cost{grid-template-columns:1fr;padding:22px}.insurance-cost-note{border-left:0;border-top:2px solid var(--violet);padding:16px 0 0}}
 
     .chain-scene{position:relative;margin:40px 0 0;padding:46px 32px 30px;border:1px solid var(--line);border-radius:18px;
       background:linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
@@ -950,51 +963,61 @@
     <div class="pillar-break" id="insurance"><span class="pillar-tag">PART 02 · INSURANCE</span></div>
     <section class="closing reveal">
       <div class="wrap">
-        <h2>Investing and insurance, both in one place: Vectus</h2>
-        <p>No need to open a separate fund app and a separate insurance app. See everything that needs a decision, in one place.</p>
+        <h2>One standard of evidence for investing and insurance</h2>
+        <p>Investing needs dated prices and filings. Insurance needs the right policy terms and holdings. Vectus is connecting the evidence behind both decisions.</p>
       </div>
     </section>
     <section class="reveal">
       <div class="wrap">
         <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
         <h2>We don't push you to buy. We diagnose what you already hold.</h2>
-        <p class="lead">Coverage gaps and duplicate policies aren't something you catch at sign-up — you have to check what you already hold.</p>
-        <div class="roadmap-pill">Currently focused on actual-loss medical insurance · other product lines are coming</div>
+        <p class="lead">To assess gaps and possible duplication, we need to match your policies to the official terms for the right product edition. If evidence is missing, we leave that judgment open rather than inventing a result.</p>
+        <div class="roadmap-pill">Actual-loss medical insurance validation and staged release in progress · not an all-insurer comparison</div>
+        <div class="insurance-proof" aria-label="Insurance evidence checks">
+          <article><small>01 / SOURCE</small><h3>Verify official terms</h3><p>Check the product edition and effective period of insurer disclosures.</p></article>
+          <article><small>02 / HOLDINGS</small><h3>Link your policies</h3><p>Compare only policies supplied with consent or entered by you.</p></article>
+          <article><small>03 / HOLD</small><h3>Defer when unverified</h3><p>Do not assert a gap or duplication if the document-to-policy link is missing.</p></article>
+        </div>
 
         <div class="chain-scene">
           <div class="chain-track"><span class="chain-pulse"></span><span class="chain-pulse d2"></span></div>
           <div class="chain-steps">
             <div class="chain-step"><div class="chain-dot">01</div><div class="chain-card"><b>Collect policy terms &amp; summaries</b><span>From official insurer filings</span></div></div>
-            <div class="chain-step"><div class="chain-dot">02</div><div class="chain-card"><b>Match clause-by-clause against your policies</b><span>Comparison, not guesswork</span></div></div>
-            <div class="chain-step"><div class="chain-dot">03</div><div class="chain-card"><b>Surface coverage gaps &amp; duplicates</b><span>Down to riders and claim conditions</span></div></div>
+            <div class="chain-step"><div class="chain-dot">02</div><div class="chain-card"><b>Check edition and effective period</b><span>Match the terms to the policy</span></div></div>
+            <div class="chain-step"><div class="chain-dot">03</div><div class="chain-card"><b>Compare verified evidence</b><span>Possible gaps, duplication, or deferral</span></div></div>
             <div class="chain-step final"><div class="chain-dot">04</div><div class="chain-card"><b>No sales pitch — just the evidence</b><span>The decision is yours</span></div></div>
           </div>
         </div>
 
+        <p class="insurance-axis-intro">The type diagnosis narrows what to check first across four dimensions. Product-specific judgments separately verify the linked policy and official source documents.</p>
         <div class="grid grid-4 violet">
           <div class="cell">
             <div class="idx">01</div>
-            <h3>Diagnose your policies</h3>
-            <p>We analyze the full text of your policy terms — validity, maturity, and cancellation status, the riders you need to know about, and exactly when a claim is and isn't covered, all with evidence.</p>
+            <h3>What you hold</h3>
+            <p>Look for possible gaps or overlap in your existing coverage.</p>
           </div>
           <div class="cell">
             <div class="idx">02</div>
-            <h3>Find coverage gaps</h3>
-            <p>We show empty coverage and overlapping riders, backed by the source documents — comparison, not guesswork.</p>
+            <h3>How you decide</h3>
+            <p>Check whether you rely on an agent's explanation or prefer to compare options yourself.</p>
           </div>
           <div class="cell">
             <div class="idx">03</div>
-            <h3>Match products to your life stage</h3>
-            <p>As your life stage changes — marriage, children, and beyond — we surface candidate products to fill the gap. The decision to buy is yours.</p>
+            <h3>When to review</h3>
+            <p>Use life changes and delayed reviews to narrow what deserves attention now.</p>
           </div>
           <div class="cell">
             <div class="idx">04</div>
-            <h3>Judgment, not a sales pitch</h3>
-            <p>Explanations use deterministic logic only. Phrases like "you should sign up" are blocked in code.</p>
+            <h3>Cost pressure</h3>
+            <p>Check whether monthly premiums feel burdensome alongside your coverage needs.</p>
           </div>
         </div>
+        <div class="insurance-cost">
+          <div><p class="eyebrow v">COST &amp; COVERAGE</p><h3>Concerned about wasted premiums?</h3><p>Review possible overlap, older policies, and renewal terms to decide what to check first. Age alone is not a reason to cancel or replace a policy.</p></div>
+          <p class="insurance-cost-note">The type diagnosis identifies cost-pressure signals; it does not provide a personal premium quote or savings figure. The initial actual-loss release does not fill in amounts without official evidence. Any real savings depend on your policy terms.</p>
+        </div>
 
-        <span class="sample-tag">Sample screen · not real user data</span>
+        <span class="sample-tag">Conceptual example · 18% and 100% are not customer or performance figures</span>
         <div class="card-frame">
           <div class="card-bar"><span></span><span></span><span></span></div>
           <div class="card-body">
@@ -1018,10 +1041,11 @@
             </div>
             <div class="card-steps">
               ① Collect policies → ② Match clause-by-clause → ③ Confirm gaps &amp; duplicates<br>
-              No GA handoff pending — see the evidence right away
+              Review verified evidence before choosing a next step · sales connection requires consent
             </div>
           </div>
         </div>
+        <p class="scope-note">After signing in, you can revisit in-progress and completed diagnoses. The card above is illustrative, not a real user's history.</p>
       </div>
     </section>
 
@@ -1039,12 +1063,12 @@
             <div class="signal-card">
               <small>policy document</small>
               <b>Policy terms &amp; product summary</b>
-              <span>We use official filings collected from insurers as evidence, as-is.</span>
+              <span>Use disclosed terms as evidence only for verified editions and effective periods.</span>
             </div>
             <div class="signal-card">
               <small>holdings</small>
               <b>Your policies, collected</b>
-              <span>Via data scraping or manual entry.</span>
+              <span>Linked within the scope of your consent or manual entry.</span>
             </div>
             <div class="signal-card">
               <small>type diagnosis</small>
@@ -1057,31 +1081,31 @@
               <div>
                 <div class="engine-kicker">Vectus Judgment Core</div>
                 <div class="engine-number">Deterministic judgment<br>(no LLM discretion)</div>
-                <div class="engine-label">Every fact is tied to its source</div>
-                <div class="engine-foot">We don't show explanations without evidence</div>
+                <div class="engine-label">Verified facts tied to original sources</div>
+                <div class="engine-foot">Insufficient evidence leaves that judgment on hold</div>
               </div>
             </div>
           </div>
           <div class="action-stack" aria-label="outputs">
             <div class="action-ticket">
               <small>coverage gap</small>
-              <b>Coverage gap confirmed</b>
-              <span>Empty coverage, shown with its source document.</span>
+              <b>Possible coverage gap</b>
+              <span>Show the evidence within verified holdings and terms.</span>
             </div>
             <div class="action-ticket">
               <small>duplicate</small>
-              <b>Duplicate coverage confirmed</b>
-              <span>Same risk covered twice — we check.</span>
+              <b>Possible duplicate coverage</b>
+              <span>Compare the scope of protection for the same risk.</span>
             </div>
             <div class="action-ticket">
-              <small>handoff</small>
-              <b>GA handoff — on hold</b>
-              <span>Forwarded internally only with your consent, after judgment is complete.</span>
+              <small>hold</small>
+              <b>Unverified means deferred</b>
+              <span>No assertion if the edition, effective period, or policy link is unclear.</span>
             </div>
           </div>
         </div>
         <div class="decision-caption">
-          <span><b>A product scene, not a stock photo:</b> policy terms and your holdings become coverage-gap and duplicate findings</span>
+          <span><b>Product flow illustration:</b> verify terms and holdings before distinguishing possible gaps, duplication, and deferral</span>
           <span>Figures shown are illustrative — your actual results depend on your policies</span>
         </div>
       </div>
@@ -1143,13 +1167,13 @@
     <section class="reveal">
       <div class="wrap">
         <p class="eyebrow v">DATA SOURCE</p>
-        <h2>Policy terms, fully analyzed — not estimated</h2>
-        <p class="lead">We don't stop at matching. We analyze the full text for riders you need to know about, and exactly when a claim is and isn't covered.</p>
+        <h2>Trace insurance judgments back to original terms</h2>
+        <p class="lead">After verifying a document's edition and effective period, we examine clauses, riders, and coverage conditions that match your policies. We do not assert coverage where the evidence has not been verified.</p>
         <div class="data-row">
           <span class="data-chip">Insurer filing disclosures</span>
           <span class="data-chip">Product summaries &amp; business method statements</span>
         </div>
-        <p class="data-note">We collect publicly disclosed policy terms and product summaries directly from insurer filing rooms, and analyze them clause by clause — down to riders and claim conditions.</p>
+        <p class="data-note">We use publicly disclosed insurer terms and product summaries as source material. Judgments are shown only within the verified product-edition, effective-period, and policy-link scope.</p>
 
         <div class="mini-cinema violet reveal">
           <div class="mini-scatter">
