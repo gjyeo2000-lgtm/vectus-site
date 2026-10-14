@@ -27,6 +27,13 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   const vision = html.match(/<section id="vision"[^>]*>([\s\S]*?)<\/section>/)?.[1] || '';
   assert.match(vision, name === 'ko' ? /종합자산관리 웹을 준비합니다/ : /preparing an integrated wealth-management web experience/);
   assert.match(vision, name === 'ko' ? /법률 검토.*계획입니다/ : /specialist legal review.*plan to connect|plan to connect.*specialist legal review/);
+  const insurance = html.match(/<div class="insurance-zone">([\s\S]*?)<section id="infra"/)?.[1] || '';
+  assert.equal((insurance.match(/<article><small>0[123] \/ (?:SOURCE|HOLDINGS|HOLD)/g) || []).length, 3, `${name}: insurance evidence sequence missing`);
+  assert.match(insurance, name === 'ko' ? /확인 불가 시 보류/ : /Defer when unverified/);
+  assert.match(insurance, name === 'ko' ? /실손의료보험 중심 검증·순차 공개 준비 중/ : /staged release in progress/);
+  assert.doesNotMatch(insurance, name === 'ko' ? /약관 전체 조항을 분석해/ : /analyze the full text of your policy terms/i);
+  assert.equal((insurance.match(/class="card-frame"/g) || []).length, 1, `${name}: insurance sample card must remain`);
+  assert.match(insurance, /class="decision-cinema violet"/, `${name}: animated insurance flow must remain`);
 }
 
 const motion = fs.readFileSync(path.join(root, 'trust-motion.js'), 'utf8');
