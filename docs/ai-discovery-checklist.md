@@ -28,3 +28,9 @@
 2. 두 페이지의 canonical, hreflang, `WebSite` 구조화 데이터와 화면의 서비스 단계가 일치하는지 확인한다.
 3. Search Console 소유자가 사이트맵을 제출하고 두 페이지의 색인 생성 요청을 할 수 있다. 요청만으로 즉시 반영되거나 AI 추천이 보장되지는 않는다.
 4. 공개 문구에 의미 있는 변경이 있을 때만 사이트맵 `lastmod`를 갱신한다.
+
+## 도메인과 변경 URL 통지
+
+- 대표 주소는 `https://vectuslab.com/`이다. `www.vectuslab.com`과 HTTP는 HTTPS 대표 주소로 이동한다. DNS가 정상일 때 임의로 변경하지 않는다.
+- 사이트 루트의 IndexNow 키 파일로 소유권을 확인할 수 있다. 의미 있는 페이지 변경이 배포된 뒤에만 해당 URL을 `https://api.indexnow.org/indexnow`에 통지한다. 수신 응답은 색인·순위·AI 추천을 보장하지 않는다.
+- IndexNow는 Google Search Console의 색인 요청을 대신하지 않는다. Google에는 기존 `robots.txt`의 사이트맵 경로가 공개되어 있으며, 직접 재색인을 요청하려면 확인된 Search Console 소유자/전체 사용자 권한이 필요하다.
