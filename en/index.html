@@ -475,6 +475,7 @@
     }
   </style>
   <link rel="stylesheet" href="../trust-visuals.css" />
+  <link rel="stylesheet" href="../differentiation.css" />
 </head>
 <body>
   <header>
@@ -726,71 +727,98 @@
     <div id="diff"></div>
     <section class="diff-band reveal">
       <div class="wrap">
-        <p class="eyebrow v">VS ROBO-ADVISORS & BROKERAGE APPS</p>
-        <h2>When information wasn't the same as an answer</h2>
-        <p class="diff-sub">Beyond gathering returns, ratings, news, and holdings on one screen, Vectus examines source dates and relationships between supported products.</p>
-        <div class="mini-cinema reveal">
-          <div class="mini-scatter">
-            <div class="mini-chip">Returns</div>
-            <div class="mini-chip">Risk rating</div>
-            <div class="mini-chip">Past performance</div>
-            <div class="mini-chip">Market news · holdings</div>
-          </div>
-          <div class="mini-arrow-wrap">
-            <span class="mini-flow-dot"></span>
-            <svg viewBox="0 0 52 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9h44M38 3l8 6-8 6"/></svg>
-          </div>
-          <div class="mini-orb">
-            <div><small>Vectus</small><b>Evidence and<br>conditions together</b></div>
+        <div class="dc-intro"><p class="eyebrow v">VS CONVENTIONAL INVESTMENT APPS</p><h2>We read the indicators, interpret the news,<br>and connect the risks that reach your money.</h2><p>Vectus goes beyond displaying returns and charts. <strong>We explain why a number matters, trace how news moves through markets and products, and examine downside risk alongside upside opportunity.</strong> When a candidate fails our criteria, we explain why it is not recommended. The final decision remains yours.</p></div>
+        <div class="dc-compare" aria-label="Comparison of conventional investment apps and Vectus">
+          <article class="dc-card"><small>Conventional investment apps</small><h3>Information appears in separate views</h3><ul>
+            <li>Review charts and technical indicators</li><li>Read news and filings</li><li>See product returns and risk ratings</li><li>You may still need to connect the implications yourself</li>
+          </ul></article>
+          <article class="dc-card vectus"><small>Vectus · connected evidence</small><h3>Analysis turns information into a decision path</h3><ul>
+            <li><strong>Interpret indicators</strong> · Explain why valuation, flows, and prices matter now</li>
+            <li><strong>Trace news</strong> · Analyze the path from an event to markets, stocks, and products</li>
+            <li><strong>Connect holdings</strong> · Examine supported links and overlapping exposure</li>
+            <li><strong>Check downside first</strong> · Show market fragility and conditions to verify</li>
+            <li><strong>Say when not to recommend</strong> · Distinguish exclusion from deferring a new entry, with reasons</li>
+          </ul></article>
+        </div>
+        <div class="dc-graph">
+          <div class="dc-graph-head"><h3>From scattered data to a decision you can examine</h3><span>Conceptual analysis path · not a live result</span></div>
+          <svg class="dc-network" viewBox="0 0 1000 290" role="img" aria-labelledby="dc-title-en dc-desc-en">
+            <title id="dc-title-en">Animated relationship graph from market signals through Vectus analysis and holdings to downside risk</title>
+            <desc id="dc-desc-en">Prices and flows, news, and rates and FX feed the Vectus analysis engine. The path branches into stocks and products and registered holdings, then converges on a downside-risk check. This is an illustration, not live data.</desc>
+            <path class="wire" d="M130 63 C210 63 240 143 305 143"/><path class="wire alt" d="M130 143 H305"/><path class="wire" d="M130 223 C210 223 240 143 305 143"/>
+            <path class="wire" d="M395 143 C465 143 475 75 555 75"/><path class="wire alt" d="M395 143 C465 143 475 211 555 211"/>
+            <path class="wire" d="M645 75 C725 75 745 143 805 143"/><path class="wire alt" d="M645 211 C725 211 745 143 805 143"/>
+            <circle class="particle" r="5"><animateMotion dur="6s" repeatCount="indefinite" path="M130 63 C210 63 240 143 305 143"/></circle>
+            <circle class="particle alt" r="5"><animateMotion dur="6s" begin="1.2s" repeatCount="indefinite" path="M130 143 H305"/></circle>
+            <circle class="particle" r="5"><animateMotion dur="6s" begin="2.4s" repeatCount="indefinite" path="M130 223 C210 223 240 143 305 143"/></circle>
+            <circle class="particle alt" r="5"><animateMotion dur="5s" begin=".4s" repeatCount="indefinite" path="M395 143 C465 143 475 75 555 75"/></circle>
+            <circle class="particle" r="5"><animateMotion dur="5s" begin="1.5s" repeatCount="indefinite" path="M395 143 C465 143 475 211 555 211"/></circle>
+            <circle class="particle" r="5"><animateMotion dur="5s" begin="2s" repeatCount="indefinite" path="M645 75 C725 75 745 143 805 143"/></circle>
+            <circle class="particle alt" r="5"><animateMotion dur="5s" begin="3s" repeatCount="indefinite" path="M645 211 C725 211 745 143 805 143"/></circle>
+            <circle class="node" cx="82" cy="63" r="47"/><text class="label" x="82" y="57">Prices·flows</text><text class="sub" x="82" y="79">Market signals</text>
+            <circle class="node alt" cx="82" cy="143" r="47"/><text class="label" x="82" y="137">News</text><text class="sub" x="82" y="159">Event context</text>
+            <circle class="node" cx="82" cy="223" r="47"/><text class="label" x="82" y="217">Rates·FX</text><text class="sub" x="82" y="239">Macro shifts</text>
+            <circle class="node" cx="350" cy="143" r="53"/><text class="label" x="350" y="135">Vectus</text><text class="sub" x="350" y="157">Analysis engine</text>
+            <circle class="node alt" cx="600" cy="75" r="47"/><text class="label" x="600" y="69">Products</text><text class="sub" x="600" y="91">Impact path</text>
+            <circle class="node alt" cx="600" cy="211" r="47"/><text class="label" x="600" y="205">Holdings</text><text class="sub" x="600" y="227">Overlap</text>
+            <circle class="node risk" cx="855" cy="143" r="53"/><text class="label" x="855" y="135">Downside</text><text class="sub" x="855" y="157">Risk check</text>
+          </svg>
+          <svg class="dc-network mobile" viewBox="0 0 360 450" role="img" aria-labelledby="dc-mobile-title-en">
+            <title id="dc-mobile-title-en">Vertical graph from market data to analysis, products and holdings, and downside-risk review</title>
+            <path class="wire" d="M180 83 V125"/><path class="wire" d="M180 215 C180 250 90 246 90 273"/><path class="wire alt" d="M180 215 C180 250 270 246 270 273"/><path class="wire" d="M90 353 C90 392 180 365 180 387"/><path class="wire alt" d="M270 353 C270 392 180 365 180 387"/>
+            <circle class="particle" r="4"><animateMotion dur="4s" repeatCount="indefinite" path="M180 83 V125"/></circle><circle class="particle alt" r="4"><animateMotion dur="5s" begin=".7s" repeatCount="indefinite" path="M180 215 C180 250 90 246 90 273"/></circle><circle class="particle" r="4"><animateMotion dur="5s" begin="1.3s" repeatCount="indefinite" path="M180 215 C180 250 270 246 270 273"/></circle><circle class="particle alt" r="4"><animateMotion dur="5s" begin="2s" repeatCount="indefinite" path="M90 353 C90 392 180 365 180 387"/></circle><circle class="particle" r="4"><animateMotion dur="5s" begin="2.8s" repeatCount="indefinite" path="M270 353 C270 392 180 365 180 387"/></circle>
+            <rect class="node" x="66" y="16" width="228" height="68" rx="18"/><text class="label" x="180" y="43">Market·product data</text><text class="sub" x="180" y="64">Prices·flows·news·rates·FX</text>
+            <circle class="node" cx="180" cy="170" r="44"/><text class="label" x="180" y="161">Vectus</text><text class="sub" x="180" y="184">Analysis engine</text>
+            <circle class="node alt" cx="90" cy="313" r="42"/><text class="label" x="90" y="305">Products</text><text class="sub" x="90" y="327">Impact path</text>
+            <circle class="node alt" cx="270" cy="313" r="42"/><text class="label" x="270" y="305">Holdings</text><text class="sub" x="270" y="327">Overlap</text>
+            <rect class="node risk" x="94" y="387" width="172" height="58" rx="18"/><text class="label" x="180" y="411">Downside risk</text><text class="sub" x="180" y="432">Inform your choice</text>
+          </svg>
+          <p class="dc-caption">Moving dots illustrate the path of information, not customer data or live analysis.</p>
+          <div class="dc-path">
+            <div class="dc-step" style="--i:0"><small>01 / INPUT</small><strong>Market and product data</strong><span>Prices, flows, financials, rates, FX, news</span></div>
+            <div class="dc-step" style="--i:1"><small>02 / INTERPRET</small><strong>Vectus analysis engine</strong><span>Statistics, algorithms, and applicable models</span></div>
+            <div class="dc-step" style="--i:2"><small>03 / CONNECT</small><strong>Impact on your products</strong><span>Supported products and registered holdings</span></div>
+            <div class="dc-step risk" style="--i:3"><small>04 / DEFEND</small><strong>Downside-risk check</strong><span>Concentration, overlap, market fragility</span></div>
+            <div class="dc-step final" style="--i:4"><small>05 / DECIDE</small><strong>Your decision</strong><span>Review evidence and conditions</span></div>
           </div>
         </div>
-
-        <div class="formula-block">
-          <p class="formula-q">A PER of 72x — is that good or bad?</p>
-          <div class="formula-steps">
-            PER and PBR describe different aspects of value.<br>
-            Vectus examines available financial, price, and observation history alongside data quality<br>
-            <span class="formula-result">→ and separates evidence from conditions that still need checking.</span>
-          </div>
+        <div class="dc-examples">
+          <article class="dc-example"><small>INTERPRET INDICATORS</small><h3>“A PER of 72x — so what?”</h3><p>No verdict from one number. We explain why it matters in the context of <strong>earnings, price, and sector</strong>.</p></article>
+          <article class="dc-example"><small>CONNECT THE NEWS</small><h3>“What does this mean for me?”</h3><p>Trace <strong>market impact → stocks and products → registered holdings</strong>, not just a headline.</p></article>
+          <article class="dc-example"><small>EXPLAIN A NON-RECOMMENDATION</small><h3>“Is this the right entry?”</h3><p>Distinguish <strong>exclusion</strong> from <strong>deferring a new entry</strong>, with reasons and conditions to recheck.</p></article>
         </div>
-
-        <div class="checklist">
-          <p><span class="k">Scope</span>Only holdings you register are connected, within supported product coverage.</p>
-          <p><span class="k">Method</span>Check common stocks in multiple products alongside composition dates.</p>
-          <p><span class="k">Principle</span>Insufficient data should not become a buy/sell conclusion.</p>
-        </div>
+        <p class="dc-statement"><strong>Vectus principle:</strong> A recommendation is the beginning, not the end. We follow changing conditions and give you evidence to reassess.</p>
       </div>
     </section>
 
     <section class="diff-band reveal" style="border-top:none">
       <div class="wrap">
-        <p class="eyebrow v">VS GENERAL-PURPOSE LLMS</p>
-        <h2>Broad explanation and traceable evidence</h2>
-        <p class="diff-sub">A general AI explanation and financial evidence serve different roles. Vectus checks connected sources, dates, and the supported scope of registered holdings.</p>
-
-        <table class="axis">
-          <tr><th>General LLM</th><th>Vectus</th></tr>
-          <tr><td>Broad topic explanation</td><td>Sources and dates on supported screens</td></tr>
-          <tr><td>General market context</td><td>Supported links to registered holdings</td></tr>
-          <tr><td>Possible interpretations</td><td>Separate missing evidence and deferred judgments</td></tr>
-          <tr><td>Text-first answers</td><td>Distinguish available prices, filings, and product data</td></tr>
-          <tr><td>Investment reference</td><td>Decision support, not buy/sell instructions</td></tr>
-        </table>
-
-        <div class="chat-stage reveal">
-          <div class="chat">
-            <p class="pane-label">"How's Samsung Electronics doing?"</p>
-            <div class="bubble them"><p class="bubble-tag">General AI chatbot</p>It's a leading semiconductor stock with earnings improvement expected, so it could be seen positively</div>
-            <div class="bubble us"><p class="bubble-tag">Vectus · illustration</p>Check supported product composition and its reference date, then examine overlapping exposure in registered holdings. If evidence is insufficient, show that status.</div>
-          </div>
+        <div class="dc-intro"><p class="eyebrow v">VS GENERAL-PURPOSE LLMS</p><h2>Fluent AI and evidence-backed financial judgment are different.</h2><p>When you ask for a recommendation, Vectus does not begin by composing a sentence. <strong>Verified financial data, statistics and algorithms, and machine-learning or deep-learning models in their applicable paths</strong> analyze markets and products before connecting them to your goals and holdings. The Vectus engine produces the judgment.</p></div>
+        <div class="dc-compare" aria-label="General conversational AI and Vectus financial analysis">
+          <article class="dc-card"><small>General-purpose conversational AI</small><h3>Fluent answers across many topics</h3><ul>
+            <li>Generate broad explanations for a question</li><li>Financial databases, reference dates, and holdings need separate checks</li><li>Users must verify numbers, sources, and answer scope</li><li>A fluent sentence is not necessarily investment evidence</li>
+          </ul></article>
+          <article class="dc-card violet"><small>Vectus · financial judgment engine</small><h3>Begin with data-based analysis</h3><ul>
+            <li><strong>Classify your goal</strong> and define what can be answered</li><li><strong>Check stock, product, and market data</strong> and reference dates</li><li><strong>Use statistics, algorithms, and applicable models</strong> for signals and connected risk</li><li><strong>Consider goals, structure, and risk</strong> before narrowing candidates</li>
+          </ul></article>
         </div>
-
-        <div class="checklist">
-          <p><span class="k">Principle</span>If a value is missing, we show "unavailable" — never filled in with a similar stock or an industry average</p>
-          <p><span class="k">Safeguard</span>Supported response paths check number sources and reference dates</p>
-          <p><span class="k">Safeguard</span>Decision-support wording is distinguished from buy/sell instructions</p>
-          <p><span class="k">Safeguard</span>Price and return sources are documented, with automated checks that catch discrepancies</p>
+        <div class="dc-route" aria-label="Stages of a Vectus investment answer">
+          <h3>From “recommend something” to an answer you can examine</h3>
+          <div class="dc-step" style="--i:0"><small>01 / QUESTION</small><strong>Classify the goal</strong><span>What does the customer need?</span></div>
+          <div class="dc-step" style="--i:1"><small>02 / EVIDENCE</small><strong>Check data and dates</strong><span>Stocks, products, markets</span></div>
+          <div class="dc-step" style="--i:2"><small>03 / ANALYSIS</small><strong>Engine and models</strong><span>Indicators, regimes, risk, holdings</span></div>
+          <div class="dc-step" style="--i:3"><small>04 / VERIFY</small><strong>Check claims</strong><span>Numbers, evidence, directive wording</span></div>
+          <div class="dc-step final" style="--i:4"><small>05 / DECIDE</small><strong>Customer choice</strong><span>Read evidence, conditions, dates</span></div>
+          <p class="dc-route-note">We read and interpret data, then connect it to evidence and conditions you can examine.</p>
         </div>
+        <div class="dc-tech">
+          <article><small>STATISTICS + RULES</small><strong>Statistics and calculation rules</strong><p>Analyze prices, flows, financials, and market fragility.</p></article>
+          <article><small>MACHINE LEARNING</small><strong>HMM regime analysis</strong><p>Apply trend and regime-change signals to their analysis paths.</p></article>
+          <article><small>DEEP LEARNING</small><strong>GNN connected risk</strong><p>A trained GNN is applied to the defined ETF risk-propagation path.</p></article>
+        </div>
+        <div class="dc-guard"><div class="dc-guard-mark" aria-hidden="true">DATA<br>FIRST</div><div><p class="eyebrow">THE IMPORTANT DIFFERENCE</p><h3>The Vectus engine judges. Fluent LLM copy does not.</h3><p>Vectus builds investment evidence with <strong>data, statistics, algorithms, and AI models</strong>. We operate checks that compare numbers and investment-directive wording in answers against their evidence. <strong>Verifiable analysis comes before a convincing sentence.</strong></p></div></div>
+        <div class="dc-promise"><small>OUR PROMISE TO YOU</small><p>Vectus does not simply list more products. It narrows candidates using your question, registered holdings, market context, and verified product data.</p></div>
+        <p class="dc-scope">The graph illustrates a process, not a current investment result. Downside-risk review does not guarantee against losses or promise returns. Holdings links depend on what you register and supported data coverage.</p>
       </div>
     </section>
 
