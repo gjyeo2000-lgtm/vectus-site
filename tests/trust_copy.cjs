@@ -30,7 +30,11 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   const insurance = html.match(/<div class="insurance-zone">([\s\S]*?)<section id="infra"/)?.[1] || '';
   assert.equal((insurance.match(/<article><small>0[123] \/ (?:SOURCE|HOLDINGS|HOLD)/g) || []).length, 3, `${name}: insurance evidence sequence missing`);
   assert.match(insurance, name === 'ko' ? /확인 불가 시 보류/ : /Defer when unverified/);
-  assert.match(insurance, name === 'ko' ? /실손의료보험 중심 검증·순차 공개 준비 중/ : /staged release in progress/);
+  assert.match(insurance, name === 'ko' ? /가능한 전 보험사·전 상품 비교로 확대합니다/ : /broadest possible insurer and product comparison/);
+  assert.equal((insurance.match(/class="insurance-roadmap"/g) || []).length, 1, `${name}: insurance roadmap missing`);
+  assert.match(insurance, name === 'ko' ? /생애주기 맞춤 서비스를 준비하고 있습니다/ : /preparing life-stage reviews/);
+  assert.match(insurance, name === 'ko' ? /뉴스는 변화 탐지와 맥락을 이해하는 참고자료/ : /news helps detect and explain changes/);
+  assert.match(insurance, name === 'ko' ? /투자도 보험도, 벡투스 하나면 됩니다/ : /Investing and insurance, together with Vectus/);
   assert.equal((insurance.match(/class="insurance-cost"/g) || []).length, 1, `${name}: insurance cost guidance missing`);
   assert.match(insurance, name === 'ko' ? /개인별 보험료 견적이나 절감액이 아닙니다/ : /does not provide a personal premium quote or savings figure/);
   assert.match(insurance, name === 'ko' ? /완료한 보험 진단 이력을 다시 확인/ : /revisit in-progress and completed diagnoses/);
