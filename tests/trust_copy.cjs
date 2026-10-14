@@ -20,6 +20,10 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.doesNotMatch(html, /<meta[^>]+noindex/i);
   assert.match(html, name === 'ko' ? /영업일 기준/ : /business days/i);
   assert.match(html, name === 'ko' ? /설명용 예시/ : /Conceptual illustration/);
+  const contact = html.match(/<section id="contact">([\s\S]*?)<\/section>/)?.[1] || '';
+  assert.equal((contact.match(/class="contact-person">전준용/g) || []).length, 2, `${name}: both contact paths need the named contact`);
+  assert.equal((contact.match(/href="mailto:juneyoung\.jeon@vectuslab\.com"/g) || []).length, 2, `${name}: both contact paths need the verified email`);
+  assert.doesNotMatch(contact, /tel:|contact@vectuslab\.com/i, `${name}: no phone or generic mailbox in contact section`);
 }
 
 const motion = fs.readFileSync(path.join(root, 'trust-motion.js'), 'utf8');
