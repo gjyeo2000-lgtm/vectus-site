@@ -24,6 +24,9 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.equal((contact.match(/class="contact-person">전준용/g) || []).length, 2, `${name}: both contact paths need the named contact`);
   assert.equal((contact.match(/href="mailto:juneyoung\.jeon@vectuslab\.com"/g) || []).length, 2, `${name}: both contact paths need the verified email`);
   assert.doesNotMatch(contact, /tel:|contact@vectuslab\.com/i, `${name}: no phone or generic mailbox in contact section`);
+  const vision = html.match(/<section id="vision"[^>]*>([\s\S]*?)<\/section>/)?.[1] || '';
+  assert.match(vision, name === 'ko' ? /종합자산관리 웹을 준비합니다/ : /preparing an integrated wealth-management web experience/);
+  assert.match(vision, name === 'ko' ? /법률 검토.*계획입니다/ : /specialist legal review.*plan to connect|plan to connect.*specialist legal review/);
 }
 
 const motion = fs.readFileSync(path.join(root, 'trust-motion.js'), 'utf8');
