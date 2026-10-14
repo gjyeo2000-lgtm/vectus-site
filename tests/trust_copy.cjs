@@ -44,6 +44,9 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.match(contact, /<p class="tag">(?:협업 문의|Partnerships)<\/p>\s*<p class="contact-person">전준용<\/p>\s*<a class="contact-address" href="mailto:juneyoung\.jeon@vectuslab\.com">juneyoung\.jeon@vectuslab\.com<\/a>/, `${name}: partnership contact must remain unchanged`);
   assert.doesNotMatch(contact, /tel:|contact@vectuslab\.com/i, `${name}: no phone or generic mailbox in contact section`);
   const vision = html.match(/<section id="vision"[^>]*>([\s\S]*?)<\/section>/)?.[1] || '';
+  assert.equal((vision.match(/class="vision-card"/g) || []).length, 2, `${name}: both visions required`);
+  assert.match(vision, name === 'ko' ? /VISION 01 · 확장 목표[\s\S]*개인 투자에서 B2B 여신까지/ : /VISION 01 · EXPANSION GOAL[\s\S]*From personal investing to B2B credit/);
+  assert.match(vision, name === 'ko' ? /VISION 02 · 준비 중[\s\S]*투자·보험·여신을 잇는 종합자산관리/ : /VISION 02 · IN PREPARATION[\s\S]*Toward integrated wealth management/);
   assert.match(vision, name === 'ko' ? /종합자산관리 웹을 준비합니다/ : /preparing an integrated wealth-management web experience/);
   assert.match(vision, name === 'ko' ? /법률 검토.*계획입니다/ : /specialist legal review.*plan to connect|plan to connect.*specialist legal review/);
   const insurance = html.match(/<div class="insurance-zone">([\s\S]*?)<section id="infra"/)?.[1] || '';
