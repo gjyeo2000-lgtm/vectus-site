@@ -321,6 +321,11 @@
     @media(max-width:680px){.timeline-scene{height:auto;padding:0}.tl-track,.tl-fill{display:none}.tl-point{position:static;transform:none!important;align-items:flex-start!important;margin-bottom:16px}.tl-point:before{margin-bottom:6px}}
 
     .follow-list{margin-top:40px;display:flex;flex-direction:column}
+    .feature-divider{margin-top:44px;padding:25px 28px;border:1px solid var(--gold-line);border-radius:12px;background:linear-gradient(120deg,var(--gold-dim),var(--panel) 65%)}
+    .feature-divider .eyebrow{margin-bottom:8px}
+    .feature-divider h3{font-size:21px;margin-bottom:7px}
+    .feature-divider p:last-child{max-width:760px;color:var(--muted);font-size:14px}
+    @media(max-width:560px){.feature-divider{padding:22px}}
     .follow-item{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line)}
     .follow-item:last-child{border-bottom:1px solid var(--line)}
     .follow-num{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-line);color:var(--gold)}
@@ -938,6 +943,11 @@
         </div>
         <p class="trust-scope">Business-day intervals. A period that has not elapsed is not evaluated; these are not guaranteed returns or a prediction-accuracy claim.</p>
 
+        <div class="feature-divider" id="investment-tools">
+          <p class="eyebrow">VECTUS INVESTMENT TOOLS</p>
+          <h3>Vectus investment analysis tools</h3>
+          <p>The timeline above shows how we observe and evaluate a recommendation afterward. The tools below also serve separate purposes: reviewing recommendation history, finding stocks, analyzing companies, following markets, and checking your holdings.</p>
+        </div>
         <div class="follow-list">
           <div class="follow-item">
             <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
@@ -1002,6 +1012,14 @@
           <div class="follow-item" data-feature="holdings-history">
             <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
             <div><div class="follow-idx">13</div><h3>Holdings history &amp; profit/loss</h3><p>Use opening balances and buy/sell records you enter to review changes in your holdings and profit/loss. This is your asset history, separate from recommendation tracking; it does not automatically import all brokerage trades or execute trades.</p></div>
+          </div>
+          <div class="follow-item" data-feature="us-stock-analysis">
+            <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-3 3-3 15 0 18M12 3c3 3 3 15 0 18"/></svg></div>
+            <div><div class="follow-idx">14</div><h3>US stock company analysis</h3><p>Review company information, filing-based financials, prices, and decision evidence for supported US-listed stocks. Check the supported universe, source dates, and missing-information notices.</p></div>
+          </div>
+          <div class="follow-item" data-feature="undervalued-candidates">
+            <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 18V6M4 18h16M7 15l4-4 3 2 5-6"/></svg></div>
+            <div><div class="follow-idx">15</div><h3>KOSPI and KOSDAQ undervaluation candidates</h3><p>Select asset-value, own-history, market-comparison, and financial-strength criteria to find candidates. This is neither a definitive undervaluation judgment nor a buy recommendation.</p></div>
           </div>
         </div>
       </div>

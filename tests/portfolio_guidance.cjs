@@ -20,9 +20,13 @@ const {chromium} = require('playwright');
         const list=page.locator('.follow-list');
         await list.scrollIntoViewIfNeeded();
         await page.waitForTimeout(1200);
-        assert.equal(await list.locator('.follow-item').count(),13);
-        assert.deepEqual(await list.locator('.follow-idx').allTextContents(),Array.from({length:13},(_,i)=>String(i+1).padStart(2,'0')));
-        for (const feature of ['holdings-overlap','holdings-history']) {
+        assert.equal(await list.locator('.follow-item').count(),15);
+        assert.deepEqual(await list.locator('.follow-idx').allTextContents(),Array.from({length:15},(_,i)=>String(i+1).padStart(2,'0')));
+        const divider=page.locator('#investment-tools');
+        assert.equal(await divider.count(),1);
+        assert.equal(await divider.evaluate(node=>Boolean(node.compareDocumentPosition(document.querySelector('.follow-list'))&Node.DOCUMENT_POSITION_FOLLOWING)),true);
+        assert.match(await divider.innerText(),lang==='ko'?/추천 이후의 관찰·평가 방식/:/observe and evaluate a recommendation afterward/);
+        for (const feature of ['holdings-overlap','holdings-history','us-stock-analysis','undervalued-candidates']) {
           const card=page.locator(`[data-feature="${feature}"]`);
           await card.scrollIntoViewIfNeeded();
           assert.equal(await card.evaluate(n=>n.scrollWidth<=n.clientWidth),true);
