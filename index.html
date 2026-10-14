@@ -351,6 +351,10 @@
     .insurance-proof small{display:block;margin-bottom:10px;color:var(--violet);font-size:11px;letter-spacing:.1em}
     .insurance-proof h3{margin:0 0 8px;color:var(--text);font-size:15px}
     .insurance-proof p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.65}
+    .insurance-mission{margin:24px 0 0;padding:26px 30px;border:1px solid var(--violet-line);border-left:3px solid var(--violet);border-radius:12px;background:linear-gradient(105deg,rgba(117,79,162,.16),rgba(19,21,25,.72))}
+    .insurance-mission h3{margin:0 0 10px;color:var(--text);font-size:20px}
+    .insurance-mission p:last-child{margin:0;color:var(--muted);font-size:13.5px;line-height:1.75}
+    @media(max-width:680px){.insurance-mission{padding:22px}}
     @media(max-width:680px){.insurance-proof{grid-template-columns:1fr}}
     .insurance-axis-intro{margin:30px 0 0;color:var(--muted);font-size:13.5px;line-height:1.7}
     .insurance-cost{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center;margin-top:24px;padding:26px 30px;border:1px solid var(--violet-line);border-radius:14px;background:linear-gradient(110deg,var(--violet-dim),rgba(19,21,25,.8))}
@@ -1077,8 +1081,13 @@
     <section class="reveal">
       <div class="wrap">
         <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
-        <h2>가입을 권하지 않습니다, 보유하신 보험을 진단합니다</h2>
-        <p class="lead">보장 공백과 중복 가능성은 보유계약과 해당 상품판의 공식 약관을 맞춰 봐야 알 수 있습니다. 근거가 부족한 항목은 결과를 만들어내지 않고 확인 필요로 남깁니다.</p>
+        <h2>보험을 더 팔기보다, 고객이 받을 보장을 먼저 봅니다</h2>
+        <p class="lead">가입 수수료가 아니라 고객의 보장과 권리를 판단의 출발점에 둡니다. 보유계약과 해당 상품판의 공식 약관을 대조하고, 근거가 부족한 항목은 확인 필요로 남깁니다.</p>
+        <div class="insurance-mission">
+          <p class="eyebrow v">CUSTOMER FIRST</p>
+          <h3>놓치기 쉬운 특약과 청구 조건, 이해할 수 있게</h3>
+          <p>복잡한 약관에서 고객이 꼭 알아야 할 특약·보험금 청구 조건·제한사항을 찾아 체계적으로 설명하는 서비스를 만들어갑니다. 고객이 받을 수 있는 보장을 놓치지 않고 정당한 청구를 준비하도록 근거를 보여주는 것이 목적입니다. 실제 지급 여부는 계약과 심사 결과에 따릅니다.</p>
+        </div>
         <div class="roadmap-pill">실손의료보험부터 시작해 가능한 전 보험사·전 상품 비교로 확대합니다</div>
         <p class="scope-note">보험사 공식 자료를 회사·상품별로 확보하고 검증하며 범위를 넓혀갑니다. 아직 원문이나 보유계약 연결이 확인되지 않은 상품은 비교 결과를 만들어내지 않고 확인 필요로 표시합니다.</p>
         <div class="insurance-proof" aria-label="보험 판단 근거 확인 순서">
@@ -1234,21 +1243,21 @@
 
     <section class="diff-band reveal">
       <div class="wrap">
-        <p class="eyebrow v">VS 설계사 · GA</p>
-        <h2>판단과 집행을 분리합니다</h2>
-        <p class="diff-sub">설계사 · GA는 가입이 집행돼야 수익이 나는 구조입니다. Vectus는 판단이 끝난 뒤, 동의하신 경우에만 내부적으로 연결합니다.</p>
+        <p class="eyebrow v">HUMAN ADVICE + VERIFIED EVIDENCE</p>
+        <h2>사람의 상담에, 놓치기 쉬운 약관 근거를 더합니다</h2>
+        <p class="diff-sub">설계사의 상담과 경험을 대신하거나 폄하하지 않습니다. 다만 방대한 약관의 특약·청구 조건과 상품판별 변경을 사람이 매번 빠짐없이 확인하기는 어렵습니다. 벡투스는 수수료·가입 성사 여부와 무관한 기준으로 근거를 정리해, 고객이 상담에서도 더 정확히 질문하고 판단하도록 돕습니다.</p>
         <table class="axis">
-          <tr><th>일반 설계사 · GA</th><th>Vectus</th></tr>
-          <tr><td>가입 집행이 수익과 직결되는 구조</td><td>판단 로직에 수수료 영향 없음(결정적 템플릿, LLM 재량 없음)</td></tr>
-          <tr><td>가입 유도 중심 상담</td><td>"가입 추천" 등 권유 문구는 코드가 차단</td></tr>
-          <tr><td>비교 근거 비공개</td><td>보험사 공식 약관 · 상품요약서 원문 대조</td></tr>
-          <tr><td>미가공 상담 리드로 바로 연결</td><td>판단이 끝난 뒤, 동의 시에만 내부 큐로 전달(Settlement-Only)</td></tr>
+          <tr><th>고객이 확인할 질문</th><th>Vectus가 제시할 근거</th></tr>
+          <tr><td>내 계약에도 이 특약이 적용되나요?</td><td>해당 상품판·적용시점의 공식 약관</td></tr>
+          <tr><td>언제 보험금을 청구할 수 있나요?</td><td>지급 조건·제한사항과 관련 조항</td></tr>
+          <tr><td>근거가 부족하면 어떻게 되나요?</td><td>단정하지 않고 확인 필요로 구분</td></tr>
+          <tr><td>새 보험을 꼭 가입해야 하나요?</td><td>수수료·가입 성사 여부를 판단 입력으로 사용하지 않고 기존 보장부터 확인</td></tr>
         </table>
         <div class="chat-stage">
           <div class="chat">
-            <p class="pane-label">"실손보험, 더 가입해야 할까요?"</p>
-            <div class="bubble them"><p class="bubble-tag">일반 설계사 · GA 상담(예시)</p>지금 이 특약도 같이 가입해두시는 게 좋습니다 — 제가 바로 설계해드릴게요</div>
-            <div class="bubble us"><p class="bubble-tag">Vectus</p>보유하신 실손보험 약관을 대조해 보니 입원일당 특약이 비어 있습니다. 가입 전에 이 공백부터 확인해보세요 — 가입 여부는 직접 결정하시면 됩니다</div>
+            <p class="pane-label">"이 특약은 제 계약에도 적용되나요?"</p>
+            <div class="bubble them"><p class="bubble-tag">고객 질문 예시</p>설명을 들었지만, 실제 청구할 때 어떤 조건이 필요한지 알고 싶어요.</div>
+            <div class="bubble us"><p class="bubble-tag">Vectus 설명 예시</p>해당 계약의 상품판과 적용시점을 확인한 뒤 특약의 지급 조건·제한사항을 약관 조항과 함께 보여드리겠습니다. 확인되지 않은 내용은 보류합니다.</div>
           </div>
         </div>
         <div class="checklist violet">

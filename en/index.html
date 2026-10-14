@@ -336,6 +336,10 @@
     .insurance-proof small{display:block;margin-bottom:10px;color:var(--violet);font-size:11px;letter-spacing:.1em}
     .insurance-proof h3{margin:0 0 8px;color:var(--text);font-size:15px}
     .insurance-proof p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.65}
+    .insurance-mission{margin:24px 0 0;padding:26px 30px;border:1px solid var(--violet-line);border-left:3px solid var(--violet);border-radius:12px;background:linear-gradient(105deg,rgba(117,79,162,.16),rgba(19,21,25,.72))}
+    .insurance-mission h3{margin:0 0 10px;color:var(--text);font-size:20px}
+    .insurance-mission p:last-child{margin:0;color:var(--muted);font-size:13.5px;line-height:1.75}
+    @media(max-width:680px){.insurance-mission{padding:22px}}
     @media(max-width:680px){.insurance-proof{grid-template-columns:1fr}}
     .insurance-axis-intro{margin:30px 0 0;color:var(--muted);font-size:13.5px;line-height:1.7}
     .insurance-cost{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center;margin-top:24px;padding:26px 30px;border:1px solid var(--violet-line);border-radius:14px;background:linear-gradient(110deg,var(--violet-dim),rgba(19,21,25,.8))}
@@ -975,8 +979,13 @@
     <section class="reveal">
       <div class="wrap">
         <p class="eyebrow v">INSURANCE DIAGNOSIS</p>
-        <h2>We don't push you to buy. We diagnose what you already hold.</h2>
-        <p class="lead">To assess gaps and possible duplication, we need to match your policies to the official terms for the right product edition. If evidence is missing, we leave that judgment open rather than inventing a result.</p>
+        <h2>We put the coverage you may already have before another sale</h2>
+        <p class="lead">Customer coverage and rights, not enrollment commissions, are our starting point. We match your policies to official terms for the right product edition and mark unsupported conclusions for review.</p>
+        <div class="insurance-mission">
+          <p class="eyebrow v">CUSTOMER FIRST</p>
+          <h3>Understand the riders and claim conditions you might miss</h3>
+          <p>We are building a service that systematically explains important riders, claim conditions, and limitations that are easy to miss in complex policy documents. Our aim is to help customers identify coverage they may be entitled to and prepare a well-founded claim. Actual payment depends on policy terms and claim assessment.</p>
+        </div>
         <div class="roadmap-pill">Starting with actual-loss medical insurance, expanding toward the broadest possible insurer and product comparison</div>
         <p class="scope-note">We are securing and validating official insurer materials product by product. Where the source terms or link to a policy cannot yet be verified, we mark it for review rather than invent a comparison.</p>
         <div class="insurance-proof" aria-label="Insurance evidence checks">
@@ -1132,21 +1141,21 @@
 
     <section class="diff-band reveal">
       <div class="wrap">
-        <p class="eyebrow v">VS INSURANCE AGENTS &amp; GA</p>
-        <h2>We separate judgment from execution</h2>
-        <p class="diff-sub">Agents and GA firms get paid when a policy is signed. Vectus connects you internally only after judgment is done, and only with your consent.</p>
+        <p class="eyebrow v">HUMAN ADVICE + VERIFIED EVIDENCE</p>
+        <h2>Add policy evidence to human advice</h2>
+        <p class="diff-sub">We do not replace or diminish an agent's experience. But no person can easily track every rider, claim condition, and product-edition change across extensive policy documents. Vectus organizes evidence without using commissions or sales outcomes as judgment inputs, helping customers ask better questions when they seek advice.</p>
         <table class="axis">
-          <tr><th>Typical agent / GA</th><th>Vectus</th></tr>
-          <tr><td>Revenue tied directly to enrollment</td><td>No fee influence on judgment logic (deterministic templates, no LLM discretion)</td></tr>
-          <tr><td>Enrollment-focused consultations</td><td>Phrases like "you should sign up" are blocked in code</td></tr>
-          <tr><td>Comparison basis undisclosed</td><td>Compared against official insurer policy terms &amp; summaries</td></tr>
-          <tr><td>Raw leads forwarded immediately</td><td>Forwarded internally only after judgment, with consent (settlement-only)</td></tr>
+          <tr><th>What customers need to know</th><th>Evidence Vectus will show</th></tr>
+          <tr><td>Does this rider apply to my policy?</td><td>Official terms for the relevant edition and effective period</td></tr>
+          <tr><td>When can I make a claim?</td><td>Payment conditions, limitations, and source clauses</td></tr>
+          <tr><td>What if evidence is incomplete?</td><td>Mark the issue for review rather than assert a conclusion</td></tr>
+          <tr><td>Do I need another policy?</td><td>Review existing coverage first, without fees or sales outcomes as judgment inputs</td></tr>
         </table>
         <div class="chat-stage">
           <div class="chat">
-            <p class="pane-label">"Should I add more actual-loss medical coverage?"</p>
-            <div class="bubble them"><p class="bubble-tag">Typical agent / GA consultation (example)</p>You should add this rider too — I can set it up for you right now.</div>
-            <div class="bubble us"><p class="bubble-tag">Vectus</p>Checking your actual-loss policy terms, your hospitalization daily-allowance rider is empty. Confirm that gap before enrolling — the decision to sign up is yours.</div>
+            <p class="pane-label">"Does this rider apply to my policy?"</p>
+            <div class="bubble them"><p class="bubble-tag">Customer question, example</p>I heard the explanation, but I want to understand what conditions apply when I make a claim.</div>
+            <div class="bubble us"><p class="bubble-tag">Vectus explanation, example</p>After checking your policy edition and effective period, we will show the rider's payment conditions and limitations with the relevant clauses. Anything unverified stays on hold.</div>
           </div>
         </div>
         <div class="checklist violet">
