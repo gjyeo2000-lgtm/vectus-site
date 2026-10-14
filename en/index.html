@@ -337,6 +337,13 @@
     .insurance-proof h3{margin:0 0 8px;color:var(--text);font-size:15px}
     .insurance-proof p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.65}
     @media(max-width:680px){.insurance-proof{grid-template-columns:1fr}}
+    .insurance-axis-intro{margin:30px 0 0;color:var(--muted);font-size:13.5px;line-height:1.7}
+    .insurance-cost{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center;margin-top:24px;padding:26px 30px;border:1px solid var(--violet-line);border-radius:14px;background:linear-gradient(110deg,var(--violet-dim),rgba(19,21,25,.8))}
+    .insurance-cost .eyebrow{margin-bottom:8px}
+    .insurance-cost h3{font-size:19px;margin:0 0 8px;color:var(--text)}
+    .insurance-cost p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
+    .insurance-cost-note{border-left:2px solid var(--violet);padding-left:17px}
+    @media(max-width:680px){.insurance-cost{grid-template-columns:1fr;padding:22px}.insurance-cost-note{border-left:0;border-top:2px solid var(--violet);padding:16px 0 0}}
 
     .chain-scene{position:relative;margin:40px 0 0;padding:46px 32px 30px;border:1px solid var(--line);border-radius:18px;
       background:linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
@@ -982,27 +989,32 @@
           </div>
         </div>
 
+        <p class="insurance-axis-intro">The type diagnosis narrows what to check first across four dimensions. Product-specific judgments separately verify the linked policy and official source documents.</p>
         <div class="grid grid-4 violet">
           <div class="cell">
             <div class="idx">01</div>
-            <h3>Diagnose your policies</h3>
-            <p>We check policy status and the edition and effective period of linked official terms, then examine riders and coverage conditions supported by verified clauses.</p>
+            <h3>What you hold</h3>
+            <p>Look for possible gaps or overlap in your existing coverage.</p>
           </div>
           <div class="cell">
             <div class="idx">02</div>
-            <h3>Find coverage gaps</h3>
-            <p>We show possible gaps and overlaps within verified holdings and terms, with source evidence. Unverified items remain on hold.</p>
+            <h3>How you decide</h3>
+            <p>Check whether you rely on an agent's explanation or prefer to compare options yourself.</p>
           </div>
           <div class="cell">
             <div class="idx">03</div>
-            <h3>Match products to your life stage</h3>
-            <p>As your life stage changes — marriage, children, and beyond — we surface candidate products to fill the gap. The decision to buy is yours.</p>
+            <h3>When to review</h3>
+            <p>Use life changes and delayed reviews to narrow what deserves attention now.</p>
           </div>
           <div class="cell">
             <div class="idx">04</div>
-            <h3>Judgment, not a sales pitch</h3>
-            <p>Explanations use deterministic logic only. Phrases like "you should sign up" are blocked in code.</p>
+            <h3>Cost pressure</h3>
+            <p>Check whether monthly premiums feel burdensome alongside your coverage needs.</p>
           </div>
+        </div>
+        <div class="insurance-cost">
+          <div><p class="eyebrow v">COST &amp; COVERAGE</p><h3>Concerned about wasted premiums?</h3><p>Review possible overlap, older policies, and renewal terms to decide what to check first. Age alone is not a reason to cancel or replace a policy.</p></div>
+          <p class="insurance-cost-note">The type diagnosis identifies cost-pressure signals; it does not provide a personal premium quote or savings figure. The initial actual-loss release does not fill in amounts without official evidence. Any real savings depend on your policy terms.</p>
         </div>
 
         <span class="sample-tag">Conceptual example · 18% and 100% are not customer or performance figures</span>
@@ -1033,6 +1045,7 @@
             </div>
           </div>
         </div>
+        <p class="scope-note">After signing in, you can revisit in-progress and completed diagnoses. The card above is illustrative, not a real user's history.</p>
       </div>
     </section>
 

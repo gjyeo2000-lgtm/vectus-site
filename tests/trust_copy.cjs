@@ -31,6 +31,9 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.equal((insurance.match(/<article><small>0[123] \/ (?:SOURCE|HOLDINGS|HOLD)/g) || []).length, 3, `${name}: insurance evidence sequence missing`);
   assert.match(insurance, name === 'ko' ? /확인 불가 시 보류/ : /Defer when unverified/);
   assert.match(insurance, name === 'ko' ? /실손의료보험 중심 검증·순차 공개 준비 중/ : /staged release in progress/);
+  assert.equal((insurance.match(/class="insurance-cost"/g) || []).length, 1, `${name}: insurance cost guidance missing`);
+  assert.match(insurance, name === 'ko' ? /개인별 보험료 견적이나 절감액이 아닙니다/ : /does not provide a personal premium quote or savings figure/);
+  assert.match(insurance, name === 'ko' ? /완료한 보험 진단 이력을 다시 확인/ : /revisit in-progress and completed diagnoses/);
   assert.doesNotMatch(insurance, name === 'ko' ? /약관 전체 조항을 분석해/ : /analyze the full text of your policy terms/i);
   assert.equal((insurance.match(/class="card-frame"/g) || []).length, 1, `${name}: insurance sample card must remain`);
   assert.match(insurance, /class="decision-cinema violet"/, `${name}: animated insurance flow must remain`);
