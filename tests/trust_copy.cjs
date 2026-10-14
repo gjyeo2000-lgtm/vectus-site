@@ -33,7 +33,8 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.match(insurance, name === 'ko' ? /가능한 전 보험사·전 상품 비교로 확대합니다/ : /broadest possible insurer and product comparison/);
   assert.equal((insurance.match(/class="insurance-roadmap"/g) || []).length, 1, `${name}: insurance roadmap missing`);
   assert.equal((insurance.match(/class="insurance-mission"/g) || []).length, 1, `${name}: customer-first mission missing`);
-  assert.match(insurance, name === 'ko' ? /수수료·가입 성사 여부를 판단 입력으로 사용하지 않음/ : /Fees and sales outcomes are not judgment inputs/);
+  assert.match(insurance, name === 'ko' ? /수수료·가입 성사 여부를 판단 입력으로 사용하지 않고/ : /without fees or sales outcomes as judgment inputs/);
+  assert.match(insurance, name === 'ko' ? /설계사의 상담과 경험을 대신하거나 폄하하지 않습니다/ : /We do not replace or diminish an agent's experience/);
   assert.match(insurance, name === 'ko' ? /실제 지급 여부는 계약과 심사 결과에 따릅니다/ : /Actual payment depends on policy terms and claim assessment/);
   assert.match(insurance, name === 'ko' ? /생애주기 맞춤 서비스를 준비하고 있습니다/ : /preparing life-stage reviews/);
   assert.match(insurance, name === 'ko' ? /뉴스는 변화 탐지와 맥락을 이해하는 참고자료/ : /news helps detect and explain changes/);
