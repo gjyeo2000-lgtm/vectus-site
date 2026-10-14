@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vectus — AI-Powered Investment &amp; Insurance Decision Engine</title>
-  <meta name="description" content="Vectus is an AI-powered investment and insurance decision engine. We deliver personalized investment recommendations and ongoing portfolio management using real-time price, flow, and news data with machine learning models, and diagnose the policies you already hold for coverage gaps and duplicate coverage." />
+  <meta name="description" content="Vectus develops decision-support tools that check the source and date of market, filing, and product data, then examine supported products and holdings you register. We explain evidence, reasons to defer a judgment, and an in-development health-insurance review." />
   <meta property="og:title" content="Vectus — AI-Powered Investment & Insurance Decision Engine" />
-  <meta property="og:description" content="AI-powered investment and insurance decision engine — personalized investing, policy diagnosis, and B2B credit ruleset optimization." />
+  <meta property="og:description" content="Financial decision support that distinguishes source dates, supported holdings, evidence, and reasons to defer a judgment." />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="../logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -434,6 +434,7 @@
       .gauge-row{flex-direction:column;gap:14px}
     }
   </style>
+  <link rel="stylesheet" href="../trust-visuals.css" />
 </head>
 <body>
   <header>
@@ -465,12 +466,14 @@
         <div>
           <p class="eyebrow">AI · FINTECH · INVESTMENT INTELLIGENCE</p>
           <h1>Recommendations, with a reason.</h1>
-          <p>Vectus is an AI fintech startup delivering personalized investment
-             recommendations and ongoing portfolio management, powered by real-time
-             market data and machine learning models.</p>
+          <p>Vectus develops financial decision support that checks market, filing, and product data, then relates supported products to holdings you register so you can examine the evidence and risks.</p>
           <div class="cta">
             <a class="btn btn-primary" href="#contact">Get in touch</a>
             <a class="btn btn-ghost" href="#diff">See what's different</a>
+          </div>
+          <div class="trust-chain" aria-label="Illustrative flow from market information to a stock, an ETF, and a holding the customer registered">
+            <ol><li>Market data</li><li class="trust-link" aria-hidden="true"></li><li>Stock</li><li class="trust-link" aria-hidden="true"></li><li>ETF</li><li class="trust-link" aria-hidden="true"></li><li>Registered holding</li></ol>
+            <p class="trust-scope">This animated link is a conceptual diagram, not live prices, a customer's result, or predictive performance.</p>
           </div>
         </div>
 
@@ -481,23 +484,22 @@
               <div><div class="card-name">Samsung Electronics</div><div class="card-tag">Stock</div></div>
               <span class="card-badge">Rebalancing review</span>
             </div>
-            <div class="card-metric"><span class="v count-num" data-count="78" data-suffix="%">0%</span><span class="l">Reversal probability</span></div>
+            <div class="card-metric"><span class="v trust-text">Evidence check</span><span class="l">Product-specific scope</span></div>
 
             <div class="gauge-row">
               <div class="gauge">
-                <div class="gauge-label"><span>Market risk score</span><b class="count-num" data-count="91" data-suffix="">0</b></div>
-                <div class="gauge-track"><div class="gauge-fill risk count-bar" data-width="91" style="width:0%"></div></div>
+                <div class="gauge-label"><span>Market risk</span><b>Source date</b></div>
               </div>
               <div class="gauge">
-                <div class="gauge-label"><span>Max overlap weight</span><b class="count-num" data-count="34.23" data-suffix="%">0%</b></div>
-                <div class="gauge-track"><div class="gauge-fill overlap count-bar" data-width="34" style="width:0%"></div></div>
+                <div class="gauge-label"><span>Holding overlap</span><b>Supported scope</b></div>
               </div>
             </div>
 
             <div class="card-steps">
-              ① Long-term <b>+143%</b> → ② Mid-term <b>-19.6%</b> → ③ Recent <b>+1.8%</b><br>
-              Also held in 1 other product you own
+              ① Source and date → ② Product composition → ③ Judgment conditions<br>
+              When data is insufficient, show why.
             </div>
+            <p class="trust-scope">Illustrative scene, not a current Samsung Electronics assessment or your holdings.</p>
           </div>
         </div>
       </div>
@@ -508,15 +510,40 @@
     <section class="tight reveal">
       <div class="wrap">
         <p class="eyebrow" style="text-align:center">JUDGMENT CHAIN</p>
-        <h2 style="text-align:center">From today's news to your portfolio</h2>
+        <h2 style="text-align:center">From market information to holdings you register</h2>
         <div class="flow">
-          <div class="flow-node"><div class="flow-idx">01</div><div class="flow-text">USD/KRW exchange rate falls</div></div>
+          <div class="flow-node"><div class="flow-idx">01</div><div class="flow-text">Market data and its date</div></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node"><div class="flow-idx">02</div><div class="flow-text">Samsung Electronics · SK hynix margins squeezed</div></div>
+          <div class="flow-node"><div class="flow-idx">02</div><div class="flow-text">Relevant stock and scope</div></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node"><div class="flow-idx">03</div><div class="flow-text">KOSPI 100 ETF (31% weight) risk rises</div></div>
+          <div class="flow-node"><div class="flow-idx">03</div><div class="flow-text">Supported ETF composition</div></div>
           <div class="flow-arrow">→</div>
-          <div class="flow-node final"><div class="flow-idx">04</div><div class="flow-text">What should you do with that ETF, right now?</div></div>
+          <div class="flow-node final"><div class="flow-idx">04</div><div class="flow-text">Exposure in a registered holding</div></div>
+        </div>
+        <p class="trust-scope">This is a data-linkage example, not proof of causality or a buy/sell timing signal for a stock.</p>
+      </div>
+    </section>
+
+    <section id="judgment-process" class="trust-section reveal" aria-labelledby="judgment-process-title">
+      <div class="wrap">
+        <p class="eyebrow">JUDGMENT PROCESS</p>
+        <h2 id="judgment-process-title">A recommendation starts with checks</h2>
+        <p class="trust-intro">We check the source and date before linking supported product composition to holdings you register. When observations are insufficient, the relevant screen should explain why a judgment is deferred.</p>
+        <div class="trust-stages">
+          <div class="trust-stage"><strong>01</strong><h3>Source</h3><p>Where did the price, filing, or product data come from?</p></div>
+          <div class="trust-stage"><strong>02</strong><h3>Date and quality</h3><p>Check the reference date, gaps, delays, and mismatches.</p></div>
+          <div class="trust-stage"><strong>03</strong><h3>Connections</h3><p>Relate supported product composition to registered holdings.</p></div>
+          <div class="trust-stage"><strong>04</strong><h3>Judge or defer</h3><p>Distinguish met conditions from reasons to wait.</p></div>
+          <div class="trust-stage"><strong>05</strong><h3>Follow-up</h3><p>Keep the original judgment separate from later outcomes.</p></div>
+        </div>
+        <div class="trust-diagram">
+          <svg viewBox="0 0 1050 215" role="img" aria-label="Conceptual flow: source data, date and quality check, then evidence for judgment or reasons to defer">
+            <path d="M200 107 H270 M480 107 H550 M760 107 H815 V60 H845"></path>
+            <path class="trust-hold" d="M760 107 H815 V160 H845"></path>
+            <rect x="20" y="72" width="180" height="70" rx="7"></rect><rect x="270" y="72" width="210" height="70" rx="7"></rect><rect x="550" y="72" width="210" height="70" rx="7"></rect><rect x="845" y="25" width="185" height="70" rx="7"></rect><rect class="trust-hold" x="845" y="125" width="185" height="70" rx="7"></rect>
+            <text x="110" y="107">Source data</text><text x="375" y="107">Date and quality</text><text x="655" y="107">Conditions met?</text><text x="937" y="60">Evidence</text><text x="937" y="160">Reason to defer</text>
+          </svg>
+          <p>This diagram explains the structure. Observation and deferral rules vary by product and screen.</p>
         </div>
       </div>
     </section>
@@ -528,24 +555,24 @@
             <p class="eyebrow">PRODUCT SCENE</p>
             <h2 id="decision-scene-title">The moment data becomes a decision</h2>
           </div>
-          <p>News, flow, portfolio weight, and a risk score don't sit apart — see them converge into a single judgment.</p>
+          <p>This scene shows how source, date, product composition, and risk conditions can lead to a judgment or a reason to defer it.</p>
         </div>
         <div class="decision-cinema">
           <div class="signal-stack" aria-label="Input data">
             <div class="signal-card">
               <small>market signal</small>
-              <b>USD/KRW exchange rate falls</b>
-              <span>Tracks how a macro signal propagates into a sector and then into your holdings.</span>
+              <b>Market data and its date</b>
+              <span>First check when the macro indicator was observed.</span>
             </div>
             <div class="signal-card">
               <small>portfolio overlap</small>
-              <b>31% weight in KOSPI 100 ETF</b>
-              <span>The news doesn't stop at a single stock — it follows through to your fund's actual weighting.</span>
+              <b>Supported ETF composition</b>
+              <span>Check the available composition date and stock exposure.</span>
             </div>
             <div class="signal-card">
               <small>risk context</small>
-              <b>Market risk score 91</b>
-              <span>Judged alongside the risk regime, not on a single return number.</span>
+              <b>Risk and observation status</b>
+              <span>Distinguish missing data and mismatched dates.</span>
             </div>
           </div>
 
@@ -575,9 +602,9 @@
             <div class="engine-orb">
               <div>
                 <div class="engine-kicker">Vectus Judgment Core</div>
-                <div class="engine-number">78%</div>
-                <div class="engine-label">Reversal probability</div>
-                <div class="engine-foot">We don't show a recommendation without evidence behind it</div>
+                <div class="engine-number trust-text">Judge or defer</div>
+                <div class="engine-label">Check product-specific conditions</div>
+                <div class="engine-foot">Inspect the reason when evidence is insufficient</div>
               </div>
             </div>
           </div>
@@ -590,19 +617,19 @@
             </div>
             <div class="action-ticket">
               <small>position risk</small>
-              <b>Max overlap weight 34.23%</b>
-              <span>Checks whether the same asset is hiding inside your other holdings too.</span>
+              <b>Overlapping exposure</b>
+              <span>Check common assets across registered holdings where supported.</span>
             </div>
             <div class="action-ticket">
               <small>follow-up</small>
               <b>Tracked after the call</b>
-              <span>5/20/60-day returns and condition alerts keep watching after the decision.</span>
+              <span>Distinguish observations at 5, 20, and 60 business days.</span>
             </div>
           </div>
         </div>
         <div class="decision-caption">
-          <span><b>A product scene, not a photo:</b> the flow from input data through the judgment core to an action candidate</span>
-          <span>Figures shown: 78% reversal probability · market risk 91 · max overlap weight 34.23%</span>
+          <span><b>Illustrative product scene:</b> source, date, and product linkage before judgment or deferral</span>
+          <span>Not a customer's result, model probability, or predictive performance.</span>
         </div>
       </div>
     </section>
@@ -611,14 +638,12 @@
       <div class="wrap">
         <p class="eyebrow">WHAT WE DO</p>
         <h2>From data to decisions</h2>
-        <p class="lead">We collect real-time price, flow, and news data across 2,900+
-           stocks, then analyze it with layered machine learning models to deliver
-           personalized investment decisions.</p>
+        <p class="lead">Prices, investor flows, filings, news, and product composition have different sources and refresh cycles. Supported screens distinguish their dates and scope before applying the relevant calculations.</p>
         <div class="grid grid-3">
           <div class="cell">
             <div class="idx">01</div>
-            <h3>Real-time data collection</h3>
-            <p>We collect and refine millions of data points daily — price, flow, and news — across 2,900+ stocks.</p>
+            <h3>Source-specific collection</h3>
+            <p>We distinguish the source and date of prices, flows, filings, and news. Not every dataset refreshes in real time.</p>
           </div>
           <div class="cell">
             <div class="idx">02</div>
@@ -639,7 +664,7 @@
       <div class="wrap">
         <p class="eyebrow v">VS ROBO-ADVISORS & BROKERAGE APPS</p>
         <h2>When information wasn't the same as an answer</h2>
-        <p class="diff-sub">Returns, risk ratings, past performance, market news, holdings — they show you everything, but never "so what should I do?"</p>
+        <p class="diff-sub">Beyond gathering returns, ratings, news, and holdings on one screen, Vectus examines source dates and relationships between supported products.</p>
         <div class="mini-cinema reveal">
           <div class="mini-scatter">
             <div class="mini-chip">Returns</div>
@@ -652,23 +677,23 @@
             <svg viewBox="0 0 52 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9h44M38 3l8 6-8 6"/></svg>
           </div>
           <div class="mini-orb">
-            <div><small>Vectus</small><b>Here's what<br>to do now</b></div>
+            <div><small>Vectus</small><b>Evidence and<br>conditions together</b></div>
           </div>
         </div>
 
         <div class="formula-block">
           <p class="formula-q">A PER of 72x — is that good or bad?</p>
           <div class="formula-steps">
-            Brokerage apps show you PER 72.38x · PBR 4.61x, and stop there.<br>
-            Vectus connects ① long-term +143% → ② mid-term -19.6% → ③ recent +1.8%<br>
-            <span class="formula-result">→ and tells you: "a staged-entry point."</span>
+            PER and PBR describe different aspects of value.<br>
+            Vectus examines available financial, price, and observation history alongside data quality<br>
+            <span class="formula-result">→ and separates evidence from conditions that still need checking.</span>
           </div>
         </div>
 
         <div class="checklist">
-          <p><span class="k">Checked</span>We looked directly at similar investment services available on the market</p>
-          <p><span class="k">Result</span>A judgment chain connecting news → market impact → your holdings — none of them had it</p>
-          <p><span class="k">Result</span>A feature that calculates overlap risk across your holdings — none of them had it</p>
+          <p><span class="k">Scope</span>Only holdings you register are connected, within supported product coverage.</p>
+          <p><span class="k">Method</span>Check common stocks in multiple products alongside composition dates.</p>
+          <p><span class="k">Principle</span>Insufficient data should not become a buy/sell conclusion.</p>
         </div>
       </div>
     </section>
@@ -676,30 +701,30 @@
     <section class="diff-band reveal" style="border-top:none">
       <div class="wrap">
         <p class="eyebrow v">VS GENERAL-PURPOSE LLMS</p>
-        <h2>A plausible answer, vs. a verified one</h2>
-        <p class="diff-sub">General chatbots talk broadly and fast. Vectus goes narrow and deep, inside your actual holdings.</p>
+        <h2>Broad explanation and traceable evidence</h2>
+        <p class="diff-sub">A general AI explanation and financial evidence serve different roles. Vectus checks connected sources, dates, and the supported scope of registered holdings.</p>
 
         <table class="axis">
           <tr><th>General LLM</th><th>Vectus</th></tr>
-          <tr><td>Source is unclear</td><td>Verified data from KRX · Koscom · KOFIA · DART</td></tr>
-          <tr><td>Knowledge frozen at training time</td><td>Prices and filings sync automatically, every day</td></tr>
-          <tr><td>Doesn't know your holdings</td><td>Answers connected to your holdings and overlap risk</td></tr>
-          <tr><td>No way to verify if numbers are made up</td><td>Checked against real data before it's shown</td></tr>
-          <tr><td>States "buy" as if it were certain</td><td>Buy/sell directives are blocked by code</td></tr>
+          <tr><td>Broad topic explanation</td><td>Sources and dates on supported screens</td></tr>
+          <tr><td>General market context</td><td>Supported links to registered holdings</td></tr>
+          <tr><td>Possible interpretations</td><td>Separate missing evidence and deferred judgments</td></tr>
+          <tr><td>Text-first answers</td><td>Distinguish available prices, filings, and product data</td></tr>
+          <tr><td>Investment reference</td><td>Decision support, not buy/sell instructions</td></tr>
         </table>
 
         <div class="chat-stage reveal">
           <div class="chat">
             <p class="pane-label">"How's Samsung Electronics doing?"</p>
             <div class="bubble them"><p class="bubble-tag">General AI chatbot</p>It's a leading semiconductor stock with earnings improvement expected, so it could be seen positively</div>
-            <div class="bubble us"><p class="bubble-tag">Vectus</p>Held at 31.29% of the KOSPI 100 ETF (per 2026-09-22 filing). 3-month return -19.6%, market risk unsuitable for new entry — a staged-entry pattern is indicated</div>
+            <div class="bubble us"><p class="bubble-tag">Vectus · illustration</p>Check supported product composition and its reference date, then examine overlapping exposure in registered holdings. If evidence is insufficient, show that status.</div>
           </div>
         </div>
 
         <div class="checklist">
           <p><span class="k">Principle</span>If a value is missing, we show "unavailable" — never filled in with a similar stock or an industry average</p>
-          <p><span class="k">Safeguard</span>Every number the AI states is checked again against real data</p>
-          <p><span class="k">Safeguard</span>Directive phrases like "buy" or "sell" are automatically blocked by code</p>
+          <p><span class="k">Safeguard</span>Supported response paths check number sources and reference dates</p>
+          <p><span class="k">Safeguard</span>Decision-support wording is distinguished from buy/sell instructions</p>
           <p><span class="k">Safeguard</span>Price and return sources are documented, with automated checks that catch discrepancies</p>
         </div>
       </div>
@@ -716,8 +741,8 @@
     <section class="tight reveal">
       <div class="wrap">
         <p class="eyebrow">DATA SOURCE</p>
-        <h2>Real filings, not estimates</h2>
-        <p class="lead">If a value is missing, we show "unavailable." We never fill it in with a similar stock or an industry average.</p>
+        <h2>Separate sources and check their dates</h2>
+        <p class="lead">Prices, filings, product composition, and news refresh at different times. Supported screens check their sources and dates, and distinguish insufficient information.</p>
         <div class="data-row">
           <span class="data-chip">Korea Exchange (KRX) prices</span>
           <span class="data-chip">Koscom real-time prices</span>
@@ -725,6 +750,16 @@
           <span class="data-chip">DART financial statements</span>
         </div>
         <p class="data-note">Vectus meets Koscom's eligibility requirements and receives official market and financial data directly, through a formal application and approval process. This is licensed source data through a formal contract, not data of unclear origin.</p>
+        <div class="trust-source-grid">
+          <div class="trust-source-sheet">
+            <h3>What we check</h3>
+            <div class="trust-source-row"><strong>Market prices</strong><span>Source and observation time</span></div>
+            <div class="trust-source-row"><strong>Filings and financials</strong><span>Publication date and when the data was available</span></div>
+            <div class="trust-source-row"><strong>Product composition</strong><span>Constituents, weights, and reference date</span></div>
+            <div class="trust-source-row"><strong>Registered holdings</strong><span>Products and changes entered by the customer</span></div>
+          </div>
+          <div class="trust-source-aside"><h3>Source date before scale</h3><p>A large dataset is not necessarily suitable for a current judgment. Supported screens distinguish the information available and its refresh status.</p></div>
+        </div>
 
         <div class="mini-cinema reveal">
           <div class="mini-scatter">
@@ -737,7 +772,7 @@
             <svg viewBox="0 0 52 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9h44M38 3l8 6-8 6"/></svg>
           </div>
           <div class="mini-orb">
-            <div><small>Real-time</small><b>2,900+ stocks<br>24/7 analysis</b></div>
+            <div><small>Source and date</small><b>Product-specific<br>reference dates</b></div>
           </div>
         </div>
       </div>
@@ -746,56 +781,39 @@
     <section id="tech" class="divider reveal">
       <div class="wrap">
         <p class="eyebrow">CORE MODELS</p>
-        <h2>A dedicated model for every problem</h2>
-        <p class="lead">Not one do-it-all algorithm — a dedicated model for each kind of problem.</p>
-        <div class="grid grid-3">
-          <div class="cell">
-            <div class="cell-head">
-              <svg class="cell-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 14c2-6 4-9 6-9s3 12 6 12 3-9 6-9 2 3 2 3"/></svg>
-              <div class="idx">01</div>
-            </div>
-            <h3>Regime detection model</h3>
-            <p>Identifies whether the market is trending up, down, or into higher volatility.</p>
-          </div>
-          <div class="cell">
-            <div class="cell-head">
-              <svg class="cell-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="7" r="2.4"/><circle cx="9" cy="18" r="2.4"/><circle cx="18" cy="17" r="2.4"/><path d="M8 7.5l7.5-.8M7.5 8.3l1.2 7.5M11 18l5-.8"/></svg>
-              <div class="idx">02</div>
-            </div>
-            <h3>Connectivity risk analysis</h3>
-            <p>Calculates overlap risk and complementary effects across your holdings.</p>
-          </div>
-          <div class="cell">
-            <div class="cell-head">
-              <svg class="cell-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v14M6 8L3 15a3 3 0 0 0 6 0L6 8zM18 8l-3 7a3 3 0 0 0 6 0l-3-7zM4 21h16"/></svg>
-              <div class="idx">03</div>
-            </div>
-            <h3>Multi-factor optimization</h3>
-            <p>Adjusts return relative to risk.</p>
-          </div>
-          <div class="cell">
-            <div class="cell-head">
-              <svg class="cell-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 16l5-7 4 4 5-8 4 5"/><path d="M17 5h4v4"/></svg>
-              <div class="idx">04</div>
-            </div>
-            <h3>Trend reversal detection</h3>
-            <p>Statistically identifies when market direction is about to change.</p>
-          </div>
-          <div class="cell">
-            <div class="cell-head">
-              <svg class="cell-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12l3 3 5-6"/></svg>
-              <div class="idx">05</div>
-            </div>
-            <h3>News impact analysis</h3>
-            <p>Tracks how news affects your holdings using rules — not an LLM's free interpretation.</p>
-          </div>
+        <h2>Different calculations for different questions</h2>
+        <p class="lead">Statistical models, product-relationship analysis, a trained neural network, and explicit rules have different roles. No single model applies to every screen.</p>
+        <div class="trust-model-list">
+          <div class="trust-model-row"><span>01</span><h3>Regime and trend</h3><p>Statistical models such as HMM examine regimes and signs of change for eligible subjects with sufficient history.</p></div>
+          <div class="trust-model-row"><span>02</span><h3>Asset relationships</h3><p>Calculate common exposure across supported products and registered holdings. Not all relationship analysis is a trained GNN.</p></div>
+          <div class="trust-model-row"><span>03</span><h3>ETF risk propagation</h3><p>A trained GNN uses overlapping ETF constituents to adjust ETF allocation caps during EMP construction. This is a limited path.</p></div>
+          <div class="trust-model-row"><span>04</span><h3>Judgment safeguards</h3><p>Explicit rules distinguish insufficient observations, date mismatches, and risk conditions before a judgment or deferral.</p></div>
         </div>
 
-        <div class="model-connector" aria-hidden="true">
-          <span></span><span></span><span></span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v13M6 11l6 6 6-6"/></svg>
-          <span>5 models converge into one conclusion</span>
+        <div class="trust-graph-grid">
+          <div class="trust-graph">
+            <h3>Overlapping product exposure</h3>
+            <p>This shows common constituents and relationships between ETFs. The trained GNN has a narrower use: ETF risk propagation adjusts ETF allocation caps in EMP construction.</p>
+            <svg viewBox="0 0 470 230" role="img" aria-label="Illustrative graph of two ETFs, a shared constituent, and a risk relationship">
+              <path class="trust-edge" d="M98 70 L235 130 L372 70"></path><path class="trust-edge" d="M98 70 L235 193 L372 70"></path>
+              <circle cx="98" cy="70" r="38"></circle><circle cx="372" cy="70" r="38"></circle><circle cx="235" cy="130" r="39"></circle><circle cx="235" cy="193" r="34"></circle>
+              <text x="98" y="70">ETF A</text><text x="372" y="70">ETF B</text><text x="235" y="130">Shared stock</text><text x="235" y="193">Risk link</text>
+            </svg>
+            <p>Conceptual illustration, not customer holdings or a model probability.</p>
+          </div>
+          <div class="trust-graph">
+            <h3>Regime-change timeline</h3>
+            <p>Statistical models such as HMM examine regimes only for eligible subjects with sufficient history. This is a different calculation from the ETF relationship graph.</p>
+            <svg viewBox="0 0 470 230" role="img" aria-label="Illustrative timeline separating observation, signs of regime change, and later observation">
+              <rect class="trust-band" x="20" y="25" width="140" height="165"></rect><rect class="trust-band" x="160" y="25" width="135" height="165" style="fill:var(--violet-dim)"></rect><rect class="trust-band" x="295" y="25" width="155" height="165"></rect>
+              <line class="trust-axis" x1="20" y1="190" x2="450" y2="190"></line>
+              <path class="trust-regime" d="M25 148 C80 149 90 135 140 139 S185 140 220 92 S280 75 315 89 S370 127 405 114 S433 97 445 96"></path>
+              <text x="90" y="211">Observe</text><text x="227" y="211">Change signs</text><text x="370" y="211">Follow-up</text>
+            </svg>
+            <p>Conceptual illustration, not a measured series, future forecast, or accuracy figure.</p>
+          </div>
         </div>
+        <p class="trust-scope">Model scope and required observation history vary by product. These drawings do not establish a trend-reversal judgment for any individual product.</p>
 
         <div class="radar-feature reveal">
           <svg class="radar-svg" viewBox="-40 -25 280 260" aria-hidden="true">
@@ -819,15 +837,29 @@
             <text x="14" y="72" text-anchor="end" class="radar-label">Shorting</text>
           </svg>
           <div class="radar-copy">
-            <p class="eyebrow">CASE — Samsung Electronics, measured</p>
-            <h3>Five-axis combined judgment</h3>
-            <p>"A good company" and "a good price right now" are different things. Financial strength and fair value passed cleanly, but mid-term trend and short pressure flagged — so the final call was downgraded one notch.</p>
+            <p class="eyebrow">ILLUSTRATION · Conceptual only</p>
+            <h3>Considering multiple conditions</h3>
+            <p>Financial, price, trend, and flow inputs have different sources and dates. A chart shape alone cannot establish a judgment when required data is missing.</p>
             <div class="radar-legend">
               <span><i style="background:var(--gold)"></i>Passed · favorable</span>
               <span><i style="background:var(--muted)"></i>Neutral</span>
               <span><i style="background:var(--red)"></i>Flagged · downgraded</span>
             </div>
           </div>
+        </div>
+        <p class="trust-scope">The radar shape is not a measured score or a current Samsung Electronics assessment.</p>
+      </div>
+    </section>
+
+    <section id="evidence" class="trust-section reveal" aria-labelledby="evidence-title">
+      <div class="wrap">
+        <p class="eyebrow">EVIDENCE BEFORE CONFIDENCE</p>
+        <h2 id="evidence-title">Traceable answers before confident ones</h2>
+        <p class="trust-intro">Evidence should be read with its source, reference date, and applicable conditions. On supported screens, Vectus distinguishes available evidence from a deferred judgment.</p>
+        <div class="trust-evidence-grid">
+          <article><small>A / SOURCE</small><h3>Show the source</h3><p>Distinguish where prices, filings, and product information originate.</p></article>
+          <article><small>B / TIME</small><h3>Show the date</h3><p>Do not present a later update as if it were known at the time of an earlier judgment.</p></article>
+          <article><small>C / HOLD</small><h3>Show the deferral</h3><p>When observations or source data are insufficient, distinguish the reason on the applicable screen.</p></article>
         </div>
       </div>
     </section>
@@ -836,15 +868,16 @@
       <div class="wrap">
         <p class="eyebrow">BEYOND THE RECOMMENDATION</p>
         <h2>The recommendation isn't the end</h2>
-        <p class="lead">Most places stop at the recommendation. Vectus keeps going.</p>
+        <p class="lead">We observe changes at 5, 20, and 60 business days after a recommendation, separating periods ready for evaluation from those still in progress.</p>
 
         <div class="timeline-scene reveal">
           <div class="tl-track"><div class="tl-fill"></div></div>
-          <div class="tl-point at0"><b>At recommendation</b><span>78% reversal probability</span></div>
-          <div class="tl-point at1"><b>5 days later</b><span>Check actual return</span></div>
-          <div class="tl-point at2"><b>20 days later</b><span>Check actual return</span></div>
-          <div class="tl-point at3"><b>60 days later</b><span>Final accuracy check</span></div>
+          <div class="tl-point at0"><b>At recommendation</b><span>Original judgment</span></div>
+          <div class="tl-point at1"><b>5 days</b><span>Observe outcome</span></div>
+          <div class="tl-point at2"><b>20 days</b><span>Observe outcome</span></div>
+          <div class="tl-point at3"><b>60 days</b><span>Observe outcome</span></div>
         </div>
+        <p class="trust-scope">Business-day intervals. A period that has not elapsed is not evaluated; these are not guaranteed returns or a prediction-accuracy claim.</p>
 
         <div class="follow-list">
           <div class="follow-item">
@@ -857,7 +890,7 @@
           </div>
           <div class="follow-item">
             <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/><path d="M7 14l3 2 3-3 4 3"/></svg></div>
-            <div><div class="follow-idx">03</div><h3>Recommendation history</h3><p>We don't stop at the recommendation. We track whether past recommendations were actually right, using 5/20/60-day returns.</p></div>
+            <div><div class="follow-idx">03</div><h3>Recommendation history</h3><p>Review the original judgment separately from outcomes at 5, 20, and 60 business days. Periods not yet elapsed are not treated as results.</p></div>
           </div>
           <div class="follow-item">
             <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 5h18M6 5v5l5 6v4M18 5v5l-5 6"/></svg></div>
@@ -885,7 +918,7 @@
           </div>
           <div class="follow-item">
             <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8l4-4 4 4M8 4v9M20 16l-4 4-4-4M16 20v-9"/></svg></div>
-            <div><div class="follow-idx">07</div><h3>Quarterly earnings reversals</h3><p>Full-year results alone won't show this. We work backward across every stock to find a profitable year that hid a loss-making fourth quarter, and show the price reaction after disclosure.</p></div>
+            <div><div class="follow-idx">07</div><h3>Quarterly earnings reversals</h3><p>Full-year results alone won't show this. For stocks with available filings and prices, we examine profitable years that hid a loss-making fourth quarter and show the post-disclosure price reaction where available.</p></div>
           </div>
           <div class="follow-item">
             <div class="follow-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div>
@@ -1143,9 +1176,7 @@
       <div class="wrap">
         <p class="eyebrow">CLOUD INFRASTRUCTURE</p>
         <h2>Built on scalable cloud infrastructure</h2>
-        <p class="lead">To reliably process millions of data points every day, run real-time
-           ML inference, and retrain models overnight, we rely on a scalable cloud
-           infrastructure — GPUs, data pipelines, and schedulers — as our core foundation.</p>
+        <p class="lead">Source collection, storage, calculation, and display are separate stages supported by schedulers and data pipelines. Processing volume and model refresh rates vary by path, so they are not presented as one universal real-time metric.</p>
 
         <div class="mini-cinema reveal">
           <div class="mini-scatter">
@@ -1158,14 +1189,14 @@
             <svg viewBox="0 0 52 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9h44M38 3l8 6-8 6"/></svg>
           </div>
           <div class="mini-orb">
-            <div><small>Runs 24/7</small><b>Millions<br>processed daily</b></div>
+            <div><small>Path-specific operations</small><b>Collection · calculation<br>status checks</b></div>
           </div>
         </div>
 
         <div class="stats">
-          <div class="stat"><div class="n mono">2,900+</div><div class="l">Stocks analyzed in real time</div></div>
-          <div class="stat"><div class="n">Millions</div><div class="l">Data points processed daily</div></div>
-          <div class="stat"><div class="n mono">24/7</div><div class="l">Inference · overnight retraining</div></div>
+          <div class="stat"><div class="n">Source</div><div class="l">Check dates by dataset</div></div>
+          <div class="stat"><div class="n">Calculation</div><div class="l">Different rules by product</div></div>
+          <div class="stat"><div class="n">Status</div><div class="l">Show gaps, delays, and deferrals</div></div>
         </div>
       </div>
     </section>
@@ -1174,7 +1205,7 @@
       <div class="wrap">
         <p class="eyebrow">VISION</p>
         <h2>From personal investing to B2B credit</h2>
-        <p class="lead">We run a reliable real-time analytics service on AWS, and aim to
+        <p class="lead">We operate data pipelines and product-specific calculation paths on AWS, and aim to
            extend the financial decision engine we've built into a B2B credit ruleset
            optimization solution — becoming the intelligence infrastructure behind
            financial decision-making as a whole.</p>
@@ -1272,5 +1303,6 @@
       document.querySelectorAll('.card-frame, .reveal-bars').forEach(function(e){ io2.observe(e); });
     })();
   </script>
+  <script src="../trust-motion.js" defer></script>
 </body>
 </html>
