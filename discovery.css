@@ -8,4 +8,7 @@ html[lang="en"] h1,html[lang="en"] h2{font-family:"Fraunces",Georgia,serif;lette
 .skip-link:focus{top:8px}
 .site-header .brand{font-size:19px}
 .site-nav .lang-link{border-left:1px solid var(--line);padding-left:14px;color:var(--text)}
+.test-web-link{flex-shrink:0;padding:7px 11px;border:1px solid var(--gold-line);border-radius:7px;background:var(--gold);color:#21190d;font-size:12px;font-weight:700;line-height:1.4;text-decoration:none;white-space:nowrap}
+.test-web-link:hover{background:#d6b680}
+.test-web-link:focus-visible{outline:2px solid var(--text);outline-offset:3px}
 @media(max-width:850px){.site-nav .lang-link{margin-left:auto}}
