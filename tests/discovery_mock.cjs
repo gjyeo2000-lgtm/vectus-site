@@ -24,6 +24,17 @@ const { chromium } = require('playwright');
         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `${name} ${width}: horizontal overflow`);
         assert.equal(await page.locator('main h1').count(), 1);
         if (name !== 'home') assert.ok(await page.locator('.diagram svg').count() >= 2, `${name}: missing visual explanation`);
+        const copy = await page.locator('main').innerText();
+        if (name === 'stock') {
+          assert.match(copy, /5·20·60영업일/);
+          assert.doesNotMatch(copy, /거래일/);
+        }
+        if (name === 'fund-etf') assert.match(copy, /ETF 편입 상한/);
+        if (name === 'insurance') {
+          assert.match(copy, /판매 수수료나 가입 성사 여부를 판단 입력으로 쓰지 않습니다/);
+          assert.match(copy, /가능한 전 보험사·전 상품 비교/);
+          assert.match(copy, /확장 목표이며 현재 완료된 범위는/);
+        }
         await page.screenshot({ path: path.join(output, `${name}-${width}.png`), fullPage: true });
       }
     }
