@@ -85,6 +85,7 @@ assert.match(visuals, /html\{scroll-behavior:auto\}/);
 const nav = fs.readFileSync(path.join(root, 'site-nav.js'), 'utf8');
 assert.match(nav, /Escape/);
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
-assert.equal((sitemap.match(/<lastmod>2026-10-14<\/lastmod>/g) || []).length, 2);
+assert.equal((sitemap.match(/<lastmod>2026-10-14<\/lastmod>/g) || []).length, 8);
+assert.doesNotMatch(sitemap, /docs\/plans\/assets|discovery-v2/, 'mock pages must not enter the sitemap');
 assert.doesNotMatch(sitemap, /<changefreq>|<priority>/);
 console.log('Homepage trust-copy contract: OK');

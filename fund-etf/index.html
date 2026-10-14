@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>펀드·ETF 중복 노출과 기준일 | 벡투스</title><meta name="description" content="벡투스는 확인된 상품 구성과 고객이 등록한 보유상품을 연결해 공통 종목·위험 노출을 살핍니다. ETF 가격·NAV와 공모펀드 기준가격의 서로 다른 시점도 구분합니다.">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Vectus | 벡투스">
+  <meta property="og:title" content="펀드·ETF 중복 노출과 기준일 | 벡투스"><meta property="og:description" content="벡투스는 확인된 상품 구성과 고객이 등록한 보유상품을 연결해 공통 종목·위험 노출을 살핍니다. ETF 가격·NAV와 공모펀드 기준가격의 서로 다른 시점도 구분합니다."><meta property="og:url" content="https://vectuslab.com/fund-etf/">
+  <link rel="canonical" href="https://vectuslab.com/fund-etf/"><link rel="alternate" hreflang="ko" href="https://vectuslab.com/fund-etf/"><link rel="alternate" hreflang="en" href="https://vectuslab.com/en/fund-etf/"><link rel="alternate" hreflang="x-default" href="https://vectuslab.com/fund-etf/">
+  <link rel="icon" type="image/png" href="../logo.png"><link rel="stylesheet" href="../discovery.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"펀드·ETF 중복 노출과 기준일 | 벡투스","description":"벡투스는 확인된 상품 구성과 고객이 등록한 보유상품을 연결해 공통 종목·위험 노출을 살핍니다. ETF 가격·NAV와 공모펀드 기준가격의 서로 다른 시점도 구분합니다.","url":"https://vectuslab.com/fund-etf/","inLanguage":"ko","isPartOf":{"@type":"WebSite","name":"Vectus | 벡투스","url":"https://vectuslab.com/"},"publisher":{"@type":"Organization","name":"벡투스","url":"https://vectuslab.com/"}}</script>
+</head><body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header"><div class="wrap"><a class="brand" href="/">VectusLab</a><nav class="site-nav" aria-label="서비스 안내"><a href="/">홈</a><a href="/stock/">주식</a><a aria-current="page" href="/fund-etf/">펀드·ETF</a><a href="/insurance/">보험</a><a class="lang-link" lang="en" href="/en/fund-etf/">English</a></nav></div></header>
+<main id="main">
+      <section class="intro">
+        <div class="wrap intro-grid">
+          <div>
+            <p class="kicker">Fund & ETF / look through the label</p>
+            <h1>이름이 다른 상품,<br />안에서는 같은 위험일 수 있습니다.</h1>
+            <p>
+              지원되는 상품의 확인된 구성 정보와 고객이 직접 등록한 보유상품을
+              연결해 공통 종목과 위험 노출을 계산합니다. 상품 이름만으로는
+              보이지 않는 겹침을 찾고, 구성 기준일을 함께 보여줍니다.
+            </p>
+            <span class="stage">주식·펀드 판단: 초대 테스트</span>
+            <div class="button-row">
+              <a class="button" href="#overlap">겹침 그래프 보기</a
+              ><a class="button ghost" href="#scope">제공 범위 확인</a>
+            </div>
+          </div>
+          <div
+            class="diagram"
+            role="img"
+            aria-label="등록한 보유상품 두 개가 공통 기초자산 하나에 연결되는 설명용 관계 그래프"
+          >
+            <div class="diagram-head">
+              상품명 대신 안쪽의 노출을 봅니다 <span>CONCEPT GRAPH</span>
+            </div>
+            <svg viewBox="0 0 500 300" aria-hidden="true">
+              <path
+                d="M120 76Q210 76 250 145M380 76Q290 76 250 145M250 165L130 240M250 165L375 240"
+              />
+              <rect x="35" y="40" width="170" height="64" rx="12" />
+              <text x="120" y="68">등록 ETF A</text>
+              <text class="subtext" x="120" y="88">고객이 등록한 범위</text>
+              <rect x="295" y="40" width="170" height="64" rx="12" />
+              <text x="380" y="68">등록 ETF B</text>
+              <text class="subtext" x="380" y="88">고객이 등록한 범위</text>
+              <circle class="node pulse" cx="250" cy="155" r="47" />
+              <text x="250" y="155">공통 종목</text>
+              <rect x="42" y="214" width="170" height="58" rx="12" />
+              <text x="127" y="242">다른 종목</text>
+              <rect x="290" y="214" width="170" height="58" rx="12" />
+              <text x="375" y="242">다른 종목</text>
+            </svg>
+            <p class="diagram-note">
+              관계선은 개념 설명입니다. 실제 구성·비중·시점은 해당 상품의 확인된
+              원천이 있어야 합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="overlap">
+        <div class="wrap visual-grid">
+          <div
+            class="diagram"
+            role="img"
+            aria-label="공식 구성 정보와 등록 보유상품이 공통 종목에 연결된 후 중복 노출을 확인하는 흐름"
+          >
+            <div class="diagram-head">
+              겹침은 세 가지를 맞춰야 보입니다
+              <span>PRODUCT / DATE / HOLDING</span>
+            </div>
+            <svg viewBox="0 0 620 260" aria-hidden="true">
+              <path d="M140 62H240M140 200H240M385 130H495" />
+              <rect x="12" y="28" width="168" height="67" rx="12" />
+              <text x="96" y="58">상품 구성</text>
+              <text class="subtext" x="96" y="79">원천·기준일</text>
+              <rect x="12" y="166" width="168" height="67" rx="12" />
+              <text x="96" y="196">등록 보유</text>
+              <text class="subtext" x="96" y="217">입력 범위</text>
+              <rect
+                class="pulse"
+                x="220"
+                y="91"
+                width="175"
+                height="75"
+                rx="12"
+              />
+              <text x="307" y="119">동일 자산 연결</text>
+              <text class="subtext" x="307" y="144">식별자·구성 확인</text>
+              <rect x="455" y="91" width="153" height="75" rx="12" />
+              <text x="531" y="119">중복 노출</text>
+              <text class="subtext" x="531" y="144">확인된 부분만</text>
+            </svg>
+            <p class="diagram-note">
+              모든 보유자산을 자동으로 읽는 화면이 아닙니다. 등록 및 지원 범위를
+              넘는 보유는 포함하지 않습니다.
+            </p>
+          </div>
+          <div class="visual-copy">
+            <p class="kicker">Beyond a list of products</p>
+            <h2>상품 개수가 아니라 같은 자산의 반복을 확인합니다.</h2>
+            <p>
+              두 상품을 보유해도 같은 기초자산에 노출될 수 있습니다. 벡투스는
+              상품 구성의 기준일과 등록한 보유 범위를 함께 확인해, 겹치는 부분과
+              확인되지 않은 부분을 구별합니다.
+            </p>
+            <ul>
+              <li>구성 정보가 있는 상품과 날짜 범위에서만 연결합니다.</li>
+              <li>분석 대상은 고객이 직접 등록한 보유상품과 지원 구성입니다.</li>
+              <li>
+                구성·식별 정보가 부족하면 중복이 없다고 단정하지 않습니다.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section tint" id="scope">
+        <div class="wrap visual-grid reverse">
+          <div class="visual-copy">
+            <p class="kicker violet">Different products, different sources</p>
+            <h2>
+              ETF 가격과 공모펀드 기준가격을 한 시점의 숫자로 섞지 않습니다.
+            </h2>
+            <p>
+              ETF는 시장 거래가격과 기초 순자산가치가 서로 다른 값·시점일 수
+              있고, 일반 공모펀드의 기준가격도 공시·반영 시점을 확인해야 합니다.
+              그래서 구성, 가격, 적용 날짜를 따로 보여주는 것이 중요합니다.
+            </p>
+            <p class="small">
+              실제 화면에서 가능한 정보는 상품과 원천·지원 범위에 따라
+              달라집니다.
+            </p>
+          </div>
+          <div
+            class="diagram"
+            role="img"
+            aria-label="ETF 시장가격과 순자산가치는 서로 다른 기준이며, 일반 공모펀드 기준가격은 별도로 기준일을 확인해야 함"
+          >
+            <div class="diagram-head">
+              숫자보다 기준을 맞춥니다 <span>SOURCE DATE</span>
+            </div>
+            <svg viewBox="0 0 570 260" aria-hidden="true">
+              <path d="M175 76H345M175 180Q265 180 345 76" />
+              <rect x="10" y="39" width="180" height="70" rx="12" />
+              <text x="100" y="67">ETF 시장가격</text>
+              <text class="subtext" x="100" y="90">거래 시점</text>
+              <rect x="10" y="145" width="180" height="70" rx="12" />
+              <text x="100" y="173">ETF NAV</text>
+              <text class="subtext" x="100" y="196">산출 기준</text>
+              <rect x="338" y="37" width="220" height="70" rx="12" />
+              <text x="448" y="65">서로 다른 기준</text>
+              <text class="subtext" x="448" y="89">동일 숫자 아님</text>
+              <rect x="338" y="143" width="220" height="70" rx="12" />
+              <text x="448" y="171">공모펀드 기준가격</text>
+              <text class="subtext" x="448" y="195">별도 공시·반영 시점</text>
+            </svg>
+            <p class="diagram-note">
+              이 그림은 값의 차이를 설명합니다. 실제 가격·NAV나 지연 상태를
+              표시하지 않습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="wrap">
+          <p class="kicker">Technology / bounded claim</p>
+          <h2>상품 관계 계산에, ETF 위험 전이 분석을 더합니다.</h2>
+          <p class="section-lead">
+            먼저 확인된 상품 구성과 등록 보유상품의 공통 노출을 계산합니다.
+            학습된 GNN은 그 전체가 아니라 ETF 중복 구성종목의 위험 전이를
+            EMP 구성의 ETF 편입 상한 조정에 쓰는 경로입니다.
+          </p>
+          <div class="grid-3">
+            <div class="panel goldline">
+              <span class="seq">01 · 관계 분석</span>
+              <h3>구성·보유의 연결</h3>
+              <p>
+                확인된 구성과 등록한 보유상품 사이에서 공통 노출을 표시합니다.
+                상품별 구성 기준일과 확인되지 않은 항목을 구분합니다.
+              </p>
+            </div>
+            <div class="panel violetline">
+              <span class="seq violet">02 · GNN 적용</span>
+              <h3>ETF 위험 전이</h3>
+              <p>
+                학습된 GNN은 ETF 중복 구성종목의 위험 전이를 EMP 구성의 ETF
+                편입 상한 조정에 반영합니다. 다른 자산의 가격 예측과는 구분합니다.
+              </p>
+            </div>
+            <div class="panel goldline">
+              <span class="seq">03 · 판단 보류</span>
+              <h3>근거가 없으면 빈 곳을 남김</h3>
+              <p>
+                상품 구성, 식별자 또는 기준일이 확인되지 않으면 관계를 추정해
+                채우지 않고 확인할 항목으로 남깁니다.
+              </p>
+            </div>
+          </div>
+          <div class="button-row">
+            <a class="button ghost" href="/#tech"
+              >현재 홈페이지의 기술 설명 →</a
+            ><a class="button" href="/insurance/"
+              >보험 진단 방식 보기 →</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+<footer class="footer"><div class="wrap"><span>벡투스 공식 서비스 안내 · 이 화면은 개념 그래프이며 실제 고객별 결과가 아닙니다.</span><span>현재 이용 가능 범위는 초대자 전용 테스트 웹에서 확인합니다.</span></div></footer>
+</body></html>

@@ -106,4 +106,8 @@
 .service-status-tag.planned{border-color:var(--violet-line);color:var(--violet)}
 .service-status-grid h3{margin:10px 0 5px;font-size:15px;color:var(--text)}
 .service-status-grid p{color:var(--muted);font-size:12px;line-height:1.7}
+.service-status-links{display:flex;flex-wrap:wrap;gap:7px 14px;margin-top:13px}
+.service-status-links a{color:var(--gold);font-size:12px;text-decoration:none;border-bottom:1px solid var(--gold-line)}
+.service-status-links a:hover,.service-status-links a:focus-visible{color:var(--text);border-color:var(--text)}
+.service-status-links a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 @media(max-width:700px){.service-status-head{display:block}.service-status-head>p{margin-top:10px}.service-status-grid{grid-template-columns:1fr}.service-status-grid article{padding:15px 17px}}
