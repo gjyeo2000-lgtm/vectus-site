@@ -35,6 +35,8 @@ const {chromium} = require('playwright');
         const history=await page.locator('[data-feature="holdings-history"]').innerText();
         assert.match(history,lang==='ko'?/직접 등록한/:/you enter/);
         assert.match(history,lang==='ko'?/자동으로 가져오거나 자동 매매하는 서비스는 아닙니다/:/does not automatically import/);
+        const usStock=await page.locator('[data-feature="us-stock-analysis"]').innerText();
+        assert.doesNotMatch(usStock,lang==='ko'?/정보 부족 표시/:/missing-information notices/);
       }
     }
     assert.deepEqual(errors,[]);
