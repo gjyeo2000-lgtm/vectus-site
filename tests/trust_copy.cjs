@@ -38,6 +38,10 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.match(status, name === 'ko' ? /초대 테스트[\s\S]*범위 확대 중[\s\S]*준비 중/ : /Invite-only test[\s\S]*Expanding scope[\s\S]*In preparation/);
   assert.match(status, name === 'ko' ? /현재 제공 기능은 아닙니다/ : /They are not current features/);
   assert.match(html, name === 'ko' ? /영업일 기준/ : /business days/i);
+  const recommendationHistory = html.match(/<div class="follow-idx">03<\/div><h3>(?:추천 이력 관리|Recommendation history)<\/h3><p>(.*?)<\/p>/)?.[1] || '';
+  assert.match(recommendationHistory, name === 'ko' ? /실제 발행된 추천.*유지·하향·재상향/ : /actually published to customers.*maintain, downgrade, or upgrade/);
+  assert.match(recommendationHistory, name === 'ko' ? /5·20·60영업일.*수익·손실·미평가/ : /5-, 20-, and 60-business-day.*gains, losses, and unevaluated/);
+  assert.match(recommendationHistory, name === 'ko' ? /가격 근거가 없으면 결과로 채우지 않습니다/ : /without supporting price data/);
   assert.match(html, name === 'ko' ? /설명용 예시/ : /Conceptual illustration/);
   const contact = html.match(/<section id="contact">([\s\S]*?)<\/section>/)?.[1] || '';
   assert.match(contact, /<p class="tag">(?:투자 문의|Investment)<\/p>\s*<p class="contact-person">여경진<\/p>\s*<a class="contact-address" href="mailto:gyeong\.yeo@vectuslab\.com">gyeong\.yeo@vectuslab\.com<\/a>/, `${name}: investment contact must be 여경진`);
