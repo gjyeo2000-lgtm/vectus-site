@@ -12,7 +12,9 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.equal((html.match(/class="trust-model-row"/g) || []).length, 4, `${name}: four model roles required`);
   assert.equal((html.match(/class="trust-source-row"/g) || []).length, 4, `${name}: four source categories required`);
   assert.equal((html.match(/<article><small>[ABC] \/ (?:SOURCE|TIME|HOLD)/g) || []).length, 3, `${name}: three evidence rules required`);
-  assert.match(html, /class="trust-chain"/);
+  assert.match(html, /class="hero-scope"/, `${name}: first-fold availability badges missing`);
+  assert.equal((html.match(/class="hero-diagram-row"/g) || []).length, 3, `${name}: three first-fold service areas required`);
+  assert.match(html, /href="#service-status-title"/, `${name}: service availability link missing`);
   assert.match(html, /class="trust-diagram"/);
   assert.match(html, /trust-motion\.js/);
   assert.match(html, /trust-visuals\.css/);
