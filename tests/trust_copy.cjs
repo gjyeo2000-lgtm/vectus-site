@@ -46,7 +46,7 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.match(recommendationHistory, name === 'ko' ? /가격 근거가 없으면 결과로 채우지 않습니다/ : /without supporting price data/);
   assert.match(html, name === 'ko' ? /설명용 예시/ : /Conceptual illustration/);
   const contact = html.match(/<section id="contact">([\s\S]*?)<\/section>/)?.[1] || '';
-  assert.match(contact, /<p class="tag">(?:투자 문의|Investment)<\/p>\s*<p class="contact-person">여경진<\/p>\s*<a class="contact-address" href="mailto:gyeong\.yeo@vectuslab\.com">gyeong\.yeo@vectuslab\.com<\/a>/, `${name}: investment contact must be 여경진`);
+  assert.match(contact, /<p class="tag">(?:투자 문의|Investment)<\/p>\s*<p class="contact-person">여경진<\/p>\s*<a class="contact-address" href="mailto:gyeongjin\.yeo@vectuslab\.com">gyeongjin\.yeo@vectuslab\.com<\/a>/, `${name}: investment contact must be 여경진`);
   assert.match(contact, /<p class="tag">(?:협업 문의|Partnerships)<\/p>\s*<p class="contact-person">전준용<\/p>\s*<a class="contact-address" href="mailto:juneyoung\.jeon@vectuslab\.com">juneyoung\.jeon@vectuslab\.com<\/a>/, `${name}: partnership contact must remain unchanged`);
   assert.doesNotMatch(contact, /tel:|contact@vectuslab\.com/i, `${name}: no phone or generic mailbox in contact section`);
   const vision = html.match(/<section id="vision"[^>]*>([\s\S]*?)<\/section>/)?.[1] || '';
