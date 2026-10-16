@@ -476,6 +476,7 @@
   </style>
   <link rel="stylesheet" href="../trust-visuals.css" />
   <link rel="stylesheet" href="../differentiation.css" />
+  <link rel="stylesheet" href="../etf-emp-section.css" />
 </head>
 <body>
   <header>
@@ -609,6 +610,50 @@
             <text x="110" y="107">Source data</text><text x="375" y="107">Date and quality</text><text x="655" y="107">Conditions met?</text><text x="937" y="60">Evidence</text><text x="937" y="160">Reason to defer</text>
           </svg>
           <p>This diagram explains the structure. Observation and deferral rules vary by product and screen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="etf-emp" class="etf-emp-section" aria-labelledby="ee-title">
+      <div class="wrap">
+        <div class="ee-intro">
+          <div class="ee-intro-copy">
+            <p class="eyebrow">INVESTMENT / ETF &amp; EMP</p>
+            <h2 id="ee-title">An ETF is more than <em>a return ranking.</em></h2>
+            <p>Vectus reviews <strong>entry and deferral conditions for ETF candidates</strong>, then compares ETF and EMP performance using each product's appropriate price basis. It also examines holdings overlap and market co-movement.</p>
+          </div>
+          <div class="ee-chart">
+            <div class="ee-chart-head"><strong>Three ways to examine ETFs</strong><span>Candidate · Performance · Overlap</span></div>
+            <svg viewBox="0 0 560 220" preserveAspectRatio="none" role="img" aria-label="Conceptual price-flow comparison, not actual ETF data">
+              <defs><linearGradient id="ee-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c3a06a" stop-opacity=".23"/><stop offset="1" stop-color="#c3a06a" stop-opacity="0"/></linearGradient></defs>
+              <path class="ee-grid" d="M18 44H545 M18 101H545 M18 159H545"/>
+              <path fill="url(#ee-area)" d="M18 153 C62 134 80 141 118 111 S184 117 220 127 S285 90 320 104 S382 54 413 69 S480 25 545 42 V185 H18Z"/>
+              <path id="ee-price-line" class="ee-line" d="M18 153 C62 134 80 141 118 111 S184 117 220 127 S285 90 320 104 S382 54 413 69 S480 25 545 42"/>
+              <path class="ee-line-secondary" d="M18 168 C65 162 75 127 125 144 S199 91 245 114 S304 77 350 91 S413 100 458 58 S513 77 545 62"/>
+              <circle class="ee-dot" r="7"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#ee-price-line"/></animateMotion></circle>
+            </svg>
+            <div class="ee-chart-axis"><span>Reference date</span><span>Evaluation date</span></div>
+            <div class="ee-chart-cards"><span><b>Product performance</b><small>Separate price bases</small></span><span><b>Overlapping risk</b><small>Shared holdings and sectors</small></span></div>
+            <p class="ee-chart-note">The animated lines are illustrative, not actual ETF returns, forecasts, or recommendation outcomes.</p>
+          </div>
+        </div>
+        <div class="ee-heading"><div><p class="eyebrow">FROM QUESTION TO COMPARISON</p><h3>Recommending and comparing are different judgments.</h3></div><p>Review candidate criteria, past operator and product performance, and overlap with existing holdings in sequence.</p></div>
+        <div class="ee-tabs" role="tablist" aria-label="ETF and EMP feature explanation">
+          <button type="button" role="tab" id="ee-tab-pick" aria-controls="ee-panel-pick" aria-selected="true">01 ETF candidate review</button>
+          <button type="button" role="tab" id="ee-tab-issuer" aria-controls="ee-panel-issuer" aria-selected="false" tabindex="-1">02 Operator and product comparison</button>
+          <button type="button" role="tab" id="ee-tab-overlap" aria-controls="ee-panel-overlap" aria-selected="false" tabindex="-1">03 Overlap and market risk</button>
+        </div>
+        <div class="ee-panel" id="ee-panel-pick" role="tabpanel" aria-labelledby="ee-tab-pick">
+          <div class="ee-copy"><small>ETF RECOMMENDATION</small><h4>A suitable candidate,<br>not simply a recent winner</h4><p>Vectus reviews ETF candidates against your objective and investment conditions, including trading quality, costs, and market risk. If entry conditions are not met, it distinguishes the reasons to defer.</p><p class="ee-point">Candidate selection is not the same as ranking past returns.</p></div>
+          <div class="ee-visual"><div class="ee-inner"><div class="ee-inner-head"><strong>ETF candidate review</strong><span>Animated illustration · not a result</span></div><div class="ee-cards"><div><small>Objective</small><b>Growth / stability</b></div><div><small>Trading quality</small><b>Cost · liquidity</b></div><div><small>Market context</small><b>Regime · risk</b></div></div><div class="ee-flow"><span>Review</span><i>→</i><span>Entry conditions</span><i>→</i><span>Judge or defer</span></div><div class="ee-progress" aria-hidden="true"><i></i></div><p class="ee-note">This is a conceptual sequence, not an actual candidate, rating, or decision.</p></div></div>
+        </div>
+        <div class="ee-panel" id="ee-panel-issuer" role="tabpanel" aria-labelledby="ee-tab-issuer" hidden>
+          <div class="ee-copy"><small>ISSUER &amp; PRODUCT</small><h4>Compare operators and products<br>on appropriate bases</h4><p>Inspect past ETF performance by period and operator. EMP products have a different price and period basis, so their returns should not be forced into a single ETF ranking.</p><p class="ee-point">Past returns are facts, not recommendations or future-performance forecasts.</p></div>
+          <div class="ee-visual"><div class="ee-inner"><div class="ee-inner-head"><strong>ETF operator comparison</strong><span>Illustration · not a result</span></div><div class="ee-rows"><div class="ee-row"><span>Operator A</span><div class="ee-track"><i style="--bar-width:74%"></i></div><small>Item 1</small></div><div class="ee-row"><span>Operator B</span><div class="ee-track"><i style="--bar-width:51%"></i></div><small>Item 2</small></div><div class="ee-row"><span>Operator C</span><div class="ee-track"><i style="--bar-width:64%"></i></div><small>Item 3</small></div></div><p class="ee-note">These bars are fictional. ETFs use exchange closes; EMPs require their own verified price and period basis.</p></div></div>
+        </div>
+        <div class="ee-panel" id="ee-panel-overlap" role="tabpanel" aria-labelledby="ee-tab-overlap" hidden>
+          <div class="ee-copy"><small>OVERLAP &amp; RISK</small><h4>Look beyond product names<br>to what they hold</h4><p>Review common constituents, sector weights, and market co-movement across two ETFs. Comparisons with your holdings depend on registered products and available composition data.</p><p class="ee-point">When data is insufficient, unverified risk is not presented as a calculated result.</p></div>
+          <div class="ee-visual"><div class="ee-inner"><div class="ee-inner-head"><strong>Two ETF compositions</strong><span>Illustration · not a result</span></div><div class="ee-overlap"><div class="ee-overlap-card"><strong>ETF A</strong><small>Fictional sectors</small><div><span>Semis</span><div class="ee-track"><i style="--bar-width:72%"></i></div></div><div><span>Software</span><div class="ee-track"><i style="--bar-width:26%"></i></div></div></div><div class="ee-overlap-card"><strong>ETF B</strong><small>Fictional sectors</small><div><span>Semis</span><div class="ee-track"><i style="--bar-width:57%"></i></div></div><div><span>Software</span><div class="ee-track"><i style="--bar-width:43%"></i></div></div></div></div><div class="ee-callout"><span>Different names can still mean similar sector exposure</span><strong>Check overlap</strong></div><p class="ee-note">Fictional composition; these are not actual weights or factor-risk estimates.</p></div></div>
         </div>
       </div>
     </section>
@@ -1449,6 +1494,7 @@
     })();
   </script>
   <script src="../trust-motion.js" defer></script>
+  <script src="../etf-emp-section.js" defer></script>
   <script src="../site-nav.js" defer></script>
 </body>
 </html>
