@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vectus | 첫 화면 문구 목업</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0a0b0d;--panel:#131519;--line:rgba(255,255,255,.12);--text:#edeef1;--muted:#a0a2ab;--gold:#c3a06a;--violet:#9483bb}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--ink);color:var(--text);font-family:'IBM Plex Sans KR',sans-serif;word-break:keep-all}
+    .review{padding:10px 24px;text-align:center;background:#222019;color:#dbc9a9;font-size:12px;letter-spacing:.03em}
+    .wrap{max-width:1160px;margin:auto;padding:0 30px}
+    header{border-bottom:1px solid rgba(255,255,255,.08);background:rgba(10,11,13,.92)}
+    .nav{height:78px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font:700 20px 'Gowun Batang',serif;letter-spacing:.02em}
+    .brand img{width:49px;height:49px;object-fit:contain;background:#fff;border-radius:8px;padding:5px}
+    .nav-links{display:flex;gap:27px;color:#a4a5aa;font-size:13px}
+    main{position:relative;overflow:hidden}
+    main:before{content:"";position:absolute;width:750px;height:750px;right:-240px;top:-250px;border-radius:50%;background:radial-gradient(circle,rgba(148,131,187,.12),transparent 66%);pointer-events:none}
+    .hero{min-height:680px;padding:92px 30px 78px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:65px}
+    .eyebrow{font:500 12px 'IBM Plex Mono',monospace;color:var(--gold);letter-spacing:.17em;margin:0 0 19px}
+    h1{font:700 clamp(36px,4.5vw,57px)/1.35 'Gowun Batang',serif;letter-spacing:-.06em;margin:0 0 21px}
+    h1 em{font-style:normal;color:#d8b77e}
+    .lead{max-width:520px;margin:0;color:#b3b4bc;font-size:16px;line-height:1.9}
+    .scope{display:flex;flex-wrap:wrap;gap:9px;margin:23px 0 27px}
+    .scope span{padding:8px 12px;border:1px solid rgba(195,160,106,.25);border-radius:100px;color:#e3d2b9;background:rgba(195,160,106,.07);font-size:12px}
+    .scope span:last-child{border-color:rgba(148,131,187,.3);background:rgba(148,131,187,.08);color:#d0c2ee}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .button{padding:12px 23px;border-radius:6px;border:1px solid rgba(255,255,255,.2);font-size:14px;text-decoration:none;color:var(--text)}
+    .button.primary{background:var(--gold);border-color:var(--gold);color:#261b0d;font-weight:600}
+    .context{margin:20px 0 0;color:#8f9098;font-size:12px;line-height:1.7}
+    .diagram{position:relative;padding:29px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,#171a20,#101215);box-shadow:0 30px 70px rgba(0,0,0,.24)}
+    .diagram:before{content:"";position:absolute;left:50px;top:106px;bottom:86px;width:1px;background:linear-gradient(var(--gold),var(--violet),transparent);opacity:.55}
+    .diagram-title{margin:0 0 23px;color:#c2a678;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em}
+    .row{display:grid;grid-template-columns:47px 1fr auto;align-items:center;gap:15px;position:relative;margin:12px 0;padding:18px 15px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:#1a1d22}
+    .index{font:500 12px 'IBM Plex Mono',monospace;color:#c5aa7f}
+    .row strong{display:block;font-size:15px;font-weight:600}
+    .row small{display:block;margin-top:3px;color:#8f929d;font-size:11px}
+    .status{white-space:nowrap;font-size:11px;color:#dec9a6}
+    .row:nth-of-type(3) .status{color:#c7b9e8}
+    .diagram-foot{margin:17px 0 0;color:#999ca6;font-size:12px;line-height:1.7}
+    .next{border-top:1px solid var(--line);padding:31px 0 48px;color:#93959e;font-size:13px}
+    .next b{color:#dfc493;font-weight:500}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;gap:35px;padding:62px 22px}.nav-links{display:none}.diagram{max-width:650px}.wrap{padding:0 22px}}
+    @media(max-width:520px){.hero{padding:54px 22px}.diagram{padding:18px}.row{grid-template-columns:28px 1fr;gap:9px}.status{grid-column:2}.diagram:before{display:none}.lead{font-size:15px}}
+  </style>
+</head>
+<body>
+  <div class="review">첫 화면 문구 검토용 목업 · 실제 홈페이지는 아직 변경하지 않았습니다</div>
+  <header><div class="wrap nav"><div class="brand"><img src="../../../logo.png" alt="">Vectus</div><div class="nav-links"><span>서비스</span><span>차별화</span><span>기술</span><span>보험</span><span>인프라</span><span>문의</span></div></div></header>
+  <main>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">VECTUS · 이유 있는 추천</p>
+        <h1>주식·펀드·보험을<br><em>하나의 판단 흐름으로.</em></h1>
+        <p class="lead">투자는 왜 지금인지, 보험은 무엇이 부족한지. 벡투스는 상품마다 다른 근거를 확인하고, 주식·펀드 판단부터 보유보험 진단까지 한곳에서 살펴봅니다.</p>
+        <div class="scope"><span>주식·펀드 판단 · 초대 테스트</span><span>보유보험 진단 · 실손보험 중심, 범위 확대 중</span></div>
+        <div class="actions"><a class="button primary" href="#status">현재 제공 범위 보기</a><a class="button" href="https://test.vectuslab.ai/">초대 테스트 웹 ↗</a></div>
+        <p class="context">벡투스는 매매·가입을 대신하지 않습니다. 확인된 정보와 판단 근거를 보여주고, 최종 선택은 고객에게 남깁니다.</p>
+      </div>
+      <div class="diagram" aria-label="세 분야의 현재 제공 상태">
+        <p class="diagram-title">ONE SERVICE · THREE PERSPECTIVES</p>
+        <div class="row"><span class="index">01</span><div><strong>주식</strong><small>시세·공시·재무의 기준일과 판단 근거</small></div><span class="status">초대 테스트</span></div>
+        <div class="row"><span class="index">02</span><div><strong>펀드·ETF</strong><small>상품 구성과 겹치는 위험, 판단 조건</small></div><span class="status">초대 테스트</span></div>
+        <div class="row"><span class="index">03</span><div><strong>보유보험</strong><small>확인된 약관과 보유계약의 연결</small></div><span class="status">범위 확대 중</span></div>
+        <p class="diagram-foot">하나의 벡투스 서비스에서 설명하는 세 영역입니다. 이용 가능 범위는 상품과 자료 확보 상태에 따라 다릅니다.</p>
+      </div>
+    </div>
+  </main>
+  <section class="next" id="status"><div class="wrap"><b>문구 설계 의도</b> · “한곳에서”를 분명히 말하되, 각 분야가 모두 일반 공개됐다는 인상은 주지 않도록 현재 상태를 제목 바로 아래에 배치했습니다.</div></section>
+</body>
+</html>
