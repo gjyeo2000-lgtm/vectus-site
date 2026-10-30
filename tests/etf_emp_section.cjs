@@ -18,8 +18,8 @@ const { chromium } = require('playwright');
         const section = page.locator('#etf-emp');
         assert.equal(await section.count(), 1, `${language}: ETF section missing`);
         assert.equal(await section.locator('a').count(), 0, `${language}: no service link belongs in this section`);
-        assert.equal(await section.locator('svg animateMotion').count(), 1, `${language}: animated chart missing`);
-        const expectedTabs = language === 'ko' ? 4 : 3;
+        assert.equal(await section.locator('.ee-chart svg animateMotion').count(), 1, `${language}: animated chart missing`);
+        const expectedTabs = 4;
         assert.equal(await section.locator('[role="tab"]').count(), expectedTabs, `${language}: tab count`);
         assert.equal(await section.locator('[role="tabpanel"]').count(), expectedTabs, `${language}: panel count`);
         for (let index = 0; index < expectedTabs; index++) {
@@ -30,20 +30,34 @@ const { chromium } = require('playwright');
           assert.equal(await section.locator('[role="tabpanel"]:visible').count(), 1);
           assert.equal(await tab.getAttribute('aria-selected'), 'true');
         }
-        if (language === 'ko') {
+        {
+          // 미국 ETF 패널: 목업 1(앱)과 같은 구조·문구, 사이트 스킨, 움직이는 도표(목업 3, PO 승인 2026-10-30).
           const us = section.locator('#ee-panel-us');
+          const copy = language === 'ko'
+            ? { status: '준비중', tabs: ['수익률 순위', '이평선·거래량', '수익률·위험', '구성종목'], count: '57개' }
+            : { status: 'Coming soon', tabs: ['Return ranking', 'Moving average · volume', 'Return · risk', 'Holdings'], count: '57 ETFs' };
           await section.locator('#ee-tab-us').click();
-          assert.equal(await us.isVisible(), true, 'ko: 미국 ETF panel hidden');
-          assert.equal(await us.locator('svg[viewBox="0 0 300 150"]').count(), 1);
-          assert.equal(await us.locator('svg animateMotion').count(), 0, 'ko: 미국 ETF 도표는 정적이다');
-          assert.equal(await us.locator('.ee-status').innerText(), '준비중');
-          assert.ok((await us.innerText()).includes('57개'));
-          assert.equal(await us.locator('svg text', { hasText: /\d/ }).count(), 0, 'ko: 도표에 숫자 없음');
+          assert.equal(await us.isVisible(), true, `${language}: US ETF panel hidden`);
+          assert.equal(await us.locator('.ee-us-chip--st').innerText(), copy.status);
+          assert.ok((await us.innerText()).includes(copy.count), `${language}: 57 ETFs copy`);
+          assert.deepEqual(await us.locator('.ee-us-tab').allInnerTexts(), copy.tabs, `${language}: card tab names`);
+          assert.equal(await us.locator('.ee-us-card--feat').count(), 1, `${language}: one featured card`);
+          assert.equal(await us.locator('svg[role="img"][viewBox="0 0 120 56"]').count(), 4, `${language}: four diagrams`);
+          assert.deepEqual(await us.locator('svg text').allTextContents(), ['ETF A', 'ETF B'], `${language}: only the ETF A/B labels are text in the diagrams`);
+          assert.equal(await us.locator('svg animateMotion').count(), 0, `${language}: diagrams move by CSS only`);
+          assert.equal(await us.locator('svg text', { hasText: /\d/ }).count(), 0, `${language}: no digits in the diagrams`);
+          assert.equal(await us.locator('a').count(), 0, `${language}: no service link in the US ETF panel`);
+          const moving = await us.locator('.ee-us-card').first().evaluate(node => getComputedStyle(node).animationName);
+          assert.notEqual(moving, 'none', `${language}: diagrams move by default`);
+          await page.emulateMedia({ reducedMotion: 'reduce' });
+          const still = await us.locator('.ee-us-card').first().evaluate(node => getComputedStyle(node).animationName);
+          assert.equal(still, 'none', `${language}: reduced motion stops the diagrams`);
+          await page.emulateMedia({ reducedMotion: 'no-preference' });
           await section.locator('#ee-tab-overlap').focus();
           await page.keyboard.press('ArrowRight');
           assert.equal(await section.locator('#ee-tab-us').getAttribute('aria-selected'), 'true');
           await page.keyboard.press('ArrowRight');
-          assert.equal(await section.locator('#ee-tab-pick').getAttribute('aria-selected'), 'true', 'ko: 마지막 탭에서 처음으로 돈다');
+          assert.equal(await section.locator('#ee-tab-pick').getAttribute('aria-selected'), 'true', `${language}: arrow keys wrap from the last tab to the first`);
         }
         await section.locator('[role="tab"]').first().focus();
         await page.keyboard.press('ArrowRight');

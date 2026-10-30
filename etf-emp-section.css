@@ -63,8 +63,36 @@
 @keyframes ee-bar{from{width:0}to{width:var(--bar-width)}}@keyframes ee-highlight{0%,25%,100%{border-color:#605867;box-shadow:none;transform:translateY(0)}8%,18%{border-color:var(--gold);box-shadow:0 0 20px rgba(195,160,106,.2);transform:translateY(-4px)}}
 @keyframes ee-flow-step{0%,25%,100%{border-color:#605867}8%,18%{border-color:var(--violet)}}@keyframes ee-progress{from{transform:translateX(-105%)}75%,100%{transform:translateX(365%)}}
 .etf-emp-section .ee-tab-new{margin-left:6px;color:var(--gold);font-size:11px}
-.etf-emp-section .ee-copy .ee-status{display:inline-block;margin-left:8px;padding:2px 8px;border:1px solid rgba(148,131,187,.5);border-radius:99px;color:#d8d1ea;font:500 10px 'IBM Plex Sans KR',sans-serif;vertical-align:1px}
-.etf-emp-section .ee-us-svg{display:block;width:100%;height:auto}
+.etf-emp-section .ee-panel.ee-panel--us{grid-template-columns:1fr;min-height:0;overflow:visible}
+.etf-emp-section .ee-us{padding:30px 28px;background:#17181d;border-radius:18px;min-width:0}
+.etf-emp-section .ee-us-chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
+.etf-emp-section .ee-us-chip{font-size:11px;padding:5px 11px;border-radius:99px;background:rgba(195,160,106,.14);color:#f3e1c4}
+.etf-emp-section .ee-us-chip--st{background:transparent;border:1px solid rgba(148,131,187,.5);color:#d8d1ea}
+.etf-emp-section .ee-us-title{font-family:'Gowun Batang',serif;font-size:clamp(25px,3vw,30px);line-height:1.35;letter-spacing:-.02em;font-weight:700;margin:0 0 12px}
+.etf-emp-section .ee-us-lead{max-width:640px;margin:0 0 22px;color:#bfc0c7;font-size:14px;line-height:1.8}
+.etf-emp-section .ee-us-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:12px;margin:0 0 12px}
+.etf-emp-section .ee-us-card{padding:16px 16px 14px;border:1px solid rgba(255,255,255,.12);border-radius:13px;background:#24242b;animation:ee-us-spot 12s ease-in-out infinite}
+.etf-emp-section .ee-us-card:nth-child(2){animation-delay:3s}.etf-emp-section .ee-us-card:nth-child(3){animation-delay:6s}.etf-emp-section .ee-us-card:nth-child(4){animation-delay:9s}
+.etf-emp-section .ee-us-card--feat{border-color:rgba(148,131,187,.6)}
+.etf-emp-section .ee-us-tab{margin:0 0 6px;color:var(--gold);font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.06em}
+.etf-emp-section .ee-us-q{margin:0 0 4px;font-size:15px;font-weight:500;line-height:1.45}
+.etf-emp-section .ee-us-d{margin:0 0 12px;color:#aba3b8;font-size:12px;line-height:1.65}
+.etf-emp-section .ee-us-card svg{display:block;width:100%;height:auto;overflow:visible}
+.etf-emp-section .ee-us-fine{margin:0 0 16px;color:#b4aeb8;font-size:11px}
+.etf-emp-section .ee-us-disc{margin:0;padding:10px 12px;border:1px dashed #766a72;border-radius:8px;color:#b4aeb8;font-size:11px;line-height:1.6}
+@keyframes ee-us-spot{0%,22%,100%{box-shadow:none;border-color:rgba(255,255,255,.12)}4%,18%{border-color:#c3a06a;box-shadow:0 0 0 1px rgba(195,160,106,.35)}}
+@keyframes ee-us-bar{0%,6%{transform:scaleX(.04)}28%,82%{transform:scaleX(1)}96%,100%{transform:scaleX(.04)}}
+@keyframes ee-us-draw{0%,6%{stroke-dashoffset:1}55%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:1}}
+@keyframes ee-us-vol{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1.12)}}
+@keyframes ee-us-pulse{0%,100%{opacity:.45}50%{opacity:1}}
+.etf-emp-section .ee-us-b{transform-box:fill-box;transform-origin:left center;animation:ee-us-bar 6s ease-in-out infinite}
+.etf-emp-section .ee-us-b2{animation-delay:.35s}.etf-emp-section .ee-us-b3{animation-delay:.7s}.etf-emp-section .ee-us-b4{animation-delay:1.05s}
+.etf-emp-section .ee-us-ln{stroke-dasharray:1;stroke-dashoffset:0;animation:ee-us-draw 6s ease-in-out infinite}
+.etf-emp-section .ee-us-v{transform-box:fill-box;transform-origin:bottom center;animation:ee-us-vol 3s ease-in-out infinite}
+.etf-emp-section .ee-us-v:nth-child(2n){animation-delay:.5s}.etf-emp-section .ee-us-v:nth-child(3n){animation-delay:1s}
+.etf-emp-section .ee-us-br{animation:ee-us-pulse 3.2s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.etf-emp-section .ee-us-card,.etf-emp-section .ee-us-b,.etf-emp-section .ee-us-ln,.etf-emp-section .ee-us-v,.etf-emp-section .ee-us-br{animation:none!important}}
+@media(max-width:620px){.etf-emp-section .ee-us{padding:22px 18px}}
 @media(max-width:860px){.etf-emp-section .ee-intro,.etf-emp-section .ee-panel{grid-template-columns:1fr}.etf-emp-section .ee-chart{max-width:620px}.etf-emp-section .ee-intro{gap:35px}.etf-emp-section .ee-copy{border-right:0;border-bottom:1px solid var(--line-strong)}}
 @media(max-width:620px){.etf-emp-section .ee-heading{display:block}.etf-emp-section .ee-heading>p{margin-top:12px}.etf-emp-section .ee-copy,.etf-emp-section .ee-visual{padding:20px}.etf-emp-section .ee-cards{gap:5px}.etf-emp-section .ee-cards>div{padding:9px}.etf-emp-section .ee-cards b{font-size:11px}.etf-emp-section .ee-overlap{gap:6px}.etf-emp-section .ee-overlap-card{padding:9px}.etf-emp-section .ee-overlap-card>div span{width:44px;font-size:9px}.etf-emp-section .ee-row{grid-template-columns:69px 1fr 64px}.etf-emp-section .ee-chart-head{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.etf-emp-section *,.etf-emp-section *::before,.etf-emp-section *::after{animation-duration:.01ms!important}.etf-emp-section .ee-dot{display:none}}
