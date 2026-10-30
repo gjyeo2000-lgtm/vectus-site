@@ -729,33 +729,29 @@
           <div class="ee-copy"><small>OVERLAP &amp; RISK</small><h4>두 상품의 이름보다<br>실제 편입 구조를 봅니다</h4><p>두 ETF의 공통 편입종목, 업종 비중, 시장 연동 지표를 나눠 살펴봅니다. 보유상품과의 비교는 상품 등록과 자료 확보 범위에서만 계산됩니다.</p><p class="ee-point">자료가 부족하면 확인되지 않은 위험을 산출된 값처럼 보여주지 않습니다.</p></div>
           <div class="ee-visual"><div class="ee-inner"><div class="ee-inner-head"><strong>두 ETF의 구성 비교</strong><span>설명용 이미지 · 실제 결과 아님</span></div><div class="ee-overlap"><div class="ee-overlap-card"><strong>ETF A</strong><small>가상 업종 구성</small><div><span>반도체</span><div class="ee-track"><i style="--bar-width:72%"></i></div></div><div><span>소프트웨어</span><div class="ee-track"><i style="--bar-width:26%"></i></div></div></div><div class="ee-overlap-card"><strong>ETF B</strong><small>가상 업종 구성</small><div><span>반도체</span><div class="ee-track"><i style="--bar-width:57%"></i></div></div><div><span>소프트웨어</span><div class="ee-track"><i style="--bar-width:43%"></i></div></div></div></div><div class="ee-callout"><span>상품명은 달라도 같은 업종에 노출될 수 있습니다</span><strong>공통 위험 점검</strong></div><p class="ee-note">가상 구성입니다. 실제 편입 비중이나 팩터 위험 수치가 아닙니다.</p></div></div>
         </div>
-        <div class="ee-panel" id="ee-panel-us" role="tabpanel" aria-labelledby="ee-tab-us" hidden>
-          <div class="ee-copy"><small>US ETF · SEC 공시 기반</small><span class="ee-status">준비중</span><h4>ETF의 이름이 아니라<br>안을 열어 설명합니다.</h4><p>이름은 다른 ETF가 같은 종목을 함께 담고 있기도 합니다. 벡투스는 미국 ETF 57개가 담은 종목을 SEC 공시로 풀어, 종목 이름은 한글로 달고 어려운 말은 뜻을 붙입니다.</p><p class="ee-point">공시 기준일과 지연은 숨기지 않고 화면에 함께 적습니다.</p></div>
-          <div class="ee-visual"><div class="ee-inner"><div class="ee-inner-head"><strong>안을 열어 보는 3단계</strong><span>예시 도표</span></div>
-            <svg class="ee-us-svg" viewBox="0 0 300 150" role="img"><title>ETF 이름에서 담은 종목, 기업 재무까지</title><desc>세 단계 예시 도표</desc>
-              <defs><marker id="ee-us-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#c3a06a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-              <rect x="4" y="14" width="84" height="92" rx="9" fill="#2d2d35" stroke="rgba(195,160,106,0.45)" stroke-width="0.8"/>
-              <text x="46" y="34" text-anchor="middle" fill="#f3e1c4" font-size="12" font-weight="500">ETF 이름</text>
-              <rect x="14" y="48" width="64" height="20" rx="5" fill="#3a3a44"/><text x="46" y="58" text-anchor="middle" dominant-baseline="central" fill="#edeef1" font-size="11">반도체</text>
-              <rect x="14" y="74" width="64" height="20" rx="5" fill="#3a3a44"/><text x="46" y="84" text-anchor="middle" dominant-baseline="central" fill="#edeef1" font-size="11">나스닥</text>
-              <rect x="108" y="14" width="84" height="92" rx="9" fill="#2d2d35" stroke="rgba(148,131,187,0.5)" stroke-width="0.8"/>
-              <text x="150" y="34" text-anchor="middle" fill="#d8d1ea" font-size="12" font-weight="500">담은 종목</text>
-              <circle cx="137" cy="72" r="20" fill="rgba(148,131,187,0.15)" stroke="#9483bb" stroke-width="0.9"/>
-              <circle cx="163" cy="72" r="20" fill="rgba(148,131,187,0.15)" stroke="#9483bb" stroke-width="0.9"/>
-              <text x="150" y="72" text-anchor="middle" dominant-baseline="central" fill="#edeef1" font-size="11">겹침</text>
-              <rect x="212" y="14" width="84" height="92" rx="9" fill="#2d2d35" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
-              <text x="254" y="34" text-anchor="middle" fill="#edeef1" font-size="12" font-weight="500">기업 재무</text>
-              <rect x="222" y="48" width="64" height="20" rx="5" fill="#3a3a44"/><text x="254" y="58" text-anchor="middle" dominant-baseline="central" fill="#edeef1" font-size="11">엔비디아</text>
-              <rect x="222" y="74" width="64" height="20" rx="5" fill="#3a3a44"/><text x="254" y="84" text-anchor="middle" dominant-baseline="central" fill="#c3a06a" font-size="11">기업분석 ›</text>
-              <line x1="90" y1="60" x2="106" y2="60" stroke="#c3a06a" stroke-width="1.4" marker-end="url(#ee-us-arrow)"/>
-              <line x1="194" y1="60" x2="210" y2="60" stroke="#c3a06a" stroke-width="1.4" marker-end="url(#ee-us-arrow)"/>
-              <line x1="14" y1="128" x2="286" y2="128" stroke="rgba(195,160,106,0.5)" stroke-width="1.2"/>
-              <circle cx="24" cy="128" r="4.5" fill="#c3a06a"/><circle cx="150" cy="128" r="4.5" fill="#c3a06a"/><circle cx="276" cy="128" r="4.5" fill="#f5d7a5"/>
-              <text x="24" y="146" fill="#aba3b8" font-size="11" text-anchor="start">보고 기준일</text>
-              <text x="150" y="146" fill="#aba3b8" font-size="11" text-anchor="middle">공시</text>
-              <text x="276" y="146" fill="#aba3b8" font-size="11" text-anchor="end">화면 반영</text>
-            </svg>
-            <p class="ee-note">숫자 없이 구조만 그린 예시입니다. 판단 보조이며 확정 예측·매수·매도 지시가 아닙니다.</p></div></div>
+        <div class="ee-panel ee-panel--us" id="ee-panel-us" role="tabpanel" aria-labelledby="ee-tab-us" hidden>
+          <div class="ee-us" aria-label="미국 ETF 소개 네 가지">
+            <div class="ee-us-chips"><span class="ee-us-chip">미국 ETF</span><span class="ee-us-chip ee-us-chip--st">준비중</span></div>
+            <h4 class="ee-us-title">미국 ETF, 사기 전에<br>네 가지부터 살핍니다</h4>
+            <p class="ee-us-lead">57개 ETF를 수익률 · 이평선 · 위험 · 구성종목으로 풀어 설명합니다. 어려운 말은 뜻을 달고, 공시 기준일은 숨기지 않습니다.</p>
+            <div class="ee-us-cards">
+            <div class="ee-us-card"><p class="ee-us-tab">수익률 순위</p><p class="ee-us-q">얼마나 올랐나</p><p class="ee-us-d">기간·기준별로 줄을 세웁니다</p>
+              <svg viewBox="0 0 120 56" role="img"><title>ETF를 막대 길이로 줄 세우고 비교 기준 선과 견주는 순위표 예시</title><rect x="0" y="3" width="20" height="8" rx="3" fill="#3a3a44"/><rect class="ee-us-b ee-us-b1" x="26" y="3" width="94" height="8" rx="3" fill="#c3a06a"/><rect x="0" y="17" width="20" height="8" rx="3" fill="#3a3a44"/><rect class="ee-us-b ee-us-b2" x="26" y="17" width="72" height="8" rx="3" fill="rgba(195,160,106,0.6)"/><rect x="0" y="31" width="20" height="8" rx="3" fill="#3a3a44"/><rect class="ee-us-b ee-us-b3" x="26" y="31" width="52" height="8" rx="3" fill="rgba(195,160,106,0.42)"/><rect x="0" y="45" width="20" height="8" rx="3" fill="#3a3a44"/><rect class="ee-us-b ee-us-b4" x="26" y="45" width="34" height="8" rx="3" fill="rgba(195,160,106,0.26)"/><line x1="66" y1="0" x2="66" y2="56" stroke="#f5d7a5" stroke-width="1.2" stroke-dasharray="3 2.5"/></svg></div>
+            <div class="ee-us-card"><p class="ee-us-tab">이평선·거래량</p><p class="ee-us-q">지금 흐름은 어떤가</p><p class="ee-us-d">가격 흐름과 이동평균선, 거래량</p>
+              <svg viewBox="0 0 120 56" role="img"><title>가격선이 이동평균선을 위로 뚫고 오르는 흐름과 거래량 막대 예시</title>
+        <line x1="0" y1="40" x2="120" y2="40" stroke="#3a3a44" stroke-width="1"/>
+        <path d="M2 30 C20 29 34 27 52 24 C72 20 92 13 118 7" fill="none" stroke="#aba3b8" stroke-width="1.3" stroke-dasharray="3 3"/>
+        <path class="ee-us-ln" pathLength="1" d="M2 33 L12 27 L20 31 L30 25 L38 30 L48 21 L56 24 L66 14 L74 19 L84 10 L92 14 L102 6 L110 9 L118 3" fill="none" stroke="#c3a06a" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="44" cy="25" r="4.5" fill="none" stroke="#f5d7a5" stroke-width="1"/>
+        <g fill="rgba(148,131,187,0.55)"><rect class="ee-us-v" x="4" y="46" width="6" height="8"/><rect class="ee-us-v" x="16" y="43" width="6" height="11"/><rect class="ee-us-v" x="28" y="47" width="6" height="7"/><rect class="ee-us-v" x="40" y="44" width="6" height="10"/><rect class="ee-us-v" x="52" y="45" width="6" height="9"/><rect class="ee-us-v" x="64" y="42" width="6" height="12"/><rect class="ee-us-v" x="76" y="46" width="6" height="8"/><rect class="ee-us-v" x="88" y="43" width="6" height="11"/><rect class="ee-us-v" x="100" y="45" width="6" height="9"/></g></svg></div>
+            <div class="ee-us-card"><p class="ee-us-tab">수익률·위험</p><p class="ee-us-q">수익에 비해 얼마나 흔들리나</p><p class="ee-us-d">수익률과 위험을 함께 봅니다</p>
+              <svg viewBox="0 0 120 56" role="img"><title>비교 기준선과 견준 ETF 가격선, 가장 높은 곳에서 가장 낮은 곳까지 떨어진 최대낙폭 표시 예시</title><path d="M2 36 C30 31 60 27 118 19" fill="none" stroke="#aba3b8" stroke-width="1.3" stroke-dasharray="3 3"/><path class="ee-us-ln" pathLength="1" d="M2 36 L16 28 L28 32 L40 15 L52 9 L64 27 L74 41 L86 31 L98 21 L110 15 L118 11" fill="none" stroke="#c3a06a" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/><line x1="52" y1="9" x2="82" y2="9" stroke="#aba3b8" stroke-width="0.8" stroke-dasharray="2 2"/><path d="M80 11 L80 38" stroke="#f5d7a5" stroke-width="1.2" fill="none"/><path d="M77 34 L80 39 L83 34" stroke="#f5d7a5" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="52" cy="9" r="2.4" fill="#f5d7a5"/><circle cx="74" cy="41" r="2.4" fill="#f5d7a5"/></svg></div>
+            <div class="ee-us-card ee-us-card--feat"><p class="ee-us-tab">구성종목</p><p class="ee-us-q">안에 뭐가 들었나</p><p class="ee-us-d">담은 종목, 함께 담은 종목, 공시 기준일</p>
+              <svg viewBox="0 0 120 56" role="img"><title>ETF A와 ETF B의 원그래프가 겹친 가운데 부분이 같은 종목임을 보여 주는 예시</title><circle cx="44" cy="28" r="26" fill="rgba(148,131,187,0.3)"/><line x1="44" y1="28" x2="39.49" y2="2.39" stroke="#24242b" stroke-width="1.2"/><line x1="44" y1="28" x2="19.57" y2="19.11" stroke="#24242b" stroke-width="1.2"/><line x1="44" y1="28" x2="24.08" y2="44.71" stroke="#24242b" stroke-width="1.2"/><line x1="44" y1="28" x2="48.51" y2="53.61" stroke="#24242b" stroke-width="1.2"/><circle cx="76" cy="28" r="26" fill="rgba(148,131,187,0.3)"/><line x1="76" y1="28" x2="80.51" y2="2.39" stroke="#24242b" stroke-width="1.2"/><line x1="76" y1="28" x2="100.43" y2="19.11" stroke="#24242b" stroke-width="1.2"/><line x1="76" y1="28" x2="95.92" y2="44.71" stroke="#24242b" stroke-width="1.2"/><line x1="76" y1="28" x2="71.49" y2="53.61" stroke="#24242b" stroke-width="1.2"/><path class="ee-us-br" d="M60 7.51 A26 26 0 0 1 60 48.49 A26 26 0 0 1 60 7.51 Z" fill="#c3a06a"/><circle cx="44" cy="28" r="26" fill="none" stroke="#f5d7a5" stroke-width="0.9"/><circle cx="76" cy="28" r="26" fill="none" stroke="#f5d7a5" stroke-width="0.9"/><rect x="23" y="22" width="24" height="12" rx="3" fill="#24242b" fill-opacity="0.92"/><text x="35" y="28" text-anchor="middle" dominant-baseline="central" fill="#f3f5fe" font-size="7.5">ETF A</text><rect x="73" y="22" width="24" height="12" rx="3" fill="#24242b" fill-opacity="0.92"/><text x="85" y="28" text-anchor="middle" dominant-baseline="central" fill="#f3f5fe" font-size="7.5">ETF B</text></svg></div>
+            </div>
+            <p class="ee-us-fine">예시 도표 · 숫자는 실제 화면에서 공시 기준일과 함께 보여 드립니다</p>
+            <p class="ee-us-disc">판단 보조 · 확정 예측 아님 · 매수 · 매도 지시 아님</p>
+          </div>
         </div>
       </div>
     </section>
