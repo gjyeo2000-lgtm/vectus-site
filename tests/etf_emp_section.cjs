@@ -47,6 +47,11 @@ const { chromium } = require('playwright');
           assert.equal(await us.locator('svg animateMotion').count(), 0, `${language}: diagrams move by CSS only`);
           assert.equal(await us.locator('svg text', { hasText: /\d/ }).count(), 0, `${language}: no digits in the diagrams`);
           assert.equal(await us.locator('a').count(), 0, `${language}: no service link in the US ETF panel`);
+          const companyLine = language === 'ko'
+            ? '담은 종목은 「기업분석 ›」으로 이어져 그 기업의 재무까지 볼 수 있습니다. 벡투스가 지원하는 미국 상장 종목만 연결됩니다.'
+            : 'Holdings link to company analysis ›, showing that company’s financials. Only US-listed stocks that Vectus supports are linked.';
+          assert.equal(await us.locator('.ee-us-link').innerText(), companyLine, `${language}: company analysis line`);
+          assert.equal(await us.locator('.ee-us-cards .ee-us-card').count(), 4, `${language}: stays at four cards`);
           const moving = await us.locator('.ee-us-card').first().evaluate(node => getComputedStyle(node).animationName);
           assert.notEqual(moving, 'none', `${language}: diagrams move by default`);
           await page.emulateMedia({ reducedMotion: 'reduce' });

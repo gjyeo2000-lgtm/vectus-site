@@ -79,6 +79,7 @@
 .etf-emp-section .ee-us-d{margin:0 0 12px;color:#aba3b8;font-size:12px;line-height:1.65}
 .etf-emp-section .ee-us-card svg{display:block;width:100%;height:auto;overflow:visible}
 .etf-emp-section .ee-us-fine{margin:0 0 16px;color:#b4aeb8;font-size:11px}
+.etf-emp-section .ee-us-link{margin:0 0 16px;max-width:640px;color:#bfc0c7;font-size:12px;line-height:1.7}
 .etf-emp-section .ee-us-disc{margin:0;padding:10px 12px;border:1px dashed #766a72;border-radius:8px;color:#b4aeb8;font-size:11px;line-height:1.6}
 @keyframes ee-us-spot{0%,22%,100%{box-shadow:none;border-color:rgba(255,255,255,.12)}4%,18%{border-color:#c3a06a;box-shadow:0 0 0 1px rgba(195,160,106,.35)}}
 @keyframes ee-us-bar{0%,6%{transform:scaleX(.04)}28%,82%{transform:scaleX(1)}96%,100%{transform:scaleX(.04)}}
