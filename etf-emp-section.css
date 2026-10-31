@@ -62,12 +62,10 @@
 @keyframes ee-draw{to{stroke-dashoffset:0}}@keyframes ee-dash{to{stroke-dashoffset:-260}}@keyframes ee-appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes ee-bar{from{width:0}to{width:var(--bar-width)}}@keyframes ee-highlight{0%,25%,100%{border-color:#605867;box-shadow:none;transform:translateY(0)}8%,18%{border-color:var(--gold);box-shadow:0 0 20px rgba(195,160,106,.2);transform:translateY(-4px)}}
 @keyframes ee-flow-step{0%,25%,100%{border-color:#605867}8%,18%{border-color:var(--violet)}}@keyframes ee-progress{from{transform:translateX(-105%)}75%,100%{transform:translateX(365%)}}
-.etf-emp-section .ee-tab-new{margin-left:6px;color:var(--gold);font-size:11px}
 .etf-emp-section .ee-panel.ee-panel--us{grid-template-columns:1fr;min-height:0;overflow:visible}
 .etf-emp-section .ee-us{padding:30px 28px;background:#17181d;border-radius:18px;min-width:0}
 .etf-emp-section .ee-us-chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
 .etf-emp-section .ee-us-chip{font-size:11px;padding:5px 11px;border-radius:99px;background:rgba(195,160,106,.14);color:#f3e1c4}
-.etf-emp-section .ee-us-chip--st{background:transparent;border:1px solid rgba(148,131,187,.5);color:#d8d1ea}
 .etf-emp-section .ee-us-title{font-family:'Gowun Batang',serif;font-size:clamp(25px,3vw,30px);line-height:1.35;letter-spacing:-.02em;font-weight:700;margin:0 0 12px}
 .etf-emp-section .ee-us-lead{max-width:640px;margin:0 0 22px;color:#bfc0c7;font-size:14px;line-height:1.8}
 .etf-emp-section .ee-us-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:12px;margin:0 0 12px}

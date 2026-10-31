@@ -34,11 +34,13 @@ const { chromium } = require('playwright');
           // 미국 ETF 패널: 목업 1(앱)과 같은 구조·문구, 사이트 스킨, 움직이는 도표(목업 3, PO 승인 2026-10-30).
           const us = section.locator('#ee-panel-us');
           const copy = language === 'ko'
-            ? { status: '준비중', tabs: ['수익률 순위', '이평선·거래량', '수익률·위험', '구성종목'], count: '57개' }
-            : { status: 'Coming soon', tabs: ['Return ranking', 'Moving average · volume', 'Return · risk', 'Holdings'], count: '57 ETFs' };
+            ? { tabs: ['수익률 순위', '이평선·거래량', '수익률·위험', '구성종목'], count: '57개' }
+            : { tabs: ['Return ranking', 'Moving average · volume', 'Return · risk', 'Holdings'], count: '57 ETFs' };
           await section.locator('#ee-tab-us').click();
           assert.equal(await us.isVisible(), true, `${language}: US ETF panel hidden`);
-          assert.equal(await us.locator('.ee-us-chip--st').innerText(), copy.status);
+          assert.equal(await us.locator('.ee-us-chip').count(), 1, `${language}: only the product-kind chip, no status chip`);
+          assert.equal(await section.locator('.ee-tab-new').count(), 0, `${language}: no new badge on the US ETF tab`);
+          assert.ok(!/준비중|Coming soon/.test(await us.innerText()), `${language}: no coming-soon wording`);
           assert.ok((await us.innerText()).includes(copy.count), `${language}: 57 ETFs copy`);
           assert.deepEqual(await us.locator('.ee-us-tab').allInnerTexts(), copy.tabs, `${language}: card tab names`);
           assert.equal(await us.locator('.ee-us-card--feat').count(), 1, `${language}: one featured card`);
