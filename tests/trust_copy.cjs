@@ -21,6 +21,7 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.match(html, /site-nav\.js/);
   assert.equal((html.match(/class="mobile-menu"/g) || []).length, 1, `${name}: mobile navigation missing`);
   assert.match(html, name === 'ko' ? /테스트 웹 · 초대자 전용/ : /Test Web · Invite Only/);
+  assert.equal((html.match(/<a href="https:\/\/vectuslab\.ai"[^>]*>(?:테스트 웹 · 초대자 전용|Test Web · Invite Only)<\/a>/g) || []).length, 2, `${name}: test web buttons must point to vectuslab.ai`);
   assert.doesNotMatch(html, name === 'ko' ? />웹 바로가기</ : />Go to Web App</);
   assert.doesNotMatch(html, /78%|34\.23%|24\/7|31\.29%/);
   assert.doesNotMatch(html, /<meta[^>]+noindex/i);
