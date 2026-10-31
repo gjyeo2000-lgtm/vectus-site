@@ -49,8 +49,8 @@ const server = http.createServer((request, response) => {
           assert.equal(await page.locator('main h1').count(), 1);
           const testWebLink = page.locator('.site-header .test-web-link');
           assert.equal(await testWebLink.count(), 1, `${lang}/${route}: missing test web return button`);
-          assert.equal(await testWebLink.getAttribute('href'), 'https://test.vectuslab.ai/guest-home');
-          assert.equal(await testWebLink.innerText(), lang === 'ko' ? '초대 테스트로 돌아가기' : 'Return to test web');
+          assert.equal(await testWebLink.getAttribute('href'), 'https://vectuslab.ai/guest-home');
+          assert.equal(await testWebLink.innerText(), lang === 'ko' ? '서비스로 돌아가기' : 'Back to the service');
           assert.equal(await testWebLink.isVisible(), true, `${lang}/${route}/${width}: return button hidden`);
           assert.equal(await page.locator('meta[name="robots"]').count(), 0);
           assert.equal(await page.locator('.mock-banner').count(), 0);
