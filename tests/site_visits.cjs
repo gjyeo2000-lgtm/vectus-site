@@ -14,7 +14,7 @@ test('every published page loads the shared anonymous visit beacon', () => {
   }
 });
 
-test('beacon sends one unique anonymous event without credentials', () => {
+test('beacon sends the same unique anonymous event to AWS and test without credentials', () => {
   const script = fs.readFileSync(path.join(root, 'site-visits.js'), 'utf8');
   const calls = [];
   const context = { location: { hostname: 'vectuslab.com', pathname: '/en/stock/' },
@@ -22,13 +22,17 @@ test('beacon sends one unique anonymous event without credentials', () => {
     fetch: (...args) => { calls.push(args); return Promise.resolve(); } };
   context.globalThis = context;
   vm.runInNewContext(script, context);
-  assert.equal(calls.length, 1);
-  assert.equal(calls[0][0], 'https://test.vectuslab.ai/api/public/site-visit');
-  assert.deepEqual(JSON.parse(calls[0][1].body), {
-    event_id: 'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa', path: '/en/stock/',
-  });
-  assert.equal(calls[0][1].credentials, 'omit');
-  assert.equal(calls[0][1].mode, 'no-cors');
+  assert.deepEqual(calls.map((call) => call[0]), [
+    'https://vectuslab.ai/api/public/site-visit',
+    'https://test.vectuslab.ai/api/public/site-visit',
+  ]);
+  for (const call of calls) {
+    assert.deepEqual(JSON.parse(call[1].body), {
+      event_id: 'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa', path: '/en/stock/',
+    });
+    assert.equal(call[1].credentials, 'omit');
+    assert.equal(call[1].mode, 'no-cors');
+  }
   calls.length = 0;
   context.location.pathname = '/fund-etf/';
   vm.runInNewContext(script, context);
