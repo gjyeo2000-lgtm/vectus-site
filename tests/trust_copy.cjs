@@ -39,7 +39,7 @@ for (const [name, file] of [['ko', 'index.html'], ['en', 'en/index.html']]) {
   assert.equal(site.publisher?.name, '벡투스');
   const status = html.match(/<section class="service-status"[\s\S]*?<\/section>/)?.[0] || '';
   assert.equal((status.match(/<article>/g) || []).length, 3, `${name}: service stages missing`);
-  assert.match(status, name === 'ko' ? /오픈 운영 중[\s\S]*범위 확대 중[\s\S]*준비 중/ : /Open and running[\s\S]*Expanding scope[\s\S]*In preparation/);
+  assert.match(status, name === 'ko' ? /오픈 운영 중[\s\S]*준비 중[\s\S]*준비 중/ : /Open and running[\s\S]*In preparation[\s\S]*In preparation/);
   assert.match(status, name === 'ko' ? /현재 제공 기능은 아닙니다/ : /They are not current features/);
   assert.match(html, name === 'ko' ? /영업일 기준/ : /business days/i);
   const recommendationHistory = html.match(/<div class="follow-idx">03<\/div><h3>(?:추천 이력 관리|Recommendation history)<\/h3><p>(.*?)<\/p>/)?.[1] || '';
