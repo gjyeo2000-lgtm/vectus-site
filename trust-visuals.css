@@ -134,3 +134,62 @@
 .hero p.hero-diagram-foot{margin:17px 0 0;color:#a0a2ab;font-size:12px;line-height:1.7;max-width:none}
 @media(max-width:860px){.hero .hero-grid{grid-template-columns:minmax(0,1fr);gap:35px}.hero-diagram{max-width:650px}}
 @media(max-width:520px){.hero-diagram{padding:18px}.hero-diagram-row{grid-template-columns:28px minmax(0,1fr);gap:9px}.hero-diagram-status{grid-column:2}.hero-diagram:before{display:none}.hero p.hero-lead{font-size:15px}}
+
+/* 계속 움직이는 흐름: 카드가 차례로 들어오고, 선 위로 점이 이어서 흐른다.
+   처음 한 번 그려지고 멈추던 효과(trust-in)를 대신하지 않고 그 위에 겹쳐 반복한다. */
+.trust-dot{display:none;fill:#f1dfb9}
+.trust-dot-hold{fill:#d8cdf2}
+.trust-diagram path.trust-flow{display:none}
+@media(prefers-reduced-motion:no-preference){
+  /* 판단 과정 5단계 카드: 7.5초 주기로 한 장씩 떠올라 순서를 보여 준다 */
+  .trust-stage{animation:trust-stage-lift 7.5s ease-in-out infinite;will-change:transform}
+  .trust-stage:nth-child(2){animation-delay:1.5s}
+  .trust-stage:nth-child(3){animation-delay:3s}
+  .trust-stage:nth-child(4){animation-delay:4.5s}
+  .trust-stage:nth-child(5){animation-delay:6s}
+  .trust-stage strong{animation:trust-stage-num 7.5s ease-in-out infinite;animation-delay:inherit}
+  .trust-stage:nth-child(2) strong{animation-delay:1.5s}
+  .trust-stage:nth-child(3) strong{animation-delay:3s}
+  .trust-stage:nth-child(4) strong{animation-delay:4.5s}
+  .trust-stage:nth-child(5) strong{animation-delay:6s}
+
+  /* 구조 그림: 점선이 앞으로 흐르고, 점이 상자를 차례로 지나며 상자가 깜박인다 */
+  .trust-diagram path.trust-flow,.trust-ready .trust-diagram path.trust-flow,.trust-ready .trust-diagram.trust-in path.trust-flow{display:inline;stroke:#f1dfb9;stroke-width:2;stroke-dasharray:4 12;stroke-dashoffset:0;opacity:.8;animation:trust-march 1s linear infinite;animation-delay:0s}
+  .trust-diagram path.trust-flow.trust-flow-hold,.trust-ready .trust-diagram path.trust-flow.trust-flow-hold,.trust-ready .trust-diagram.trust-in path.trust-flow.trust-flow-hold{stroke:#d8cdf2;animation-delay:0s}
+  .trust-dot{display:inline;filter:drop-shadow(0 0 5px rgba(241,223,185,.9))}
+  .trust-dot-hold{filter:drop-shadow(0 0 5px rgba(216,205,242,.9))}
+  .trust-diagram rect.trust-box{animation:trust-box-gold 6s ease-in-out infinite}
+  .trust-diagram rect.trust-box.b1{animation-delay:1.2s}
+  .trust-diagram rect.trust-box.b2{animation-delay:2.4s}
+  .trust-diagram rect.trust-box.b3{animation-delay:3.6s}
+  .trust-diagram rect.trust-box.trust-hold{animation-name:trust-box-violet}
+
+  /* 시장 정보와 보유상품의 연결: 네 칸이 차례로 켜지고 화살표가 계속 앞으로 민다 */
+  .flow-node{animation:trust-node-on 6s ease-in-out infinite}
+  .flow-node:nth-child(3){animation-delay:1.5s}
+  .flow-node:nth-child(5){animation-delay:3s}
+  .flow-node:nth-child(7){animation-delay:4.5s}
+  .flow-arrow{animation:trust-arrow-push 1.5s ease-in-out infinite}
+  .flow-arrow:nth-child(4){animation-delay:.3s}
+  .flow-arrow:nth-child(6){animation-delay:.6s}
+}
+@keyframes trust-stage-lift{
+  0%,24%,100%{transform:translateY(0);border-top-color:var(--gold-line);box-shadow:none;background:var(--panel)}
+  6%,18%{transform:translateY(-7px);border-top-color:var(--gold);box-shadow:0 16px 30px rgba(195,160,106,.17);background:#1a1d23}
+}
+@keyframes trust-stage-num{0%,24%,100%{color:var(--gold);letter-spacing:0}6%,18%{color:#f1dfb9;letter-spacing:.14em}}
+@keyframes trust-march{to{stroke-dashoffset:-16}}
+@keyframes trust-box-gold{
+  0%,22%,100%{stroke:var(--gold-line);fill:var(--panel-2)}
+  4%,14%{stroke:var(--gold);fill:#22262d}
+}
+@keyframes trust-box-violet{
+  0%,22%,100%{stroke:var(--violet-line);fill:var(--panel-2)}
+  4%,14%{stroke:var(--violet);fill:#25222f}
+}
+@keyframes trust-node-on{
+  0%,26%,100%{transform:translateY(0);border-color:var(--line);box-shadow:none}
+  6%,20%{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 12px 26px rgba(195,160,106,.16)}
+}
+@keyframes trust-arrow-push{0%,100%{translate:0 0;opacity:.45}50%{translate:7px 0;opacity:1;color:var(--gold)}}
+@media(max-width:760px){@keyframes trust-arrow-push{0%,100%{translate:0 0;opacity:.45}50%{translate:0 5px;opacity:1;color:var(--gold)}}}
