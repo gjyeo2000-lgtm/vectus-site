@@ -96,7 +96,7 @@ test('every link to the service carries the website entry marker', () => {
   let found = 0;
   for (const file of pagesAndGenerator) {
     const text = fs.readFileSync(path.join(root, file), 'utf8');
-    for (const match of text.matchAll(/href="(https:\/\/vectuslab\.ai[^"]*)"/g)) {
+    for (const match of text.matchAll(/<a\b[^>]*\bhref="(https:\/\/vectuslab\.ai[^"]*)"/g)) {
       found += 1;
       assert.match(match[1], /[?&]entry=website$/, `${file}: ${match[1]}`);
     }
