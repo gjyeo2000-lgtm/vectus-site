@@ -67,10 +67,12 @@ function build(slug, lang) {
   const footerText = lang === 'ko'
     ? '벡투스 공식 서비스 안내 · 이 화면은 개념 그래프이며 실제 고객별 결과가 아닙니다.'
     : 'Official Vectus service guide · Diagrams are conceptual, not customer-specific results.';
+  const youtubeUrl = 'https://www.youtube.com/@vectuslab';
+  const youtubeLink = `<a class="social-link" href="${youtubeUrl}" target="_blank" rel="noopener noreferrer" aria-label="${lang === 'ko' ? '벡투스 YouTube 채널 (새 창)' : 'Vectus on YouTube, in Korean (opens in a new tab)'}"><svg class="social-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>${lang === 'ko' ? 'YouTube' : 'YouTube (Korean)'}</a>`;
   const stageText = lang === 'ko'
     ? '현재 이용 가능 범위는 서비스 화면에서 확인합니다.'
     : 'Check the service for the current available scope.';
-  const schema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebPage', name: meta.title, description: meta.description, url: canonical, inLanguage: lang, isPartOf: { '@type': 'WebSite', name: 'Vectus | 벡투스', url: 'https://vectuslab.com/' }, publisher: { '@type': 'Organization', name: '벡투스', url: 'https://vectuslab.com/' } });
+  const schema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebPage', name: meta.title, description: meta.description, url: canonical, inLanguage: lang, isPartOf: { '@type': 'WebSite', name: 'Vectus | 벡투스', url: 'https://vectuslab.com/' }, publisher: { '@type': 'Organization', name: '벡투스', url: 'https://vectuslab.com/', sameAs: [youtubeUrl] } });
   const html = `<!doctype html>
 <html lang="${lang}"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -84,7 +86,7 @@ function build(slug, lang) {
 <a class="skip-link" href="#main">${lang === 'ko' ? '본문으로 건너뛰기' : 'Skip to content'}</a>
 <header class="site-header"><div class="wrap"><a class="brand" href="${base}">VectusLab</a><nav class="site-nav" aria-label="${navLabel}"><a href="${base}">${homeText}</a>${navHtml}<a class="lang-link" lang="${lang === 'ko' ? 'en' : 'ko'}" href="${altUrl}">${altLang}</a></nav><a class="test-web-link" href="https://vectuslab.ai/guest-home?entry=website">${testWebText}</a></div></header>
 <main id="main">${main}</main>
-<footer class="footer"><div class="wrap"><span>${footerText}</span><span>${stageText}</span></div></footer>
+<footer class="footer"><div class="wrap"><span>${footerText}</span><span>${stageText} · ${youtubeLink}</span></div></footer>
 </body></html>
 `;
   const directory = path.join(root, ...(lang === 'ko' ? [] : ['en']), slug);
