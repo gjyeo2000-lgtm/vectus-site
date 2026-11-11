@@ -12,3 +12,6 @@ html[lang="en"] h1,html[lang="en"] h2{font-family:"Fraunces",Georgia,serif;lette
 .test-web-link:hover{background:#d6b680}
 .test-web-link:focus-visible{outline:2px solid var(--text);outline-offset:3px}
 @media(max-width:850px){.site-nav .lang-link{margin-left:auto}}
+.social-link{display:inline-flex;align-items:center;gap:6px;vertical-align:middle;color:var(--muted)}
+.social-link:hover{color:var(--text)}
+.social-icon{width:16px;height:16px;flex-shrink:0}
