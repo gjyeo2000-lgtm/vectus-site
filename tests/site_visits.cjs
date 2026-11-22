@@ -104,3 +104,17 @@ test('every link to the service carries the website entry marker', () => {
   assert.ok(found >= 13, `서비스 링크 ${found}곳`);
 });
 
+
+test('guide service links send the same cta signal and unknown entry values do not count', () => {
+  const script = fs.readFileSync(path.join(root, 'site-visits.js'), 'utf8');
+  const { calls, listeners } = runWithDocument(script, 'vectuslab.com', '/guide/check-my-insurance/');
+  calls.length = 0;
+  listeners.click(linkTo('https://vectuslab.ai/?entry=guide'));
+  assert.equal(calls.length, 2);
+  const body = JSON.parse(calls[0][1].body);
+  assert.equal(body.kind, 'cta');
+  assert.equal(body.path, '/guide/check-my-insurance/');
+  calls.length = 0;
+  listeners.click(linkTo('https://vectuslab.ai/?entry=other'));
+  assert.equal(calls.length, 0);
+});

@@ -16,14 +16,14 @@
   };
   send({});
 
-  // 서비스 링크(주소 끝 ?entry=website)를 누르면 클릭 1건을 따로 보낸다. 링크가 noreferrer 라 서비스 쪽에서는
+  // 서비스 링크(주소 끝 ?entry=website 또는 ?entry=guide)를 누르면 클릭 1건을 따로 보낸다. 링크가 noreferrer 라 서비스 쪽에서는
   // 이 표시로만 홈페이지 경유를 알 수 있다. 가운데 버튼(auxclick)도 센다. 클릭마다 새 event_id 라 중복 제거는 되지 않는다.
   const onClick = (event) => {
     const link = event.target?.closest?.('a[href]');
     if (!link) return;
     let url;
     try { url = new URL(link.href, location.href); } catch (error) { return; }
-    if (url.origin !== 'https://vectuslab.ai' || url.searchParams.get('entry') !== 'website') return;
+    if (url.origin !== 'https://vectuslab.ai' || !['website', 'guide'].includes(url.searchParams.get('entry'))) return;
     if (event.type === 'auxclick' && event.button !== 1) return;
     send({ kind: 'cta' });
   };
