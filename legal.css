@@ -21,3 +21,20 @@
 .legal .guide-cta .guide-cta-button{display:inline-block;padding:10px 16px;border-radius:8px;background:var(--gold);color:#21190d;font-weight:700;font-size:14px;text-decoration:none}
 .legal .guide-cta .guide-cta-button:hover{background:#d6b680}
 .legal .guide-cta .guide-cta-button:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+.legal.guide-index{max-width:980px}
+.legal.guide-index h1{font-size:clamp(28px,4.2vw,42px);line-height:1.25}
+.legal .guide-lead{max-width:720px;margin:14px 0 30px;font-size:15px;line-height:1.75}
+.legal .guide-cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+@media (max-width:760px){.legal .guide-cards{grid-template-columns:1fr}}
+.legal .guide-card{display:flex;flex-direction:column;gap:10px;margin:0;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);transition:border-color .15s ease,transform .15s ease}
+.legal .guide-card+.guide-card{margin-top:0}
+.legal .guide-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.legal .guide-tag{align-self:flex-start;padding:3px 10px;border:1px solid var(--gold);border-radius:999px;color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.02em}
+.legal .guide-card h2{margin:0;padding:0;border:0;font-size:clamp(17px,2vw,20px);line-height:1.4}
+.legal .guide-card h2 a{color:var(--text);text-decoration:none}
+.legal .guide-card h2 a:hover{color:var(--gold)}
+.legal .guide-answer{margin:0;font-size:14px;line-height:1.7}
+.legal .guide-answer strong{display:inline-block;margin-right:6px;color:var(--gold)}
+.legal .guide-more{margin-top:auto;color:var(--gold);font-size:13.5px;font-weight:700;text-decoration:none}
+.legal .guide-more:hover{text-decoration:underline}
+.legal .guide-more:focus-visible,.legal .guide-card h2 a:focus-visible{outline:2px solid var(--text);outline-offset:3px}

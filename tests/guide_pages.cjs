@@ -55,3 +55,14 @@ test('guide link is in the Korean menus and articles end with a service button a
     assert.match(html, /수익을 약속하지 않습니다/, slug);
   }
 });
+
+test('guide list shows every article as a card with its one-line answer', () => {
+  const cards = read('guide/index.html').split('<li class="guide-card">').slice(1).map((c) => c.split('</li>')[0]);
+  assert.equal(cards.length, slugs.length);
+  for (const slug of slugs) {
+    const card = cards.find((c) => c.includes(`href="/guide/${slug}/"`));
+    assert.ok(card, slug);
+    assert.ok(card.includes('<strong>한 줄 답</strong>'), slug);
+    assert.ok(card.includes('글 읽기 →'), slug);
+  }
+});
