@@ -43,3 +43,15 @@ test('guide index and sitemap list every article and asset links resolve', () =>
     }
   }
 });
+
+test('guide link is in the Korean menus and articles end with a service button and a figure', () => {
+  for (const p of ['index.html', 'stock/index.html', 'fund-etf/index.html', 'insurance/index.html', 'privacy/index.html', 'terms/index.html', 'guide/index.html']) {
+    assert.match(read(p), /href="\/guide\/"/, p);
+  }
+  for (const slug of slugs) {
+    const html = read(`guide/${slug}/index.html`);
+    assert.match(html, /<figure class="guide-figure">[\s\S]*<svg[^>]*role="img"/, slug);
+    assert.match(html, /<a class="guide-cta-button" href="https:\/\/vectuslab\.ai\/\?entry=website"[^>]*rel="noopener noreferrer"/, slug);
+    assert.match(html, /수익을 약속하지 않습니다/, slug);
+  }
+});

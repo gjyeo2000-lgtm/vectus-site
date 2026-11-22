@@ -56,7 +56,7 @@ function build(slug, lang) {
   const meta = pages[slug][lang];
   const depth = lang === 'ko' ? '..' : '../..';
   const nav = lang === 'ko'
-    ? [['주식', '/stock/', 'stock'], ['펀드·ETF', '/fund-etf/', 'fund-etf'], ['보험', '/insurance/', 'insurance']]
+    ? [['주식', '/stock/', 'stock'], ['펀드·ETF', '/fund-etf/', 'fund-etf'], ['보험', '/insurance/', 'insurance'], ['가이드', '/guide/', 'guide']]
     : [['Stocks', '/en/stock/', 'stock'], ['Funds &amp; ETFs', '/en/fund-etf/', 'fund-etf'], ['Insurance', '/en/insurance/', 'insurance']];
   const navHtml = nav.map(([label, href, key]) => `<a${key === slug ? ' aria-current="page"' : ''} href="${href}">${label}</a>`).join('');
   const altLang = lang === 'ko' ? 'English' : '한국어';
