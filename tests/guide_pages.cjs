@@ -5,7 +5,7 @@ const test = require('node:test');
 
 const root = path.resolve(__dirname, '..');
 const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
-const slugs = ['etf-name-vs-holdings', 'recommendation-evidence-check', 'etf-overlap-diversification', 'price-rise-buy-check', 'fund-etf-price-basis'];
+const slugs = ['etf-name-vs-holdings', 'recommendation-evidence-check', 'etf-overlap-diversification', 'price-rise-buy-check', 'fund-etf-price-basis', 'choose-recommendation-service'];
 
 test('guide articles are indexable, have canonical, description and structured data', () => {
   for (const slug of slugs) {
