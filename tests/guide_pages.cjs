@@ -66,3 +66,10 @@ test('guide list shows every article as a card with its one-line answer', () => 
     assert.ok(card.includes('글 읽기 →'), slug);
   }
 });
+
+test('guide index and every article load the shared anonymous visit beacon', () => {
+  for (const route of ['guide'].concat(slugs.map((slug) => 'guide/' + slug))) {
+    const html = fs.readFileSync(path.join(root, route, 'index.html'), 'utf8');
+    assert.match(html, /<script defer src="\/site-visits\.js"><\/script>/, route);
+  }
+});
