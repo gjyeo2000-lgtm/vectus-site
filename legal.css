@@ -42,3 +42,6 @@
 .legal .guide-more{margin-top:auto;color:var(--gold);font-size:13.5px;font-weight:700;text-decoration:none}
 .legal .guide-more:hover{text-decoration:underline}
 .legal .guide-more:focus-visible,.legal .guide-card h2 a:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+
+.legal .guide-inline{margin:18px 0 0;font-size:14px}
+.legal .guide-inline a{color:var(--gold);font-weight:700}
