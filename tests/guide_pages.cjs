@@ -5,7 +5,7 @@ const test = require('node:test');
 
 const root = path.resolve(__dirname, '..');
 const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
-const slugs = ['etf-name-vs-holdings', 'recommendation-evidence-check', 'etf-overlap-diversification', 'price-rise-buy-check', 'fund-etf-price-basis', 'choose-recommendation-service', 'ask-ai-about-stocks', 'split-buying-basics', 'insufficient-data-stocks', 'check-my-insurance', 'no-recommendation-in-falling-market', 'market-regime-basics', 'us-etf-holdings-check', 'driver-insurance-overlap-check', 'fund-fee-class-check', 'dividend-investing-basics'];
+const slugs = ['etf-name-vs-holdings', 'recommendation-evidence-check', 'etf-overlap-diversification', 'price-rise-buy-check', 'fund-etf-price-basis', 'choose-recommendation-service', 'ask-ai-about-stocks', 'split-buying-basics', 'insufficient-data-stocks', 'check-my-insurance', 'no-recommendation-in-falling-market', 'market-regime-basics', 'us-etf-holdings-check', 'driver-insurance-overlap-check', 'fund-fee-class-check', 'dividend-investing-basics', 'vectus-service-flow', 'vectus-stock-check-tools', 'vectus-dividend-screen', 'vectus-post-drop-sideways-screen', 'vectus-my-portfolio-screen', 'vectus-market-fragility-check'];
 
 test('guide articles are indexable, have canonical, description and structured data', () => {
   for (const slug of slugs) {
