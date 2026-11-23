@@ -16,6 +16,10 @@
 .legal .guide-figure{margin:22px 0 8px;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}
 .legal .guide-figure svg{display:block;width:100%;height:auto}
 .legal .guide-figure figcaption{margin-top:10px;color:var(--muted);font-size:12.5px}
+.legal .guide-note{margin:24px 0 8px;padding:16px 18px;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;background:var(--panel2)}
+.legal .guide-note h3{margin:0 0 8px;font-size:clamp(16px,2vw,18px)}
+.legal .guide-note p{margin:0 0 8px}
+.legal .guide-note p:last-child{margin-bottom:0}
 .legal .guide-cta{margin:34px 0 8px;padding:20px;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}
 .legal .guide-cta p{margin:0 0 12px}
 .legal .guide-cta .guide-cta-button{display:inline-block;padding:10px 16px;border-radius:8px;background:var(--gold);color:#21190d;font-weight:700;font-size:14px;text-decoration:none}
