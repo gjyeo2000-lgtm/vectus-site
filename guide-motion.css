@@ -1,0 +1,35 @@
+/* 가이드 글 공용 동적 그래프 (홈페이지 trust-visuals 와 같은 금색·보라 선과 스크롤 진입 움직임) */
+[data-gm] svg text{font-family:'IBM Plex Sans KR',sans-serif}
+.gm-toggle{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.gm-toggle button{padding:7px 14px;border:1px solid var(--line-strong,var(--line));border-radius:999px;background:transparent;color:var(--muted);font:600 13px 'IBM Plex Sans KR',sans-serif;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.gm-toggle button:hover{color:var(--text)}
+.gm-toggle button[aria-pressed="true"]{border-color:var(--gold);color:var(--gold);background:rgba(195,160,106,.1)}
+.gm-toggle button:focus-visible,.gm-day:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+.gm-badge{display:inline-block;margin-left:8px;padding:2px 8px;border:1px solid var(--violet-line,var(--line));border-radius:999px;color:var(--violet,var(--muted));font-size:11.5px;font-weight:700;vertical-align:middle}
+.gm-day{cursor:pointer}
+.gm-day .gm-col{fill:var(--panel);stroke:var(--line);transition:stroke .2s,fill .2s}
+.gm-day:hover .gm-col{stroke:var(--gold-line)}
+.gm-day[aria-pressed="true"] .gm-col{stroke:var(--gold);fill:rgba(195,160,106,.08)}
+.gm-bar{fill:var(--gold);transform-box:fill-box;transform-origin:bottom}
+.gm-bar.gm-strong{fill:#e7d5b8}
+.gm-bar.gm-hold{fill:none;stroke:var(--violet);stroke-width:2;stroke-dasharray:5 4}
+.gm-bar.gm-none{fill:none;stroke:var(--line-strong,var(--line));stroke-dasharray:3 4}
+.gm-ready .gm-bar{transform:scaleY(0)}
+.gm-ready.gm-in .gm-bar{animation:gm-rise .7s cubic-bezier(.2,.8,.2,1) forwards}
+.gm-ready.gm-in .gm-day:nth-child(2) .gm-bar{animation-delay:.12s}
+.gm-ready.gm-in .gm-day:nth-child(3) .gm-bar{animation-delay:.24s}
+.gm-ready.gm-in .gm-day:nth-child(4) .gm-bar{animation-delay:.36s}
+.gm-ready.gm-in .gm-day:nth-child(5) .gm-bar{animation-delay:.48s}
+.gm-panel{margin-top:12px;padding:14px 16px;border:1px solid var(--gold-line);border-radius:10px;background:var(--panel);font-size:14px;line-height:1.7}
+.gm-panel strong{color:var(--gold)}
+.gm-needle{transform-box:view-box;transition:transform 1s cubic-bezier(.3,1.3,.4,1)}
+.gm-score{font:700 34px 'IBM Plex Mono',monospace;fill:var(--text);text-anchor:middle}
+.gm-state{fill:var(--gold);font-size:14px;font-weight:700;text-anchor:middle}
+.gm-route path{fill:none;stroke:var(--gold);stroke-width:2;stroke-dasharray:260;stroke-dashoffset:0}
+.gm-ready .gm-route path{stroke-dashoffset:260}
+.gm-ready.gm-in .gm-route path{animation:gm-line 1.2s ease-out .4s forwards}
+.gm-ready.gm-in .gm-route path+path{animation-delay:1s}
+.gm-route rect{fill:var(--panel);stroke:var(--violet)}
+@keyframes gm-rise{to{transform:scaleY(1)}}
+@keyframes gm-line{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.gm-ready .gm-bar{transform:none;animation:none!important}.gm-ready .gm-route path{stroke-dashoffset:0;animation:none!important}.gm-needle{transition:none}}
