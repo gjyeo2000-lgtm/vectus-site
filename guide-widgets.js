@@ -106,7 +106,7 @@
       var closed = v === 12; nav.setAttribute('class', 'gm-dotv' + (closed ? ' on' : '')); navt.textContent = closed ? '기준가격' : ''; nav.setAttribute('cy', Y(P[12])); navt.setAttribute('y', Y(P[12]) - 14);
       basis.textContent = closed ? '하루 한 번 계산' : '기준가격은 하루 한 번 계산됩니다';
       panel.textContent = closed ? 'ETF의 거래 가격은 하루 내내 움직였고, 일반 공모펀드의 기준가격은 이제 한 번 정해졌습니다. 기준 시점이 다릅니다.' : '지금은 장중입니다. ETF는 거래 가격이 계속 바뀌지만 일반 공모펀드는 아직 기준가격이 없습니다.';
-    }, function (v) { return (9 + Math.round(v * 65 / 12) / 10).toFixed(1).replace('.0', '') + '시'; });
+    }, function (v) { var t = 540 + Math.round(v * 32.5), m = t % 60; return Math.floor(t / 60) + '시' + (m ? ' ' + m + '분' : ''); });
     ui.appendChild(sl.el); ui.appendChild(svg); ui.appendChild(panel); sl.update();
   };
 
