@@ -71,3 +71,27 @@
     setScore(+btns[0].getAttribute('data-score'));
   });
 })();
+
+/* 기존 글의 정적 그림에 진입 움직임을 입힌다 (직접 만든 동적 그래프가 있는 그림은 제외) */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var figs = Array.prototype.filter.call(document.querySelectorAll('.guide-figure'), function (f) { return !f.querySelector('[data-gm]'); });
+  if (!figs.length) return;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('gm-auto-in'); io.unobserve(e.target); } });
+  }, { threshold: 0.25 });
+  figs.forEach(function (f) {
+    var svg = f.querySelector('svg');
+    if (!svg) return;
+    var i = 0;
+    svg.querySelectorAll('rect,circle,ellipse,line,path,polyline,polygon,text').forEach(function (el) {
+      if (el.closest('title,desc,defs')) return;
+      el.classList.add('gm-a');
+      el.style.setProperty('--gm-i', Math.min(i++, 24));
+      if (/^(line|path|polyline)$/.test(el.tagName)) el.setAttribute('pathLength', '1');
+    });
+    f.classList.add('gm-auto-ready');
+    io.observe(f);
+  });
+})();

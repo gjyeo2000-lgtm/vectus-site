@@ -33,3 +33,11 @@
 @keyframes gm-rise{to{transform:scaleY(1)}}
 @keyframes gm-line{to{stroke-dashoffset:0}}
 @media(prefers-reduced-motion:reduce){.gm-ready .gm-bar{transform:none;animation:none!important}.gm-ready .gm-route path{stroke-dashoffset:0;animation:none!important}.gm-needle{transition:none}}
+
+/* 기존 글의 정적 그림: 문구는 그대로 두고 스크롤 진입 시 차례로 나타나고 선이 그려지며, 마우스를 올리면 강조된다 */
+.gm-auto-ready svg .gm-a{opacity:0;transform:translateY(6px);transition:opacity .5s ease,transform .5s ease;transition-delay:calc(var(--gm-i,0)*70ms)}
+.gm-auto-ready svg line.gm-a,.gm-auto-ready svg path.gm-a,.gm-auto-ready svg polyline.gm-a{opacity:1;transform:none;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s ease;transition-delay:calc(var(--gm-i,0)*70ms)}
+.gm-auto-in svg .gm-a{opacity:1;transform:none}
+.gm-auto-in svg line.gm-a,.gm-auto-in svg path.gm-a,.gm-auto-in svg polyline.gm-a{stroke-dashoffset:0}
+.guide-figure svg rect:hover{stroke:var(--gold)}
+@media(prefers-reduced-motion:reduce){.gm-auto-ready svg .gm-a{opacity:1;transform:none;transition:none}.gm-auto-ready svg line.gm-a,.gm-auto-ready svg path.gm-a,.gm-auto-ready svg polyline.gm-a{stroke-dashoffset:0;transition:none}}
